@@ -23,4 +23,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', function () {
         return view('adminpage.dashboard');
     });
+    Route::get('/giaovien', function () {
+        return view('adminpage.giaovien');
+    });
+    Route::get('/hocvien', function () {
+        return view('adminpage.hocvien');
+    });
 });
