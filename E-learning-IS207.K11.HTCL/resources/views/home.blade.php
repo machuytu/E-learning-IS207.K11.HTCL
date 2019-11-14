@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{ route('hocviens.create') }}">add member</a>
                 </div>
             </div>
         </div>

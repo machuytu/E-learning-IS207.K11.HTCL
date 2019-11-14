@@ -20,13 +20,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::resource('/hocviens', 'HocvienController');
+
     Route::get('/dashboard', function () {
         return view('adminpage.dashboard');
     });
     Route::get('/giaovien', function () {
         return view('adminpage.giaovien');
     });
+    // Route::get('/them', function () {
+    //    return view('adminpage.hocvien.them_hocvien');
+    // });
     Route::get('/hocvien', function () {
-        return view('adminpage.hocvien');
+       return view('adminpage.hocvien');
     });
+
 });
