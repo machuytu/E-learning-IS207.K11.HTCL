@@ -24,15 +24,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div id="page-wrapper">
                 <div class="main-page">
                     <div class="tables">
-                        <h2 class="title1">Học Viên</h2>
-                        <div class="bs-example widget-shadow" data-example-id="bordered-table">
+                        <h2 class="title1">Giáo Viên</h2>
+                        <div class="bs-example widget-shadow" data-example-id="hoverable-table">
                             <table>
                                 <tr>
-                                    <h4>Danh sách học viên</h4>
+                                    <h4>Danh sách giáo viên</h4>
                                 </tr>
                                 <tr>
                                     <h3 style="text-align: right">
-                                        <a href="{{ route('hocviens.create') }}">
+                                        <a href="{{ route('giaoviens.create') }}">
                                             <span class="label label-success">Thêm</span>
                                         </a>
                                     </h3>
@@ -40,10 +40,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </table>
 
                             <br>
-                            <table class="table table-hover">
+                            <table class="table table-hover"">
                                 <thead>
                                     <tr>
                                         <th>Họ và Tên</th>
+                                        <th>Loại Giáo Viên</th>
                                         <th>Ngày Sinh</th>
                                         <th>Địa Chỉ</th>
                                         <th>Số Điện Thoại</th>
@@ -51,19 +52,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($Hocviens as $hocvien)
+                                    @foreach ($Giaoviens as $giaovien)
                                     <tr>
-                                        <td>{{ $hocvien->HoTen }}</td>
-                                        <td>{{ date('d-m-Y', strtotime($hocvien->NgaySinh)) }}</td>
-                                        <td>{{ $hocvien->DiaChi }}</td>
-                                        <td>{{ $hocvien->SDT }}</td>
+                                        <td>{{ $giaovien->HoTen }}</td>
+                                        <td>{{ $giaovien->Loai }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($giaovien->NgaySinh)) }}</td>
+                                        <td>{{ $giaovien->DiaChi }}</td>
+                                        <td>{{ $giaovien->SDT }}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('hocviens.edit',$hocvien->id) }}">
+                                            <form action="{{ route('giaoviens.edit',$giaovien->id) }}">
                                                 <button class="btn btn-primary">Edit</button>
                                             </form>
                                         </td>
                                         <td class="text-center">
-                                            <form action="{{ route('hocviens.destroy', $hocvien->id)}}" method="post">
+                                            <form action="{{ route('giaoviens.destroy', $giaovien->id)}}" method="post">
                                                 {{ csrf_field() }}
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" type="submit">Delete</button>

@@ -19,7 +19,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="/giaovien">
+              <a href="{{ route('giaoviens.index') }}">
               <i class="fa fa-dashboard"></i> <span>Giáo Viên</span>
               </a>
             </li>
