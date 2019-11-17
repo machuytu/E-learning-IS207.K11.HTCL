@@ -240,7 +240,7 @@ a, i, .btn, .btn span, button, img, span, .dropdown-item, .social-icons li:hover
 .navbar-brand{margin-right: 0;}
 .navbar-nav .nav-item{margin: 0 20px}
 .navbar-nav .nav-link{color: #1c1d3e; font-weight: 500; padding: 0 !important; border-radius: 0; text-transform: capitalize; position: relative;}
-.navbar-nav .nav-link:hover, .navbar-nav .nav-item .nav-link.active {color: #2575fc;}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-item .nav-link.active {color: #eb5959;}
 .navbar-nav .nav-link::before {position: absolute; bottom: -10%; left: 50%; color: transparent; content: '.'; text-shadow: 0 0 transparent; font-size: 2em; -webkit-transition: text-shadow 0.3s, color 0.3s; -moz-transition: text-shadow 0.3s, color 0.3s; transition: text-shadow 0.3s, color 0.3s; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); transform: translateX(-50%); pointer-events: none; animation: opacitychange 1s ease-in-out infinite; line-height: 0;}
 .navbar-nav .nav-link:hover::before,
 .navbar-nav .nav-item .nav-link.active::before,
