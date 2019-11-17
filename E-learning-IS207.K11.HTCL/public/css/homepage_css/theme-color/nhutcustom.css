@@ -29,3 +29,14 @@
     border-radius: 50px;
     padding:50px;
   }
+  .buttonnhutcst3{
+      background: linear-gradient(90deg, rgb(234, 11, 0) 0%, rgb(252, 87, 37) 80%);
+      color:white;
+  }
+  .text-themenew{
+        color:#eb5959 !important;
+  }
+  .hinhanhblog{
+        height:200px;
+        width:400px;
+  }
