@@ -1,0 +1,31 @@
+.nhutcst1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('https://ak7.picdn.net/shutterstock/videos/19530127/thumb/4.jpg') center center no-repeat;
+    background-size: cover;
+  }
+  .nhutcst1:before{
+   
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to top, rgb(250, 208, 196) 0%, rgb(255, 209, 255) 100%);
+        opacity: .6; 
+  }
+
+  .nhutcst2{
+        padding:30px;
+  }
+  .nhutcst3{
+       background-color:#ffffff7d;
+
+  }
+  .nhutbackgroundlogin{
+    background: #ffffffb0;
+    border-radius: 50px;
+    padding:50px;
+  }
