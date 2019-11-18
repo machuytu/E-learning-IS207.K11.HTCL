@@ -18,6 +18,11 @@ class AdminMiddleware
         if($user->usertype == 'admin') {
             return $next($request);
         }
+
+            else if($user->usertype == 'user') {
+                redirect('/home');
+            }
+
         else {
         return redirect('/home');
         }

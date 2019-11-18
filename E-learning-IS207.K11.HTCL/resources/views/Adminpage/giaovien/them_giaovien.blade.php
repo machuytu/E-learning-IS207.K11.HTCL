@@ -53,6 +53,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="form-group">
                                                 {{ Form::text('SDT',null,['class' => 'form-control', 'placeholder' =>"Số điện thoại"]) }}
                                             </div>
+                                            <div class="form-group">
+                                                {{ Form::file('image') }}
+                                            </div>
 
                                             <div class="form-group">
                                                 <button class="btn btn-primary">Submit</button>

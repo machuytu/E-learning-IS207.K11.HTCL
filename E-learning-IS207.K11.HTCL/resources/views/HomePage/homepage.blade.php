@@ -9,7 +9,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Trang chủ</title>
+<title>asdf</title>
 
 <!-- favicon icon -->
 <link rel="shortcut icon" href="/images/logo.png">
@@ -155,7 +155,7 @@
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
           <h2 class="title">Các khóa học lập trình tại<span class="text-themenew">"Tương lai"</span></h2>
-          
+
         </div>
       </div>
     </div>
@@ -212,7 +212,7 @@
                   <ul class="list-inline">
                     <li>Lê Thị Trúc Hòa</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li class="mb-3">
@@ -224,7 +224,7 @@
                   <ul class="list-inline">
                     <li>Hoàng Thụy Trinh</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li>
@@ -236,7 +236,7 @@
                   <ul class="list-inline">
                     <li>Nguyễn Minh Nhựt</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a> 
+                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
               </div>
             </li>
           </ul>
@@ -282,7 +282,7 @@
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
           <h2 class="title">Các khóa học ngoại ngữ tại<span class="text-themenew">"Tương lai"</span></h2>
-          
+
         </div>
       </div>
     </div>
@@ -339,7 +339,7 @@
                   <ul class="list-inline">
                     <li>Lê Thị Trúc Hòa</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li class="mb-3">
@@ -351,7 +351,7 @@
                   <ul class="list-inline">
                     <li>Hoàng Thụy Trinh</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li>
@@ -363,7 +363,7 @@
                   <ul class="list-inline">
                     <li>Nguyễn Minh Nhựt</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a> 
+                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
               </div>
             </li>
           </ul>
@@ -410,7 +410,7 @@
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
           <h2 class="title">Các khóa học ngoại ngữ tại<span class="text-themenew">"Tương lai"</span></h2>
-          
+
         </div>
       </div>
     </div>
@@ -467,7 +467,7 @@
                   <ul class="list-inline">
                     <li>Lê Thị Trúc Hòa</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li class="mb-3">
@@ -479,7 +479,7 @@
                   <ul class="list-inline">
                     <li>Hoàng Thụy Trinh</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li>
@@ -491,7 +491,7 @@
                   <ul class="list-inline">
                     <li>Nguyễn Minh Nhựt</li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a> 
+                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
               </div>
             </li>
           </ul>
@@ -504,7 +504,7 @@
 <!--kynangsong end-->
 </div>
 
-<!--body content end--> 
+<!--body content end-->
 
 
 <!--footer start-->
@@ -531,7 +531,7 @@
 
 <!--back-to-top end-->
 
- 
+
 <!-- inject js start -->
 
 <!--== jquery -->
@@ -544,28 +544,28 @@
 <script src="js/bootstrap.min.js"></script>
 
 <!--== appear -->
-<script src="js/jquery.appear.js"></script> 
+<script src="js/jquery.appear.js"></script>
 
 <!--== modernizr -->
-<script src="js/modernizr.js"></script> 
+<script src="js/modernizr.js"></script>
 
 <!--== easing -->
-<script src="js/jquery.easing.min.js"></script> 
+<script src="js/jquery.easing.min.js"></script>
 
-<!--== menu --> 
+<!--== menu -->
 <script src="js/menu/jquery.smartmenus.js"></script>
 
 <!--== owl-carousel -->
-<script src="js/owl-carousel/owl.carousel.min.js"></script> 
+<script src="js/owl-carousel/owl.carousel.min.js"></script>
 
-<!--== magnific-popup --> 
+<!--== magnific-popup -->
 <script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 <!--== counter -->
-<script src="js/counter/counter.js"></script> 
+<script src="js/counter/counter.js"></script>
 
 <!--== countdown -->
-<script src="js/countdown/jquery.countdown.min.js"></script> 
+<script src="js/countdown/jquery.countdown.min.js"></script>
 
 <!--== contact-form -->
 <script src="js/contact-form/contact-form.js"></script>
@@ -583,7 +583,7 @@
 <script src="js/wow.min.js"></script>
 
 <!--== color-customize -->
-<script src="js/color-customize/color-customizer.js"></script> 
+<script src="js/color-customize/color-customizer.js"></script>
 
 <!--== theme-script -->
 <script src="js/theme-script.js"></script>
