@@ -9,6 +9,16 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
+Route::get('/loginlophoc',function(){
+    return view('HomePage.login');
+});
+Route::get('/trangchu',function(){
+    return view('HomePage.homepage');
+});
+Route::get('/a/b',function(){
+    return view('HomePage.login');
+});
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
