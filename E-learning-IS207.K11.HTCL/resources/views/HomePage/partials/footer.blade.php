@@ -1,11 +1,11 @@
-<footer class="nhutcst3">
+<footer class="nhutcst3 border-version">
 
-  <div class="primary-footer">
+  <div class="primary-footer border-version">
     <div class="container">
       <div class="row nhutcst2">
         <div class="col-lg-4 col-md-6">
           <div class="footer-logo">
-            <img id="footer-logo-img" src="images/logo.png" class="img-center" alt="">
+            <img id="footer-logo-img" src="{{asset('images/logo.png')}}" class="img-center" alt="">
           </div>
           <p class="mb-0">Trung tâm dạy học abc là trung tâm dạy rất nhiều thứ từ lập trình, ngoại ngữ, ôn thi đại học, kinh tế, đời sống, dạy kèm cấp 1, 2, 3,...</p>
         </div>

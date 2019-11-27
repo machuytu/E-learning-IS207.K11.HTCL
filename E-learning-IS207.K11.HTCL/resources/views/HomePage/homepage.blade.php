@@ -11,50 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Trang chủ</title>
 
-<!-- favicon icon -->
-<link rel="shortcut icon" href="/images/logo.png">
-
-<!-- inject css start -->
-
-<!--== bootstrap -->
-<link href="{{asset('/css/homepage_css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
-
-<!--== animate -->
-<link href="{{asset('/css/homepage_css/animate.css')}}" rel="stylesheet" type="text/css" />
-
-<!--== fontawesome -->
-<link href="{{asset('/css/homepage_css/fontawesome-all.css')}}" rel="stylesheet" type="text/css" />
-
-<!--== line-awesome -->
-<link href="/css/homepage_css/line-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<!--== magnific-popup -->
-<link href="/css/homepage_css/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
-
-<!--== owl-carousel -->
-<link href="/css/homepage_css/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
-
-<!--== base -->
-<link href="/css/homepage_css/base.css" rel="stylesheet" type="text/css" />
-
-<!--== shortcodes -->
-<link href="/css/homepage_css/shortcodes.css" rel="stylesheet" type="text/css" />
-
-<!--== default-theme -->
-<link href="/css/homepage_css/style.css" rel="stylesheet" type="text/css" />
-
-<!--== responsive -->
-<link href="/css/homepage_css/responsive.css" rel="stylesheet" type="text/css" />
-
-<!--== color-customizer -->
-<link href="#" data-style="styles" rel="stylesheet">
-<link href="/css/homepage_css/color-customize/color-customizer.css" rel="stylesheet" type="text/css" />
-<link href="{{asset('/css/homepage_css/theme-color/nhutcustom.css')}}" rel="stylesheet" type="text/css" />
-<!-- inject css end -->
-
-<!-- inject css end -->
+@include('HomePage.partials.nguon',[])
 
 </head>
 
@@ -70,9 +27,127 @@
 
 <!--header end-->
 
+<!--section su kien-->
+<br><br>
+<!--anh nen-->
+
+<!--end and nen-->
+<section class="hinhnen">
+  <div class="container">
+    
+    <!--Anhnen-->
+
+<section class="custom1">
+<div class="container">
+
+    <div class="row text-center">
+      <div class="col-lg-8 col-md-12 ml-auto mr-auto">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+<!-- Indicators -->
+<ul class="carousel-indicators">
+  <li data-target="#demo" data-slide-to="0" class="active"></li>
+  <li data-target="#demo" data-slide-to="1"></li>
+  <li data-target="#demo" data-slide-to="2"></li>
+</ul>
+
+<!-- The slideshow -->
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="{{asset('images/hinhkhoahoc/a.png')}}" alt="Los Angeles" width="600" height="400">
+  </div>
+  <div class="carousel-item">
+    <img src="{{asset('images/hinhkhoahoc/b.jpg')}}" alt="Chicago" width="600" height="400">
+  </div>
+  <div class="carousel-item">
+    <img src="{{asset('images/hinhkhoahoc/c.jpg')}}" alt="New York" width="600" height="400">
+  </div>
+</div>
+
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</a>
+</div>
+<marquee class="dep">Nhân dịp khai trương trung tâm dành tặng voucher giảm 20% cho bất kì khóa học đến 100 khách hàng đầu tiên.</marquee>
+      </div>
+      <div class="col-lg-4 col-md-12 widget md-mt-5 hinhnenbao">
+        <div class="recent-post main-post">
+        <!--section--->
+        <div id='nz-div-4'>
+          <h3 class="tde">			
+                <span>TIN TỨC</span>			
+          </h3>
+        </div>
+        <!--section-->
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <div class="recent-post-thumb mr-2">
+                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
+              </div>
+              <div class="recent-post-desc">
+                <div class="post-meta">
+                  <ul class="list-inline">
+                    <li>Người đăng: Lê Thị Trúc Hòa</li>
+                  </ul>
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+              </div>
+            </li>
+            <li class="mb-3">
+              <div class="recent-post-thumb">
+                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
+              </div>
+              <div class="recent-post-desc">
+                <div class="post-meta">
+                  <ul class="list-inline">
+                    <li> Người đăng: Hoàng Thụy Trinh</li>
+                  </ul>
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+              </div>
+            </li>
+            <li>
+              <div class="recent-post-thumb">
+                <img class="img-fluid" src="images/blog/java.jpg" alt="">
+              </div>
+              <div class="recent-post-desc">
+                <div class="post-meta">
+                  <ul class="list-inline">
+                    <li>Người đăng: Nguyễn Minh Nhựt</li>
+                  </ul>
+                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a> 
+                
+              </div>            
+</div>
+<div style="text-align:center; margin-top:15px;">
+  <a href="#">Xem Thêm >> </a>
+</div>    
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Anhnenend-->
+
+</section>
+<!--end section sk--->
 
 <!--hero laptrinh section start-->
+</section>
 
+<!-- Cac chuong trinh noi bac-->
+
+
+<!--endct-->
 <section class="fullscreen-banner banner p-0 o-hidden" data-bg-color="#fbfbfb" id="laptrinh">
   <div class="bg-animation">
     <img class="zoom-fade" src="images/pattern/01.png" alt="">
@@ -81,7 +156,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
-          <img class="img-center wow tada" data-wow-duration="2s" src="images/banner/05.png" alt="">
+          <img class="img-center wow tada" data-wow-duration="2s" src="{{asset('images/banner/05.png')}}" alt="">
         </div>
         <div class="col-lg-6 col-md-12 md-mt-5 md-mb-5">
           <h5 class=" wow fadeInDown" data-wow-duration="1.5s">Trở thành một lập trình viên</h5>
@@ -535,58 +610,58 @@
 <!-- inject js start -->
 
 <!--== jquery -->
-<script src="js/jquery.3.3.1.min.js"></script>
+<script src="{{asset('js/jquery.3.3.1.min.js')}}"></script>
 
 <!--== popper -->
-<script src="js/popper.min.js"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 
 <!--== bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!--== appear -->
-<script src="js/jquery.appear.js"></script> 
+<script src="{{asset('js/jquery.appear.js')}}"></script> 
 
 <!--== modernizr -->
-<script src="js/modernizr.js"></script> 
+<script src="{{asset('js/modernizr.js')}}"></script> 
 
 <!--== easing -->
-<script src="js/jquery.easing.min.js"></script> 
+<script src="{{asset('js/jquery.easing.min.js')}}"></script> 
 
 <!--== menu --> 
-<script src="js/menu/jquery.smartmenus.js"></script>
+<script src="{{asset('js/menu/jquery.smartmenus.js')}}"></script>
 
 <!--== owl-carousel -->
-<script src="js/owl-carousel/owl.carousel.min.js"></script> 
+<script src="{{asset('js/owl-carousel/owl.carousel.min.js')}}"></script> 
 
 <!--== magnific-popup --> 
-<script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="{{asset('js/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
 <!--== counter -->
-<script src="js/counter/counter.js"></script> 
+<script src="{{asset('js/counter/counter.js')}}"></script> 
 
 <!--== countdown -->
-<script src="js/countdown/jquery.countdown.min.js"></script> 
+<script src="{{asset('js/countdown/jquery.countdown.min.js')}}"></script> 
 
 <!--== contact-form -->
-<script src="js/contact-form/contact-form.js"></script>
+<script src="{{asset('js/contact-form/contact-form.js')}}"></script>
 
 <!--== validate -->
-<script src="js/contact-form/jquery.validate.min.js"></script>
+<script src="{{asset('js/contact-form/jquery.validate.min.js')}}"></script>
 
 <!--== map api -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!--== map -->
-<script src="js/map.js"></script>
+<script src="{{asset('js/map.js')}}"></script>
 
 <!--== wow -->
-<script src="js/wow.min.js"></script>
+<script src="{{asset('js/wow.min.js')}}"></script>
 
 <!--== color-customize -->
-<script src="js/color-customize/color-customizer.js"></script> 
+<script src="{{asset('js/color-customize/color-customizer.js')}}"></script> 
 
 <!--== theme-script -->
-<script src="js/theme-script.js"></script>
+<script src="{{asset('js/theme-script.js')}}"></script>
 
 <!-- inject js end -->
 
