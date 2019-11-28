@@ -1,12 +1,12 @@
 <header id="site-header" class="header">
-  <div id="header-wrap">
+  <div id="header-wrap" class="border-nhut">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <!-- Navbar -->
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand logo" href="index.html">
-              <img id="logo-img" class="img-center" src="images/logo.png" alt="">
+              <img id="logo-img" class="img-center" src="{{asset('images/logo.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
               <span></span>
@@ -14,21 +14,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <!-- Left nav -->
-              <ul id="main-menu" class="nav navbar-nav ml-auto mr-auto">
+              <ul id="main-menu" class="nav navbar-nav ml-auto mr-auto font-nav">
                 <li class="nav-item"> <a class="nav-link active" href="#ngoaingu">Ngoại ngữ</a>
                   <ul>
                     <li><a href="index.html">Tiếng Anh</a>
                     </li>
                     <li><a href="index-2.html">Tiếng Nhật</a>
                     </li>
-                    <li><a href="index-3.html">Tiếng Hàn</a>
-                    </li>
-                    <li><a href="index-4.html">Tiếng Nga</a>
-                    </li>
-                    <li><a href="index-5.html">Tiếng Trung</a>
-                    </li>
-                    <li><a href="index-6.html">Tiếng Pháp</a>
-                    </li>
+                   
                   </ul>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#laptrinh">Lập trình</a>
