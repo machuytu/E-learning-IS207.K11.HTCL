@@ -34,7 +34,7 @@
 <!--end and nen-->
 <section class="hinhnen">
   <div class="container">
-    
+
     <!--Anhnen-->
 
 <section class="custom1">
@@ -42,7 +42,7 @@
 
     <div class="row text-center">
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
-        
+
       </div>
     </div>
     <div class="row">
@@ -83,8 +83,8 @@
         <div class="recent-post main-post">
         <!--section--->
         <div id='nz-div-4'>
-          <h3 class="tde">			
-                <span>TIN TỨC</span>			
+          <h3 class="tde">
+                <span>TIN TỨC</span>
           </h3>
         </div>
         <!--section-->
@@ -97,10 +97,10 @@
                 <div class="post-meta">
                   <ul class="list-inline">
                   <div class=" marinblog">
-                      <span class="newnhut">By:<b> Lê Thị Trúc Hòa </b></span> 
+                      <span class="newnhut">By:<b> Lê Thị Trúc Hòa </b></span>
                       </div>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li class="mb-3">
@@ -111,10 +111,10 @@
                 <div class="post-meta">
                   <ul class="list-inline">
                   <div class=" marinblog">
-                      <span class="newnhut">By:<b> Hoàng Thụy Trinh</b></span> 
+                      <span class="newnhut">By:<b> Hoàng Thụy Trinh</b></span>
                       </div>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a> 
+                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
               </div>
             </li>
             <li>
@@ -125,19 +125,19 @@
                 <div class="post-meta">
                   <ul class="list-inline">
                   <div class=" marinblog">
-                      <span class="newnhut">By:<b>Nguyễn Minh Nhựt</b></span> 
+                      <span class="newnhut">By:<b>Nguyễn Minh Nhựt</b></span>
                       </div>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a> 
-                
-              </div>            
+                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
+
+              </div>
 </div>
 <div style="text-align:center; margin-top:15px;">
 <div class=" marinblog">
-                      <span class="newnhut2"><b> <a href="#" class="nextblog"> Xem Thêm >> </a></b></span> 
+                      <span class="newnhut2"><b> <a href="#" class="nextblog"> Xem Thêm >> </a></b></span>
   </div>
- 
-</div>    
+
+</div>
             </li>
           </ul>
         </div>
@@ -220,20 +220,14 @@
     <div class="row text-center">
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
-<<<<<<< HEAD
           <h2 class="title">Các khóa học lập trình tại<span class="text-themenew">"Tương lai"</span></h2>
 
-=======
-          <h2 class="title">Các khóa học mới của <br> <span class="text-themenew">"Tương lai"</span></h2>
-          
->>>>>>> trangchuver3
         </div>
       </div>
     </div>
     <div class="row">
-    
+
         <div class="row">
-<<<<<<< HEAD
             @foreach ($lops as $lop)
             <div class="col-lg-6 col-md-12">
                     <div class="post">
@@ -289,156 +283,49 @@
             <li>
               <div class="recent-post-thumb">
                 <img class="img-fluid" src="images/blog/java.jpg" alt="">
-=======
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/blog/CPlusPlus.jpg')}}" alt=""> <a class="post-categories" href="#">Lập trình C++</a>
               </div>
               <div class="post-desc">
                 <div class="post-meta">
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 </b></span> 
+                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span>
                       </div>
                     </li>
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Mạc Huy Tú</b> (Cơ sở: Quận 3)</span> 
+                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span>
                       </div>
                     </li>
                    <br>
-                    <li> 
+                    <li>
                       <div class="row margingia">
-    
+
                       <span class="col mr newnhut">Giá gốc</span>
                       <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
+
                       </div>
-                      
+
                     </li>
                     <br>
-                    <li> 
+                    <li>
                       <div class="row margingia ">
-    
+
                       <span class="col mr newnhut">Giá KM</span>
                       <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
+
                       </div>
-                      
+
                     </li>
                   </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">Lớp cơ bản C++ <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/hinhkhoahoc/toeic500.jpg')}}" alt=""> <a class="post-categories" href="#">TOEIC 500+</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 28/11/2019 </b></span> 
-                      </div>
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Lắc Si Lê</b> (Cơ sở: Quận 3)</span> 
-                      </div>
-                    </li>
-                   <br>
-                    <li> 
-                      <div class="row margingia">
-    
-                      <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
-                      </div>
-                      
-                    </li>
-                    <br>
-                    <li> 
-                      <div class="row margingia ">
-    
-                      <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
-                      </div>
-                      
-                    </li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" data-target="#myModal">Lớp TOEIC 500+ <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/hinhkhoahoc/thuyetrinh.jpg')}}" alt=""> <a class="post-categories" href="#">Kỹ năng thuyết trình</a>
->>>>>>> trangchuver3
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span> 
-                      </div>
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span> 
-                      </div>
-                    </li>
-                   <br>
-                    <li> 
-                      <div class="row margingia">
-    
-                      <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
-                      </div>
-                      
-                    </li>
-                    <br>
-                    <li> 
-                      <div class="row margingia ">
-    
-                      <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
-                      </div>
-                      
-                    </li>
-                  </ul>
-<<<<<<< HEAD
                 </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
-=======
-                </div>
-                <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" data-target="#myModal">Lớp thuyết trình CB <br>(10 tuần)</a></h4>
-                </div>
->>>>>>> trangchuver3
               </div>
             </div>
           </div>
         </div>
-    
-      
+
+
     </div>
   </div>
 </section>
@@ -460,18 +347,13 @@
     <div class="row text-center">
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
-<<<<<<< HEAD
           <h2 class="title">Các khóa học ngoại ngữ tại<span class="text-themenew">"Tương lai"</span></h2>
 
-=======
-          <h2 class="title">Các khóa học bạn có thể quan tâm <br> <span class="text-themenew">"Tương lai"</span></h2>
-          
->>>>>>> trangchuver3
         </div>
       </div>
     </div>
     <div class="row">
-    
+
         <div class="row">
           <div class="col-sm-4">
             <div class="post">
@@ -483,34 +365,34 @@
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 </b></span> 
+                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 </b></span>
                       </div>
                     </li>
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Mạc Huy Tú</b> (Cơ sở: Quận 3)</span> 
+                      <span class="newnhut">Giảng viên: <b>Mạc Huy Tú</b> (Cơ sở: Quận 3)</span>
                       </div>
                     </li>
                    <br>
-                    <li> 
+                    <li>
                       <div class="row margingia">
-    
+
                       <span class="col mr newnhut">Giá gốc</span>
                       <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
+
                       </div>
-                      
+
                     </li>
                     <br>
-                    <li> 
+                    <li>
                       <div class="row margingia ">
-    
+
                       <span class="col mr newnhut">Giá KM</span>
                       <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
+
                       </div>
-                      
+
                     </li>
                   </ul>
                 </div>
@@ -528,7 +410,6 @@
               <div class="post-desc">
                 <div class="post-meta">
                   <ul class="list-inline">
-<<<<<<< HEAD
                   <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
                     <li><i class="la la-user mr-1"></i> Giảng viên:Dương Quốc Cường</li>
                   </ul>
@@ -641,39 +522,6 @@
                   <ul class="list-inline">
                     <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
                     <li><i class="la la-user mr-1"></i> Giảng viên: Mạc Huy Tú</li>
-=======
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 28/11/2019 </b></span> 
-                      </div>
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Lắc Si Lê</b> (Cơ sở: Quận 3)</span> 
-                      </div>
-                    </li>
-                   <br>
-                    <li> 
-                      <div class="row margingia">
-    
-                      <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
-                      </div>
-                      
-                    </li>
-                    <br>
-                    <li> 
-                      <div class="row margingia ">
-    
-                      <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
-                      </div>
-                      
-                    </li>
->>>>>>> trangchuver3
                   </ul>
                 </div>
                 <div class="post-title">
@@ -692,34 +540,34 @@
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span> 
+                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span>
                       </div>
                     </li>
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span> 
+                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span>
                       </div>
                     </li>
                    <br>
-                    <li> 
+                    <li>
                       <div class="row margingia">
-    
+
                       <span class="col mr newnhut">Giá gốc</span>
                       <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-          
+
                       </div>
-                      
+
                     </li>
                     <br>
-                    <li> 
+                    <li>
                       <div class="row margingia ">
-    
+
                       <span class="col mr newnhut">Giá KM</span>
                       <div class="col mr"><span class='giakm'>980.000đ</span></div>
-          
+
                       </div>
-                      
+
                     </li>
                   </ul>
                 </div>
@@ -730,7 +578,6 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
       <div class="col-lg-4 col-md-12 widget md-mt-5">
         <div class="recent-post main-post">
@@ -774,10 +621,6 @@
           </ul>
         </div>
       </div>
-=======
-    
-      
->>>>>>> trangchuver3
     </div>
   </div>
 </section>
@@ -827,10 +670,10 @@
       <div class="modal-content">
         <div class="modal-header">
         <div class="row margingia">
-                      <span class="newnhutmodal">Khóa học xyz</span> 
+                      <span class="newnhutmodal">Khóa học xyz</span>
         </div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          
+
         </div>
         <div class="modal-body">
           <div class="row padding-modal">
@@ -851,7 +694,7 @@ Hồ Quỳnh Hương được đánh giá là một trong những nữ ca sĩ h�
 
 Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại học Văn hóa - Nghệ thuật Quân đội.</p>
           </div>
-         
+
         </div>
         <div class="modal-footer">
         <div class=" col-xs-4">
@@ -864,7 +707,7 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
   </div>
 </div>
 </div>
-  
+
 <!--modalbox-->
 
 <!--back-to-top end-->
@@ -882,7 +725,6 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!--== appear -->
-<<<<<<< HEAD
 <script src="js/jquery.appear.js"></script>
 
 <!--== modernizr -->
@@ -905,30 +747,6 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 
 <!--== countdown -->
 <script src="js/countdown/jquery.countdown.min.js"></script>
-=======
-<script src="{{asset('js/jquery.appear.js')}}"></script> 
-
-<!--== modernizr -->
-<script src="{{asset('js/modernizr.js')}}"></script> 
-
-<!--== easing -->
-<script src="{{asset('js/jquery.easing.min.js')}}"></script> 
-
-<!--== menu --> 
-<script src="{{asset('js/menu/jquery.smartmenus.js')}}"></script>
-
-<!--== owl-carousel -->
-<script src="{{asset('js/owl-carousel/owl.carousel.min.js')}}"></script> 
-
-<!--== magnific-popup --> 
-<script src="{{asset('js/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
-
-<!--== counter -->
-<script src="{{asset('js/counter/counter.js')}}"></script> 
-
-<!--== countdown -->
-<script src="{{asset('js/countdown/jquery.countdown.min.js')}}"></script> 
->>>>>>> trangchuver3
 
 <!--== contact-form -->
 <script src="{{asset('js/contact-form/contact-form.js')}}"></script>
@@ -946,11 +764,7 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 <script src="{{asset('js/wow.min.js')}}"></script>
 
 <!--== color-customize -->
-<<<<<<< HEAD
 <script src="js/color-customize/color-customizer.js"></script>
-=======
-<script src="{{asset('js/color-customize/color-customizer.js')}}"></script> 
->>>>>>> trangchuver3
 
 <!--== theme-script -->
 <script src="{{asset('js/theme-script.js')}}"></script>
