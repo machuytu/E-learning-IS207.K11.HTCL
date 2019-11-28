@@ -26,16 +26,16 @@
                                     <th width="10">
 
                                     </th>
-                                    <th>
+                                    {{-- <th>
                                         {{ trans('cruds.baiHoc.fields.id') }}
-                                    </th>
+                                    </th> --}}
                                     <th>
                                         {{ trans('cruds.baiHoc.fields.lop') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.baiHoc.fields.ten_bai_hoc') }}
                                     </th>
-                                    <th>
+                                    {{-- <th>
                                         {{ trans('cruds.baiHoc.fields.lien_quan') }}
                                     </th>
                                     <th>
@@ -43,16 +43,16 @@
                                     </th>
                                     <th>
                                         {{ trans('cruds.baiHoc.fields.noi_dung') }}
-                                    </th>
+                                    </th> --}}
                                     <th>
                                         {{ trans('cruds.baiHoc.fields.vi_tri_bai_hoc') }}
                                     </th>
-                                    <th>
+                                    {{-- <th>
                                         {{ trans('cruds.baiHoc.fields.hinh_anh_bai_hoc') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.baiHoc.fields.file') }}
-                                    </th>
+                                    </th> --}}
                                     <th>
                                         &nbsp;
                                     </th>
@@ -64,16 +64,16 @@
                                         <td>
 
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             {{ $baiHoc->id ?? '' }}
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             {{ $baiHoc->lop->ten_lop_hoc ?? '' }}
                                         </td>
                                         <td>
                                             {{ $baiHoc->ten_bai_hoc ?? '' }}
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             {{ $baiHoc->lien_quan ?? '' }}
                                         </td>
                                         <td>
@@ -81,11 +81,11 @@
                                         </td>
                                         <td>
                                             {{ $baiHoc->noi_dung ?? '' }}
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             {{ $baiHoc->vi_tri_bai_hoc ?? '' }}
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             @foreach($baiHoc->hinh_anh_bai_hoc as $key => $media)
                                                 <a href="{{ $media->getUrl() }}" target="_blank">
                                                     <img src="{{ $media->getUrl('thumb') }}" width="50px" height="50px">
@@ -98,7 +98,7 @@
                                                     {{ trans('global.view_file') }}
                                                 </a>
                                             @endforeach
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @can('bai_hoc_show')
                                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.bai-hocs.show', $baiHoc->id) }}">

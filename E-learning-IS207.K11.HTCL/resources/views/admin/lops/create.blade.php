@@ -61,6 +61,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.lop.fields.the_loai_helper') }}</span>
                         </div>
+                        @if (Auth::user()->isAdmin())
                         <div class="form-group {{ $errors->has('giao_vien') ? 'has-error' : '' }}">
                             <label class="required" for="giao_vien_id">{{ trans('cruds.lop.fields.giao_vien') }}</label>
                             <select class="form-control select2" name="giao_vien_id" id="giao_vien_id" required>
@@ -73,6 +74,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.lop.fields.giao_vien_helper') }}</span>
                         </div>
+                        @endif
                         <div class="form-group {{ $errors->has('phong_hoc') ? 'has-error' : '' }}">
                             <label class="required" for="phong_hoc_id">{{ trans('cruds.lop.fields.phong_hoc') }}</label>
                             <select class="form-control select2" name="phong_hoc_id" id="phong_hoc_id" required>

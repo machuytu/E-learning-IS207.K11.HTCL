@@ -58,14 +58,14 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.baiHoc.fields.noi_dung_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('vi_tri_bai_hoc') ? 'has-error' : '' }}">
+                        {{-- <div class="form-group {{ $errors->has('vi_tri_bai_hoc') ? 'has-error' : '' }}">
                             <label for="vi_tri_bai_hoc">{{ trans('cruds.baiHoc.fields.vi_tri_bai_hoc') }}</label>
                             <input class="form-control" type="number" name="vi_tri_bai_hoc" id="vi_tri_bai_hoc" value="{{ old('vi_tri_bai_hoc', $baiHoc->vi_tri_bai_hoc) }}" step="1">
                             @if($errors->has('vi_tri_bai_hoc'))
                                 <span class="help-block" role="alert">{{ $errors->first('vi_tri_bai_hoc') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.baiHoc.fields.vi_tri_bai_hoc_helper') }}</span>
-                        </div>
+                        </div> --}}
                         <div class="form-group {{ $errors->has('hinh_anh_bai_hoc') ? 'has-error' : '' }}">
                             <label for="hinh_anh_bai_hoc">{{ trans('cruds.baiHoc.fields.hinh_anh_bai_hoc') }}</label>
                             <div class="needsclick dropzone" id="hinh_anh_bai_hoc-dropzone">

@@ -26,12 +26,12 @@ class StoreBaiHocRequest extends FormRequest
             'ten_bai_hoc'    => [
                 'required',
             ],
-            'vi_tri_bai_hoc' => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
-            ],
+            // 'vi_tri_bai_hoc' => [
+            //     'nullable',
+            //     'integer',
+            //     'min:-2147483648',
+            //     'max:2147483647',
+            // ],
         ];
     }
 }

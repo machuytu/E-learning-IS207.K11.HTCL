@@ -9,7 +9,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>asdf</title>
+<title>Trang Chủ</title>
 
 <!-- favicon icon -->
 <link rel="shortcut icon" href="/images/logo.png">
@@ -162,42 +162,29 @@
     <div class="row">
       <div class="col-lg-8 col-md-12">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="images/blog/CPlusPlus.jpg" alt=""> <a class="post-categories" href="#">Lập trình C++</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
-                    <li><i class="la la-user mr-1"></i> Giảng viên: Mạc Huy Tú</li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="blog-single.html">Lớp cơ bản C++ <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 md-mt-5">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="images/blog/cplusnangcao.jpg" alt=""> <a class="post-categories" href="#">Lập trình C++</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
-                    <li><i class="la la-user mr-1"></i> Giảng viên:Dương Quốc Cường</li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="blog-single.html">Lớp C++ về lập trình hướng đối tượng</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
+            @foreach ($lops as $lop)
+            <div class="col-lg-6 col-md-12">
+                    <div class="post">
+                      <div class="post-image">
+                            @if($lop->hinh_anh_lop)
+                        <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}" style="width: 400; height: 200" > <a class="post-categories" href="#">Lập trình C++</a>
+                            @endif
+                    </div>
+                      <div class="post-desc">
+                        <div class="post-meta">
+                          <ul class="list-inline">
+                            <li><i class="la la-calendar mr-1"></i>Thời gian bắt đầu: {{ $lop->thgian_bd }}</li>
+                            <br>
+                            <li><i class="la la-user mr-1"></i>{{ $lop->giao_vien['name'] }}</li>
+                          </ul>
+                        </div>
+                        <div class="post-title">
+                          <h4><a href="blog-single.html">{{ $lop->ten_lop_hoc }} <br>(10 tuần)</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            @endforeach
         </div>
       </div>
       <div class="col-lg-4 col-md-12 widget md-mt-5">

@@ -14,6 +14,7 @@ use App\TheLoai;
 use App\User;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class LopController extends Controller
@@ -24,7 +25,7 @@ class LopController extends Controller
     {
         abort_if(Gate::denies('lop_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $lops = Lop::all();
+        $lops = Lop::ofGiaoVien()->get();
 
         return view('admin.lops.index', compact('lops'));
     }
@@ -37,11 +38,11 @@ class LopController extends Controller
 
         $the_loais = TheLoai::all()->pluck('ten_tl', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $giao_viens = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $phong_hocs = PhongHoc::all()->pluck('ten_phong', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $hoc_viens = User::all()->pluck('name', 'id');
+        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 4); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.lops.create', compact('mo_hocs', 'the_loais', 'giao_viens', 'phong_hocs', 'hoc_viens'));
     }
@@ -54,7 +55,8 @@ class LopController extends Controller
         if ($request->input('hinh_anh_lop', false)) {
             $lop->addMedia(storage_path('tmp/uploads/' . $request->input('hinh_anh_lop')))->toMediaCollection('hinh_anh_lop');
         }
-
+        // $giao_viens = Auth::user()->isAdmin() ? \array_filter((array)$request->input('giao_vien')) : [Auth::user()->id];
+        // $lop->giao_viens()->sync($giao_viens);
         return redirect()->route('admin.lops.index');
     }
 
@@ -66,11 +68,11 @@ class LopController extends Controller
 
         $the_loais = TheLoai::all()->pluck('ten_tl', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $giao_viens = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $phong_hocs = PhongHoc::all()->pluck('ten_phong', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $hoc_viens = User::all()->pluck('name', 'id');
+        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 4); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $lop->load('mo_hoc', 'the_loai', 'giao_vien', 'phong_hoc', 'hoc_viens');
 

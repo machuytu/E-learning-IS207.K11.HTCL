@@ -44,9 +44,11 @@
                                     <th>
                                         {{ trans('cruds.lop.fields.the_loai') }}
                                     </th>
-                                    <th>
-                                        {{ trans('cruds.lop.fields.giao_vien') }}
-                                    </th>
+                                    @if(Auth::user()->isAdmin())
+                                        <th>
+                                            {{ trans('cruds.lop.fields.giao_vien') }}
+                                        </th>
+                                    @endif
                                     <th>
                                         {{ trans('cruds.lop.fields.phong_hoc') }}
                                     </th>
@@ -91,9 +93,11 @@
                                         <td>
                                             {{ $lop->the_loai->ten_tl ?? '' }}
                                         </td>
-                                        <td>
-                                            {{ $lop->giao_vien->name ?? '' }}
-                                        </td>
+                                        @if(Auth::user()->isAdmin())
+                                            <td>
+                                                {{ $lop->giao_vien->name ?? '' }}
+                                            </td>
+                                        @endif
                                         <td>
                                             {{ $lop->phong_hoc->ten_phong ?? '' }}
                                         </td>
@@ -107,7 +111,7 @@
                                         </td>
                                         <td>
                                             @if($lop->hinh_anh_lop)
-                                                <a href="{{ $lop->hinh_anh_lop->getUrl() }}" target="_blank">
+                                                <a href="{{ asset($lop->hinh_anh_lop->getUrl()) }}" target="_blank">
                                                     <img src="{{ $lop->hinh_anh_lop->getUrl('thumb') }}" width="50px" height="50px">
                                                 </a>
                                             @endif
@@ -118,9 +122,12 @@
                                         </td>
                                         <td>
                                             @can('lop_show')
-                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.lops.show', $lop->id) }}">
-                                                    {{ trans('global.view') }}
+                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.bai-hocs.index', ['lop_id' => $lop->id]) }}">
+                                                    {{ trans('Lesson') }}
                                                 </a>
+                                                {{-- <a class="btn btn-xs btn-primary" href="{{ route('admin.lops.show', $lop->id) }}">
+                                                    {{ trans('global.view') }}
+                                                </a> --}}
                                             @endcan
 
                                             @can('lop_edit')

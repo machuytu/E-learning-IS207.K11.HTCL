@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
@@ -108,5 +109,13 @@ class Lop extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    public function scopeOfGiaoVien($query) {
+        if (!Auth::user()->isAdmin()) {
+            return $query->whereHas('giao_vien',function ($q) {
+                $q->where('giao_vien_id', Auth::user()->id);
+            });
+        }
     }
 }
