@@ -49,7 +49,7 @@
                     </li>
                     <li><a href="coming-soon.html">C++/C#</a>
                     </li>
-                    
+
                   </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#kynangsong">Kỹ năng sống</a>
@@ -69,14 +69,14 @@
                   </ul>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#">Blogs</a>
-                 
+
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#">Liên hệ với chúng tôi</a>
-                
+
                 </li>
               </ul>
             </div>
-            <a class="btn buttonnhutcst3" href="loginlophoc" data-text="Đăng nhập"> <span>Đ</span><span>ă</span><span>n</span><span>g </span><span></span><span>N</span><span>h</span><span>ậ</span><span>p</span>
+            <a class="btn buttonnhutcst3" href="{{{ route('login') }}}" data-text="Đăng nhập"> <span>Đ</span><span>ă</span><span>n</span><span>g </span><span></span><span>N</span><span>h</span><span>ậ</span><span>p</span>
             </a>
           </nav>
         </div>

@@ -20,7 +20,7 @@
 <!--== bootstrap -->
 <link href="{{asset('/css/homepage_css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 <!--== animate -->
 <link href="{{asset('/css/homepage_css/animate.css')}}" rel="stylesheet" type="text/css" />
@@ -106,32 +106,40 @@
 <section class="login">
   <div class="container">
     <div class="row align-items-center">
-     
+
       <div class="col-lg-6 col-md-12 ml-auto mr-auto md-mt-5">
         <div class="login-form text-center nhutbackgroundlogin">
           <img class="img-center mb-5" src="/images/logo.png" alt="">
-          <form id="contact-form" method="post" action="http://themeht.com/softino/html/multipage/ltr/php/contact.php">
-            <div class="messages"></div>
-            <div class="form-group">
-              <input id="form_name" type="text" name="name" class="form-control" placeholder="Tên tài khoản" required="required" data-error="Phải nhập tài khoản.">
-              <div class="help-block with-errors"></div>
+          <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <input id="form_name" type="email" name="email" class="form-control" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
+
+                @if($errors->has('email'))
+                    <p class="help-block">
+                        {{ $errors->first('email') }}
+                    </p>
+                @endif
             </div>
-            <div class="form-group">
-              <input id="form_password" type="password" name="password" class="form-control" placeholder="Mật khẩu" required="required" data-error="Phải nhập mật khẩu">
-              <div class="help-block with-errors"></div>
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input id="form_password" type="password" name="password" class="form-control" required placeholder="{{ trans('global.login_password') }}">
+
+                @if($errors->has('password'))
+                    <p class="help-block">
+                        {{ $errors->first('password') }}
+                    </p>
+                @endif
             </div>
-            <div class="form-group mt-4 mb-5">
-              <div class="remember-checkbox d-flex align-items-center justify-content-between">
-                <div class="checkbox">
-                  <input type="checkbox" id="check2" name="check2">
-                  <label for="check2">Nhớ tài khoản</label>
+            <div class="row">
+                <div class="checkbox icheck">
+                    <label><input type="checkbox" name="remember"> {{ trans('global.remember_me') }}</label>
                 </div>
-                 <a href="#">Quên mật khẩu?</a>
-              </div>
-            </div> <a href="#" class="btn btn-theme btn-block btn-circle" data-text="ĐĂNG NHẬP"><span>Đ</span><span>Ă</span><span>N</span><span>G</span>
-            <span> </span><span>N</span><span>H</span><span>Ậ</span><span>P</span></a>
-           
-          </form>
+                <button type="submit" class="btn btn-theme btn-block btn-circle">
+                    {{ trans('global.login') }}
+                </button>
+            </div>
+        </form>
           <h5 class="mb-0 mt-4 text-capitalize">Bạn có tài khoản chưa? <a href="register.html"><i>Đăng kí ngay!</i></a></h5>
           <div class="social-icons fullwidth social-colored mt-4 text-center clearfix">
             <ul class="list-inline">
@@ -153,7 +161,7 @@
 
 </div>
 
-<!--body content end--> 
+<!--body content end-->
 
 
 <!--footer start-->
@@ -170,7 +178,7 @@
 <!--color-customizer start-->
 
 <div class="color-customizer closed">
-  
+
   <div class="clearfix color-chooser text-center">
     <h4 class="text-theme font-w-8 mb-4">Softino With <span class="text-black font-w-5">Awesome Colors</span></h4>
     <ul class="colorChange clearfix">
@@ -199,7 +207,7 @@
 
 <!--back-to-top end-->
 
- 
+
 <!-- inject js start -->
 
 <!--== jquery -->
@@ -220,13 +228,13 @@
 <!--== easing -->
 <!-- <script src="../../../public/jshomepage/jquery.easing.min.js"></script>  -->
 
-<!--== menu --> 
+<!--== menu -->
 <!-- <script src="../../../public/jshomepage/menu/jquery.smartmenus.js"></script> -->
 
 <!--== owl-carousel -->
 <!-- <script src="../../../public/jshomepage/owl-carousel/owl.carousel.min.js"></script>  -->
 
-<!--== magnific-popup --> 
+<!--== magnific-popup -->
 <!-- <script src="../../../public/jshomepage/magnific-popup/jquery.magnific-popup.min.js"></script> -->
 
 <!--== counter -->

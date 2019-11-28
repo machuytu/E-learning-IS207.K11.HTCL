@@ -17,11 +17,15 @@ class BaiHocController extends Controller
 {
     use MediaUploadingTrait;
 
-    public function index()
+    public function index(Request $request)
     {
         abort_if(Gate::denies('bai_hoc_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $baiHocs = BaiHoc::all();
+        $baiHocs = BaiHoc::whereIn('lop_id',Lop::ofGiaoVien()->pluck('id'));
+        if($request->input('lop_id')) {
+            $baiHocs = $baiHocs->where('lop_id', $request->input('lop_id'));
+        }
+        $baiHocs = $baiHocs->get();
 
         return view('admin.baiHocs.index', compact('baiHocs'));
     }
@@ -30,14 +34,16 @@ class BaiHocController extends Controller
     {
         abort_if(Gate::denies('bai_hoc_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $lops = Lop::all()->pluck('ten_lop_hoc', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $lops = Lop::ofGiaoVien()->pluck('ten_lop_hoc', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.baiHocs.create', compact('lops'));
     }
 
     public function store(StoreBaiHocRequest $request)
     {
-        $baiHoc = BaiHoc::create($request->all());
+        // $baiHoc = BaiHoc::ofTeacher()->get()->pluck('title','id')->prepend('Please select','');
+        $baiHoc = BaiHoc::create($request->all()
+            + ['vi_tri_bai_hoc' => BaiHoc::where('lop_id', $request->lop_id)->max('vi_tri_bai_hoc') + 1] );
 
         foreach ($request->input('hinh_anh_bai_hoc', []) as $file) {
             $baiHoc->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('hinh_anh_bai_hoc');
@@ -47,14 +53,14 @@ class BaiHocController extends Controller
             $baiHoc->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('file');
         }
 
-        return redirect()->route('admin.bai-hocs.index');
+        return redirect()->route('admin.bai-hocs.index', ['lop_id' => $request->lop_id]);
     }
 
     public function edit(BaiHoc $baiHoc)
     {
         abort_if(Gate::denies('bai_hoc_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $lops = Lop::all()->pluck('ten_lop_hoc', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $lops = Lop::ofGiaoVien()->pluck('ten_lop_hoc', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $baiHoc->load('lop');
 
@@ -97,7 +103,7 @@ class BaiHocController extends Controller
             }
         }
 
-        return redirect()->route('admin.bai-hocs.index');
+        return redirect()->route('admin.bai-hocs.index', ['lop_id' => $request->lop_id]);
     }
 
     public function show(BaiHoc $baiHoc)

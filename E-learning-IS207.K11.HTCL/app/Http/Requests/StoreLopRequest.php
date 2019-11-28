@@ -52,6 +52,9 @@ class StoreLopRequest extends FormRequest
             'hoc_viens'    => [
                 'array',
             ],
+            [
+                'logo' => 'required|file',
+            ],
         ];
     }
 }

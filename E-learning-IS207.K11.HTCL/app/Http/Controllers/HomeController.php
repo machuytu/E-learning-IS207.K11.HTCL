@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Lop;
+use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -11,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // get 2 or less lop to homepage
+        // $lops = DB::table('lops')
+        // ->join('users', 'lops.giao_vien_id', '=', 'users.id')
+        // // ->join('media', 'lops.id', '=', 'media.model_id')
+        // ->inRandomOrder()->where('published', 1)->limit(2)->get();
+        $lops = Lop::all()->random(2);
+        //return page
+        return view('Homepage/homepage', compact('lops'));
     }
 }
