@@ -12,20 +12,12 @@
 <title>Tiếng Nhật</title>
 @include('HomePage.partials.nguon',[])
 
-
 </head>
-
 <body class="home-3">
-
 <!-- page wrapper start -->
-
 <div class="page-wrapper">
-
 <!--header start-->
-
 @include('HomePage.partials.header',[])
-
-<!--header end-->
 
 <!--section su kien-->
 <br>
@@ -98,11 +90,66 @@
 
 <!--laptrinh start-->
 
-
+<section class="fullscreen-banner banner p-0 o-hidden" data-bg-color="#fbfbfb" id="laptrinh">
+  <div class="bg-animation">
+    <img class="zoom-fade" src="images/pattern/01.png" alt="">
+  </div>
+  <div class="align-center pt-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <img class="img-center wow tada" data-wow-duration="2s" src="{{asset('images/banner/05.png')}}" alt="">
+        </div>
+        <div class="col-lg-6 col-md-12 md-mt-5 md-mb-5">
+          <h5 class=" wow fadeInDown" data-wow-duration="1.5s">Trở thành một lập trình viên</h5>
+          <h1 class="mb-4 wow jackInTheBox" data-wow-duration="2s">Hãy đến với trung tâm <span class="text-themenew">“Tương lai”</span></h1>
+          <p class="lead mb-0 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Bạn sẽ được học tập trong môi trường chuyên nghiệp, nắm bắt bài giảng từ cơ bản đến nâng cao để trở thành một lập trình viên</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!--laptrinh end-->
 <!--hero ngoaingu section start-->
 
-
+<section class="fullscreen-banner banner p-0 o-hidden" data-bg-color="#fbfbfb" id="ngoaingu">
+  <div class="bg-animation">
+    <img class="zoom-fade" src="images/pattern/01.png" alt="">
+  </div>
+  <div class="align-center pt-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <img class="img-center wow tada" data-wow-duration="2s" src="images/banner/07.png" alt="">
+        </div>
+        <div class="col-lg-6 col-md-12 md-mt-5 md-mb-5">
+          <h5 class=" wow fadeInDown" data-wow-duration="1.5s">Giỏi ngoại ngữ! thât đơn giản</h5>
+          <h1 class="mb-4 wow jackInTheBox" data-wow-duration="2s">Hãy đến với trung tâm <span class="text-themenew">“Tương lai”</span></h1>
+          <p class="lead mb-0 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Bạn sẽ có một môi trường rèn luyện về trình độ ngoại ngữ của mình như tiếng Anh, tiếng Pháp, tiếng Trung, tiếng Hàn,...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fullscreen-banner banner p-0 o-hidden" data-bg-color="#fbfbfb" id="kynangsong">
+  <div class="bg-animation">
+    <img class="zoom-fade" src="images/pattern/01.png" alt="">
+  </div>
+  <div class="align-center pt-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <img class="img-center wow tada" data-wow-duration="2s" src="images/banner/08.png" alt="">
+        </div>
+        <div class="col-lg-6 col-md-12 md-mt-5 md-mb-5">
+          <h5 class=" wow fadeInDown" data-wow-duration="1.5s">Giỏi giao tiếp, giỏi thuyết trình, tự tin trước đám đông</h5>
+          <h1 class="mb-4 wow jackInTheBox" data-wow-duration="2s">Hãy đến với trung tâm <span class="text-themenew">“Tương lai”</span></h1>
+          <p class="lead mb-0 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Bạn sẽ được dạy những kĩ năng sống thật tốt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!--hero ngoaingu section end-->
 <!--ngoaingu start-->

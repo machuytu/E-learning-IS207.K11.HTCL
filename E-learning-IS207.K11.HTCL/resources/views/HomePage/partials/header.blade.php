@@ -21,14 +21,7 @@
                     </li>
                     <li><a href="index-2.html">Tiếng Nhật</a>
                     </li>
-                    <li><a href="index-3.html">Tiếng Hàn</a>
-                    </li>
-                    <li><a href="index-4.html">Tiếng Nga</a>
-                    </li>
-                    <li><a href="index-5.html">Tiếng Trung</a>
-                    </li>
-                    <li><a href="index-6.html">Tiếng Pháp</a>
-                    </li>
+                   
                   </ul>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#laptrinh">Lập trình</a>
