@@ -29,6 +29,14 @@
                                 </tr>
                                 <tr>
                                     <th>
+                                        {{ trans('cruds.monHoc.fields.ma_mh') }}
+                                    </th>
+                                    <td>
+                                        {{ $monHoc->ma_mh }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
                                         {{ trans('cruds.monHoc.fields.ten_mh') }}
                                     </th>
                                     <td>

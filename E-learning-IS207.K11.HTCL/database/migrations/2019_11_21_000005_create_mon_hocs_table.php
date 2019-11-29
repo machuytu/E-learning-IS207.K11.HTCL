@@ -11,7 +11,9 @@ class CreateMonHocsTable extends Migration
         Schema::create('mon_hocs', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('ten_mh')->nullable();
+            $table->string('ma_mh');
+
+            $table->string('ten_mh');
 
             $table->string('mo_ta_mh')->nullable();
 
