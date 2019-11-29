@@ -9,7 +9,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Trang Chủ</title>
+<title>Trang chủ</title>
 
 @include('HomePage.partials.nguon',[])
 
@@ -220,7 +220,7 @@
     <div class="row text-center">
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
-          <h2 class="title">Các khóa học lập trình tại<span class="text-themenew">"Tương lai"</span></h2>
+          <h2 class="title">Các khóa học mới của <br> <span class="text-themenew">"Tương lai"</span></h2>
 
         </div>
       </div>
@@ -228,74 +228,27 @@
     <div class="row">
 
         <div class="row">
-            @foreach ($lops as $lop)
-            <div class="col-lg-6 col-md-12">
-                    <div class="post">
-                      <div class="post-image">
-                            @if($lop->hinh_anh_lop)
-                        <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}" style="width: 400; height: 200" > <a class="post-categories" href="#">Lập trình C++</a>
-                            @endif
-                    </div>
-                      <div class="post-desc">
-                        <div class="post-meta">
-                          <ul class="list-inline">
-                            <li><i class="la la-calendar mr-1"></i>Thời gian bắt đầu: {{ $lop->thgian_bd }}</li>
-                            <br>
-                            <li><i class="la la-user mr-1"></i>{{ $lop->giao_vien['name'] }}</li>
-                          </ul>
-                        </div>
-                        <div class="post-title">
-                          <h4><a href="blog-single.html">{{ $lop->ten_lop_hoc }} <br>(10 tuần)</a></h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            @endforeach
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 widget md-mt-5">
-        <div class="recent-post main-post">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <div class="recent-post-thumb mr-2">
-                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Lê Thị Trúc Hòa</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li class="mb-3">
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Hoàng Thụy Trinh</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li>
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/java.jpg" alt="">
-              </div>
+        @foreach ($lops as $lop)
+          <div class="col-sm-4">
+            <div class="post">
+              <div class="post-image">
+                @if($lop->hinh_anh_lop)
+                    <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
+                        <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                @endif
+            </div>
               <div class="post-desc">
                 <div class="post-meta">
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span>
+                      <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
                       </div>
                     </li>
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span>
+                      <span class="newnhut">Giảng viên: <b>{{ $lop->giao_vien['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
                       </div>
                     </li>
                    <br>
@@ -303,7 +256,7 @@
                       <div class="row margingia">
 
                       <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
+                      <div class="col mr"><span class='giamgia'>{{ $lop->gia }}đ </span></div>
 
                       </div>
 
@@ -313,16 +266,20 @@
                       <div class="row margingia ">
 
                       <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
+                      <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}0đ</span></div>
 
                       </div>
 
                     </li>
                   </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
+                </div>
+                <div class="post-title">
+                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                </div>
               </div>
             </div>
           </div>
+          @endforeach
         </div>
 
 
@@ -347,280 +304,69 @@
     <div class="row text-center">
       <div class="col-lg-8 col-md-12 ml-auto mr-auto">
         <div class="section-title">
-          <h2 class="title">Các khóa học ngoại ngữ tại<span class="text-themenew">"Tương lai"</span></h2>
+          <h2 class="title">Các khóa học bạn có thể quan tâm <br> <span class="text-themenew">"Tương lai"</span></h2>
 
         </div>
       </div>
     </div>
     <div class="row">
 
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/blog/CPlusPlus.jpg')}}" alt=""> <a class="post-categories" href="#myModal" data-toggle="modal" data-target="#myModal">Lập trình C++</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 </b></span>
+            <div class="row">
+                    @foreach ($lops as $lop)
+                      <div class="col-sm-4">
+                        <div class="post">
+                          <div class="post-image">
+                            @if($lop->hinh_anh_lop)
+                                <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
+                                    <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                            @endif
+                        </div>
+                          <div class="post-desc">
+                            <div class="post-meta">
+                              <ul class="list-inline">
+                                <li>
+                                  <div class="row margingia">
+                                  <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
+                                  </div>
+                                </li>
+                                <br>
+                                <li>
+                                  <div class="row margingia">
+                                  <span class="newnhut">Giảng viên: <b>{{ $lop->giao_vien['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
+                                  </div>
+                                </li>
+                               <br>
+                                <li>
+                                  <div class="row margingia">
+
+                                  <span class="col mr newnhut">Giá gốc</span>
+                                  <div class="col mr"><span class='giamgia'>{{ $lop->gia }}đ </span></div>
+
+                                  </div>
+
+                                </li>
+                                <br>
+                                <li>
+                                  <div class="row margingia ">
+
+                                  <span class="col mr newnhut">Giá KM</span>
+                                  <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}0đ</span></div>
+
+                                  </div>
+
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="post-title">
+                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Mạc Huy Tú</b> (Cơ sở: Quận 3)</span>
-                      </div>
-                    </li>
-                   <br>
-                    <li>
-                      <div class="row margingia">
+                      @endforeach
+                    </div>
 
-                      <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
 
-                      </div>
-
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia ">
-
-                      <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
-
-                      </div>
-
-                    </li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" data-target="#myModal">Lớp cơ bản C++ <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/hinhkhoahoc/toeic500.jpg')}}" alt=""> <a class="post-categories" href="#">TOEIC 500+</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
-                    <li><i class="la la-user mr-1"></i> Giảng viên:Dương Quốc Cường</li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="blog-single.html">Lớp C++ về lập trình hướng đối tượng</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 widget md-mt-5">
-        <div class="recent-post main-post">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <div class="recent-post-thumb mr-2">
-                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Lê Thị Trúc Hòa</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li class="mb-3">
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Hoàng Thụy Trinh</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li>
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/java.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Nguyễn Minh Nhựt</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--ngoaingu end-->
-</div>
-<!--hero kynangsong section start-->
-
-<section class="fullscreen-banner banner p-0 o-hidden" data-bg-color="#fbfbfb" id="kynangsong">
-  <div class="bg-animation">
-    <img class="zoom-fade" src="images/pattern/01.png" alt="">
-  </div>
-  <div class="align-center pt-0">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-12">
-          <img class="img-center wow tada" data-wow-duration="2s" src="images/banner/08.png" alt="">
-        </div>
-        <div class="col-lg-6 col-md-12 md-mt-5 md-mb-5">
-          <h5 class=" wow fadeInDown" data-wow-duration="1.5s">Giỏi giao tiếp, giỏi thuyết trình, tự tin trước đám đông</h5>
-          <h1 class="mb-4 wow jackInTheBox" data-wow-duration="2s">Hãy đến với trung tâm <span class="text-themenew">“Tương lai”</span></h1>
-          <p class="lead mb-0 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Bạn sẽ được dạy những kĩ năng sống thật tốt.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--hero kynangsong section end-->
-<!--kynangsong start-->
-
-<section class="pos-r">
-  <div class="spinner-eff">
-    <div class="spinner-circle circle-1"></div>
-    <div class="spinner-circle circle-2"></div>
-  </div>
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-lg-8 col-md-12 ml-auto mr-auto">
-        <div class="section-title">
-          <h2 class="title">Các khóa học ngoại ngữ tại<span class="text-themenew">"Tương lai"</span></h2>
-
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 col-md-12">
-        <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="images/blog/CPlusPlus.jpg" alt=""> <a class="post-categories" href="#">Lập trình C++</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li><i class="la la-calendar mr-1"></i> Thời gian bắt đầu: 17/11/2019</li>
-                    <li><i class="la la-user mr-1"></i> Giảng viên: Mạc Huy Tú</li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" data-target="#myModal">Lớp TOEIC 500+ <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="post">
-              <div class="post-image">
-                <img class="img-fluid hinhanhblog" src="{{asset('images/hinhkhoahoc/thuyetrinh.jpg')}}" alt=""> <a class="post-categories" href="#">Kỹ năng thuyết trình</a>
-              </div>
-              <div class="post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> 17/11/2019 (T2, T4)</b></span>
-                      </div>
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>Phạm Minh Thuận</b> (Cơ sở: Quận 3)</span>
-                      </div>
-                    </li>
-                   <br>
-                    <li>
-                      <div class="row margingia">
-
-                      <span class="col mr newnhut">Giá gốc</span>
-                      <div class="col mr"><span class='giamgia'>1.200.000đ </span></div>
-
-                      </div>
-
-                    </li>
-                    <br>
-                    <li>
-                      <div class="row margingia ">
-
-                      <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>980.000đ</span></div>
-
-                      </div>
-
-                    </li>
-                  </ul>
-                </div>
-                <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" data-target="#myModal">Lớp thuyết trình CB <br>(10 tuần)</a></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 widget md-mt-5">
-        <div class="recent-post main-post">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <div class="recent-post-thumb mr-2">
-                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Lê Thị Trúc Hòa</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li class="mb-3">
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Hoàng Thụy Trinh</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li>
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/java.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                    <li>Nguyễn Minh Nhựt</li>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -712,7 +458,9 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 
 <!--back-to-top end-->
 
-
+<script>
+    $giakm = $lop->thgian_bd * 90%;
+</script>
 <!-- inject js start -->
 
 <!--== jquery -->
@@ -725,28 +473,28 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!--== appear -->
-<script src="js/jquery.appear.js"></script>
+<script src="{{asset('js/jquery.appear.js')}}"></script>
 
 <!--== modernizr -->
-<script src="js/modernizr.js"></script>
+<script src="{{asset('js/modernizr.js')}}"></script>
 
 <!--== easing -->
-<script src="js/jquery.easing.min.js"></script>
+<script src="{{asset('js/jquery.easing.min.js')}}"></script>
 
 <!--== menu -->
-<script src="js/menu/jquery.smartmenus.js"></script>
+<script src="{{asset('js/menu/jquery.smartmenus.js')}}"></script>
 
 <!--== owl-carousel -->
-<script src="js/owl-carousel/owl.carousel.min.js"></script>
+<script src="{{asset('js/owl-carousel/owl.carousel.min.js')}}"></script>
 
 <!--== magnific-popup -->
-<script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="{{asset('js/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 
 <!--== counter -->
-<script src="js/counter/counter.js"></script>
+<script src="{{asset('js/counter/counter.js')}}"></script>
 
 <!--== countdown -->
-<script src="js/countdown/jquery.countdown.min.js"></script>
+<script src="{{asset('js/countdown/jquery.countdown.min.js')}}"></script>
 
 <!--== contact-form -->
 <script src="{{asset('js/contact-form/contact-form.js')}}"></script>
@@ -764,7 +512,7 @@ Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại họ
 <script src="{{asset('js/wow.min.js')}}"></script>
 
 <!--== color-customize -->
-<script src="js/color-customize/color-customizer.js"></script>
+<script src="{{asset('js/color-customize/color-customizer.js')}}"></script>
 
 <!--== theme-script -->
 <script src="{{asset('js/theme-script.js')}}"></script>

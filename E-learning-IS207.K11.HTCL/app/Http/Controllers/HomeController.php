@@ -30,7 +30,7 @@ class HomeController extends Controller
         // ->join('users', 'lops.giao_vien_id', '=', 'users.id')
         // // ->join('media', 'lops.id', '=', 'media.model_id')
         // ->inRandomOrder()->where('published', 1)->limit(2)->get();
-        $lops = Lop::all()->random(2);
+        $lops = Lop::all();
         //return page
         return view('Homepage/homepage', compact('lops'));
     }
