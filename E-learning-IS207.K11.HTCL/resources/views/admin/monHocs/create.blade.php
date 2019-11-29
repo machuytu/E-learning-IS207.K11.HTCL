@@ -13,6 +13,20 @@
 
                     <form action="{{ route("admin.mon-hocs.store") }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <div class="form-group {{ $errors->has('ma_mh') ? 'has-error' : '' }}">
+                            <label for="ma_mh">{{ trans('cruds.monHoc.fields.ma_mh') }}</label>
+                            <input type="text" id="ma_mh" name="ma_mh" class="form-control"
+                                maxlength="5" onkeyup="this.value = this.value.toUpperCase();"
+                                value="{{ old('ma_mh', isset($monHoc) ? $monHoc->ma_mh : '') }}">
+                            @if($errors->has('ma_mh'))
+                                <p class="help-block">
+                                    {{ $errors->first('ma_mh') }}
+                                </p>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('cruds.monHoc.fields.ma_mh_helper') }}
+                            </p>
+                        </div>
                         <div class="form-group {{ $errors->has('ten_mh') ? 'has-error' : '' }}">
                             <label for="ten_mh">{{ trans('cruds.monHoc.fields.ten_mh') }}</label>
                             <input type="text" id="ten_mh" name="ten_mh" class="form-control" value="{{ old('ten_mh', isset($monHoc) ? $monHoc->ten_mh : '') }}">

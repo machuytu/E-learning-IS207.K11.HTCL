@@ -18,6 +18,7 @@ class MonHoc extends Model
     ];
 
     protected $fillable = [
+        'ma_mh',
         'ten_mh',
         'mo_ta_mh',
         'created_at',
