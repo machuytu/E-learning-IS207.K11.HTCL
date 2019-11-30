@@ -17,6 +17,9 @@ Route::get('/loginlophoc',function(){
 Route::get('/trangchu',function(){
     return view('HomePage.homepage');
 });
+Route::get('/dashboard',function(){
+    return view('HomePage.dashboardsv');
+});
 Route::get('/trangchu/TiengNhat',function(){
     return view('HomePage.TiengNhat');
 });
