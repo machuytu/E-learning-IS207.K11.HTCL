@@ -29,6 +29,7 @@ class Lop extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'id',
         'gia',
         'thgian_bd',
         'thgian_kt',
@@ -110,6 +111,7 @@ class Lop extends Model implements HasMedia
 
         return $file;
     }
+    public $incrementing = false;
 
     public function scopeOfGiaoVien($query) {
         if (!Auth::user()->isAdmin()) {

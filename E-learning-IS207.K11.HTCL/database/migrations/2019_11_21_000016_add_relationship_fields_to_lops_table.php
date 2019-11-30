@@ -9,7 +9,7 @@ class AddRelationshipFieldsToLopsTable extends Migration
     public function up()
     {
         Schema::table('lops', function (Blueprint $table) {
-            $table->unsignedInteger('mo_hoc_id');
+            $table->string('mo_hoc_id');
 
             $table->foreign('mo_hoc_id', 'mo_hoc_fk_624826')->references('id')->on('mon_hocs');
 

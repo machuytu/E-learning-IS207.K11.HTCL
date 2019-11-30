@@ -9,7 +9,7 @@ class CreateLopsTable extends Migration
     public function up()
     {
         Schema::create('lops', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id')->primary();
 
             $table->string('ten_lop_hoc');
 

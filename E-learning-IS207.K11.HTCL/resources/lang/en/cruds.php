@@ -73,8 +73,6 @@ return [
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => '',
-            'ma_mh'            => 'Mã Môn Học',
-            'ma_mh_helper'     => '',
             'ten_mh'            => 'Tên Môn Học',
             'ten_mh_helper'     => '',
             'mo_ta_mh'          => 'Mô Tả Môn Học',

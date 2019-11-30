@@ -9,7 +9,7 @@ class CreateLopUserPivotTable extends Migration
     public function up()
     {
         Schema::create('lop_user', function (Blueprint $table) {
-            $table->unsignedInteger('lop_id');
+            $table->string('lop_id');
 
             $table->foreign('lop_id', 'lop_id_fk_624829')->references('id')->on('lops')->onDelete('cascade');
 

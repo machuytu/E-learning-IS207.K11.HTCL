@@ -9,9 +9,7 @@ class CreateMonHocsTable extends Migration
     public function up()
     {
         Schema::create('mon_hocs', function (Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('ma_mh');
+            $table->string('id')->primary();
 
             $table->string('ten_mh');
 

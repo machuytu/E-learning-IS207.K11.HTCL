@@ -30,9 +30,6 @@
                                         {{ trans('cruds.monHoc.fields.id') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.monHoc.fields.ma_mh') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.monHoc.fields.ten_mh') }}
                                     </th>
                                     <th>
@@ -51,9 +48,6 @@
                                         </td>
                                         <td>
                                             {{ $monHoc->id ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $monHoc->ma_mh ?? '' }}
                                         </td>
                                         <td>
                                             {{ $monHoc->ten_mh ?? '' }}

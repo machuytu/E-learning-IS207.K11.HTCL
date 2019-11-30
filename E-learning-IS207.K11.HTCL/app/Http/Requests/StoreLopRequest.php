@@ -32,7 +32,6 @@ class StoreLopRequest extends FormRequest
             ],
             'mo_hoc_id'    => [
                 'required',
-                'integer',
             ],
             'the_loai_id'  => [
                 'required',

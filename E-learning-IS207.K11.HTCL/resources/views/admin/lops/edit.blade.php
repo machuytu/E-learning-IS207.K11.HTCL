@@ -14,6 +14,14 @@
                     <form method="POST" action="{{ route("admin.lops.update", [$lop->id]) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
+                        <div class="form-group {{ $errors->has('id') ? 'has-error' : '' }}">
+                            <label class="required" for="id">{{ trans('cruds.lop.fields.id') }}</label>
+                            <input class="form-control" type="text" name="id" id="id" value="{{ old('id', $lop->id) }}" required>
+                            @if($errors->has('id'))
+                                <span class="help-block" role="alert">{{ $errors->first('id') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.lop.fields.id_helper') }}</span>
+                        </div>
                         <div class="form-group {{ $errors->has('ten_lop_hoc') ? 'has-error' : '' }}">
                             <label class="required" for="ten_lop_hoc">{{ trans('cruds.lop.fields.ten_lop_hoc') }}</label>
                             <input class="form-control" type="text" name="ten_lop_hoc" id="ten_lop_hoc" value="{{ old('ten_lop_hoc', $lop->ten_lop_hoc) }}" required>

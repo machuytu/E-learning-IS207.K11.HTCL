@@ -14,16 +14,16 @@
                     <form action="{{ route("admin.mon-hocs.update", [$monHoc->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="form-group {{ $errors->has('ma_mh') ? 'has-error' : '' }}">
-                            <label for="ma_mh">{{ trans('cruds.monHoc.fields.ma_mh') }}</label>
-                            <input type="text" id="ma_mh" name="ma_mh" class="form-control" maxlength="5" value="{{ old('ma_mh', isset($monHoc) ? $monHoc->ma_mh : '') }}">
-                            @if($errors->has('ma_mh'))
+                        <div class="form-group {{ $errors->has('id') ? 'has-error' : '' }}">
+                            <label for="id">{{ trans('cruds.monHoc.fields.id') }}</label>
+                            <input type="text" id="id" name="id" class="form-control" maxlength="5" value="{{ old('id', isset($monHoc) ? $monHoc->id : '') }}">
+                            @if($errors->has('id'))
                                 <p class="help-block">
-                                    {{ $errors->first('ma_mh') }}
+                                    {{ $errors->first('id') }}
                                 </p>
                             @endif
                             <p class="helper-block">
-                                {{ trans('cruds.monHoc.fields.ma_mh_helper') }}
+                                {{ trans('cruds.monHoc.fields.id_helper') }}
                             </p>
                         </div>
                         <div class="form-group {{ $errors->has('ten_mh') ? 'has-error' : '' }}">
