@@ -13,11 +13,15 @@ class CreateLopsTable extends Migration
 
             $table->string('ten_lop_hoc');
 
+            $table->string('ten_link');
+
             $table->date('thgian_bd')->nullable();
 
             $table->date('thgian_kt')->nullable();
 
             $table->decimal('gia', 15, 2)->nullable();
+
+            $table->longText('mo_ta');
 
             $table->boolean('published')->default(0)->nullable();
 

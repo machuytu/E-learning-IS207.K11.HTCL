@@ -31,6 +31,8 @@ class Lop extends Model implements HasMedia
     protected $fillable = [
         'id',
         'gia',
+        'ten_link',
+        'mo_ta',
         'thgian_bd',
         'thgian_kt',
         'mo_hoc_id',

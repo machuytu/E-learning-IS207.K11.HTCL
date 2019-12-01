@@ -6,11 +6,12 @@ use App\Model;
 use Faker\Generator as Faker;
 use App\Lop;
 
-$factory->define(App\Lop::class, function (Faker $faker) {
+$factory->define(Lop::class, function (Faker $faker) {
+    $name = $faker->name;
     return [
-        'ten_lop_hoc' => $faker->name,
-        // 'thgian_bd' => $faker->date(),
-        // 'thgian_kt' => $faker->date(),
+        'id' => $name,
+        'ten_lop_hoc' => $name,
+        'mo_hoc_id' => '3123',
         'gia' => $faker->randomFloat(),
         'published' => 1,
     ];

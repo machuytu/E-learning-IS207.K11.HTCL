@@ -9,7 +9,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Trang chủ</title>
+<title>Trang Chủ</title>
 
 @include('HomePage.partials.nguon',[])
 
@@ -234,7 +234,7 @@
               <div class="post-image">
                 @if($lop->hinh_anh_lop)
                     <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                        <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                        <a class="post-categories" href="">{{ $lop->mo_hoc->ten_mh ?? '' }}</a>
                 @endif
             </div>
               <div class="post-desc">
@@ -266,7 +266,7 @@
                       <div class="row margingia ">
 
                       <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}0đ</span></div>
+                      <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}đ</span></div>
 
                       </div>
 
@@ -274,7 +274,7 @@
                   </ul>
                 </div>
                 <div class="post-title">
-                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc->ten_mh ?? '' }} <br>(10 tuần)</a></h4>
                 </div>
               </div>
             </div>

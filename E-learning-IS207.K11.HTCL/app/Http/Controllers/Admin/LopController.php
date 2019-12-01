@@ -7,6 +7,8 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyLopRequest;
 use App\Http\Requests\StoreLopRequest;
 use App\Http\Requests\UpdateLopRequest;
+use Illuminate\Support\Str;
+
 use App\Lop;
 use App\MonHoc;
 use App\PhongHoc;

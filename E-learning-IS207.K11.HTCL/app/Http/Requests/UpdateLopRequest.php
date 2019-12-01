@@ -30,9 +30,12 @@ class UpdateLopRequest extends FormRequest
                 'date_format:' . config('panel.date_format'),
                 'nullable',
             ],
+            'ten_link'     => [
+            ],
+            'mo_ta'        => [
+            ],
             'mo_hoc_id'    => [
                 'required',
-                'integer',
             ],
             'the_loai_id'  => [
                 'required',

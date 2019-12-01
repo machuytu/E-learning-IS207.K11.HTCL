@@ -1,7 +1,10 @@
 <?php
 
 // Route::redirect('/', '/login');
-Route::get('/','HomeController@index');
+
+use App\Http\Controllers\LopsController;
+
+Route::get('/', 'HomeController@index');
 
 Route::get('/home', function () {
     if (session('status')) {
@@ -11,19 +14,20 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
-Route::get('/loginlophoc',function(){
+Route::get('/loginlophoc', function () {
     return view('HomePage.login');
 });
-Route::get('/trangchu',function(){
+Route::get('/trangchu', function () {
     return view('HomePage.homepage');
 });
-Route::get('/dashboard',function(){
+Route::get('/dashboard', function () {
     return view('HomePage.dashboardsv');
 });
-Route::get('/trangchu/TiengNhat',function(){
-    return view('HomePage.TiengNhat');
+// Route::get('lop/{ten_lop_hoc}', ['uses' => 'LopsController@show', 'as' => 'lops.show']);
+Route::get('/trangchu/lop', function () {
+    return view('Homepage.lopdanhmuc');
 });
-Route::get('/a/b',function(){
+Route::get('/a/b', function () {
     return view('HomePage.login');
 });
 

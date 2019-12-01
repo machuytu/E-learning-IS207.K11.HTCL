@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <!-- Navbar -->
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="/">
               <img id="logo-img" class="img-center" src="{{asset('images/logo.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
@@ -21,7 +21,7 @@
                     </li>
                     <li><a href="index-2.html">Tiếng Nhật</a>
                     </li>
-                   
+
                   </ul>
                 </li>
                 <li class="nav-item"> <a class="nav-link" href="#laptrinh">Lập trình</a>

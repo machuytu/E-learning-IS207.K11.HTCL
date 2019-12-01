@@ -37,6 +37,14 @@
                                 </tr>
                                 <tr>
                                     <th>
+                                        {{ trans('cruds.lop.fields.ten_link') }}
+                                    </th>
+                                    <td>
+                                        {{ $lop->ten_link }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
                                         {{ trans('cruds.lop.fields.thgian_bd') }}
                                     </th>
                                     <td>
@@ -99,6 +107,14 @@
                                     </th>
                                     <td>
                                         {{ $lop->gia }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.lop.fields.mo_ta') }}
+                                    </th>
+                                    <td>
+                                        {{ $lop->mo_ta }}
                                     </td>
                                 </tr>
                                 <tr>
