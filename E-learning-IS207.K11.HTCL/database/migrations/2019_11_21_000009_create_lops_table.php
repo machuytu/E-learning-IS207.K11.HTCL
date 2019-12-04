@@ -21,7 +21,7 @@ class CreateLopsTable extends Migration
 
             $table->decimal('gia', 15, 2)->nullable();
 
-            $table->longText('mo_ta');
+            $table->longText('mo_ta')->nullable();
 
             $table->boolean('published')->default(0)->nullable();
 

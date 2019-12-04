@@ -210,7 +210,6 @@
 
 
 <!--laptrinh start-->
-
 <section class="pos-r a">
   <div class="spinner-eff">
     <div class="spinner-circle circle-1"></div>
@@ -234,7 +233,7 @@
               <div class="post-image">
                 @if($lop->hinh_anh_lop)
                     <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                        <a class="post-categories" href="">{{ $lop->mo_hoc->ten_mh ?? '' }}</a>
+                        <a class="post-categories" href="{{ route('lops.show',[$lop->ten_link]) }}">{{ $lop->ten_lop_hoc }}</a>
                 @endif
             </div>
               <div class="post-desc">
@@ -248,7 +247,7 @@
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>{{ $lop->giao_vien['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
+                      <span class="newnhut">Giảng viên: <b>{{ $lop->user['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
                       </div>
                     </li>
                    <br>
@@ -274,7 +273,7 @@
                   </ul>
                 </div>
                 <div class="post-title">
-                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc->ten_mh ?? '' }} <br>(10 tuần)</a></h4>
+                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->ten_lop_hoc }} <br>(10 tuần)</a></h4>
                 </div>
               </div>
             </div>
@@ -286,7 +285,6 @@
     </div>
   </div>
 </section>
-
 <!--laptrinh end-->
 <!--hero ngoaingu section start-->
 
@@ -312,13 +310,13 @@
     <div class="row">
 
             <div class="row">
-                    @foreach ($lops as $lop)
+                    @foreach ($lop_quantams as $lop)
                       <div class="col-sm-4">
                         <div class="post">
                           <div class="post-image">
                             @if($lop->hinh_anh_lop)
                                 <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                                    <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                                    <a class="post-categories" href="#">{{ $lop->mo_hoc['ten_mh'] }}</a>
                             @endif
                         </div>
                           <div class="post-desc">
@@ -358,7 +356,7 @@
                               </ul>
                             </div>
                             <div class="post-title">
-                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br>(10 tuần)</a></h4>
                             </div>
                           </div>
                         </div>

@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('noi_dung') ? 'has-error' : '' }}">
                             <label for="noi_dung">{{ trans('cruds.baiHoc.fields.noi_dung') }}</label>
-                            <input class="form-control" type="text" name="noi_dung" id="noi_dung" value="{{ old('noi_dung', $baiHoc->noi_dung) }}">
+                            <textarea class="form-control" type="text" name="noi_dung" id="noi_dung" value="{{ old('noi_dung', $baiHoc->noi_dung) }}">
                             @if($errors->has('noi_dung'))
                                 <span class="help-block" role="alert">{{ $errors->first('noi_dung') }}</span>
                             @endif
@@ -96,6 +96,7 @@
             </div>
 
         </div>
+
     </div>
 </div>
 @endsection

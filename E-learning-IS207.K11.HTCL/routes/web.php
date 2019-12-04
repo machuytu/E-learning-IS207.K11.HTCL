@@ -20,15 +20,12 @@ Route::get('/loginlophoc', function () {
 Route::get('/trangchu', function () {
     return view('HomePage.homepage');
 });
-Route::get('/dashboard', function () {
-    return view('HomePage.dashboardsv');
-});
-// Route::get('lop/{ten_lop_hoc}', ['uses' => 'LopsController@show', 'as' => 'lops.show']);
+Route::get('/dashboard', 'DashboardSVController@index');
+
+Route::get('lop/{ten_link}', ['uses' => 'LopsController@show', 'as' => 'lops.show']);
+// Route::get('lophocvien/{ten_link}', ['uses' => 'DashboardSVController@show', 'as' => 'lops.show']);
 Route::get('/trangchu/lop', function () {
     return view('Homepage.lopdanhmuc');
-});
-Route::get('/a/b', function () {
-    return view('HomePage.login');
 });
 
 Auth::routes();

@@ -25,18 +25,24 @@
     <div class="col-sm-8 chuamonhoc">
       <h4 class="kh">Khóa học của bạn đã đăng kí</h4>
       <!--1 lop hoc-->
-      @foreach ($lops as $key => $lop)
-        <div class="row">
-            <div class="col chuamonhoc">
-            <a href="{{ route('lops.show',[$lop->ten_link]) }}">
-                <h4 class="kh2">{{ $lop->mo_hoc['ten_mh'] }}: {{ $lop->id }} </h4>
-            </a>
-            <p class="cach"><span class="newnhut">Tên giảng viên: </span> {{ $lop->giao_vien['name'] }} </p>
-            <p class="cach"><span class="newnhut">Phòng học:</span> {{ $lop->phong_hoc['ten_phong'] }}</p>
-            <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
-            </div>
-        </div>
-        @endforeach
+      <div class="row">
+        <div class="col chuamonhoc">
+          <h4 class="kh2">Tên môn: + mã lớp </h4>
+          <p class="cach"><span class="newnhut">Tên giảng viên:</span> Mạc Huy Tú </p>
+          <p class="cach"><span class="newnhut">Phòng học:</span> 101</p>
+          <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
+         </div>
+      </div>
+      <!--1 lop hoc-->
+       <!--1 lop hoc-->
+       <div class="row">
+        <div class="col chuamonhoc">
+          <h4 class="kh2">Tên môn: + mã lớp </h4>
+          <p class="cach"><span class="newnhut">Tên giảng viên:</span> Mạc Huy Tú </p>
+          <p class="cach"><span class="newnhut">Phòng học:</span> 101</p>
+          <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
+         </div>
+      </div>
       <!--1 lop hoc-->
     </div>
 
