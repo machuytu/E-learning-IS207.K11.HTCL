@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dashboard</title>
-  @include('HomePage.partials.nguon',[])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    @include('HomePage.partials.nguon',[])
 </head>
+
 <body class="home-3">
-@include('HomePage.partials.headerdashboard',[])
-<div class="page-wrapper">
+    @include('HomePage.partials.headerdashboard',[])
+    <div class="page-wrapper">
 
-<!--header start-->
+        <section class="tuychinh" style=" margin-top:40px;">
+            <div class="container-fluid">
+                <h1>website môn học</h1>
+                <p>Ghi chú: Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn</p>
+                <div class="row">
+                    <div class="col-sm-3" style="background-color:lavender;">.col</div>
+                    <div class="col-sm-8 chuamonhoc">
+                        <h4 class="kh">Khóa học của bạn đã đăng kí</h4>
+                        <!--1 lop hoc-->
+                        @foreach ($lops as $key => $lop)
+                        <div class="row">
+                            <div class="col chuamonhoc">
+                                <a href="{{ route('lops.show',[$lop->ten_link]) }}">
+                                    <h4 class="kh2">{{ $lop->mo_hoc['ten_mh'] }}: {{ $lop->id }} </h4>
+                                </a>
+                                <p class="cach"><span class="newnhut">Tên giảng viên: </span>
+                                    {{ $lop->giao_vien['name'] }} </p>
+                                <p class="cach"><span class="newnhut">Phòng học:</span>
+                                    {{ $lop->phong_hoc['ten_phong'] }}</p>
+                                <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
+                            </div>
+                        </div>
+                        @endforeach
+                        <!--1 lop hoc-->
+                    </div>
 
-
-
-<!--header end-->
-<section class="tuychinh" style=" margin-top:40px;">
-<div class="container-fluid">
-  <h1>website môn học</h1>
-  <p>Ghi chú: Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn</p>
-  <div class="row">
-    <div class="col-sm-3" style="background-color:lavender;">.col</div>
-    <div class="col-sm-8 chuamonhoc">
-      <h4 class="kh">Khóa học của bạn đã đăng kí</h4>
-      <!--1 lop hoc-->
-      @foreach ($lops as $key => $lop)
-        <div class="row">
-            <div class="col chuamonhoc">
-            <a href="{{ route('lops.show',[$lop->ten_link]) }}">
-                <h4 class="kh2">{{ $lop->mo_hoc['ten_mh'] }}: {{ $lop->id }} </h4>
-            </a>
-            <p class="cach"><span class="newnhut">Tên giảng viên: </span> {{ $lop->giao_vien['name'] }} </p>
-            <p class="cach"><span class="newnhut">Phòng học:</span> {{ $lop->phong_hoc['ten_phong'] }}</p>
-            <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
+                </div>
             </div>
-        </div>
-        @endforeach
-      <!--1 lop hoc-->
+        </section>
+
+        <!--section su kien-->
+
+        @include('HomePage.partials.footer',[])
+
+
     </div>
-
-  </div>
-</div>
-</section>
-
-<!--section su kien-->
-
-@include('HomePage.partials.footer',[])
-
-
-</div>
 
 </body>
 
@@ -108,4 +107,5 @@
 <script src="{{asset('js/theme-script.js')}}"></script>
 
 </body>
+
 </html>

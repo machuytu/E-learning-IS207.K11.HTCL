@@ -36,7 +36,7 @@
                         <div class="form-group {{ $errors->has('ten_link') ? 'has-error' : '' }}">
                             <label class="required" for="ten_link">{{ trans('cruds.lop.fields.ten_link') }}</label>
                             <input class="form-control" type="text" name="ten_link" id="ten_link"
-                                value="{{ old('ten_link', '') }}">
+                                value="{{ old('ten_link', '') }}" readonly="readonly">
                             @if($errors->has('ten_link'))
                             <span class="help-block" role="alert">{{ $errors->first('ten_link') }}</span>
                             @endif

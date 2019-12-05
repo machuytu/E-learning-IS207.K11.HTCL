@@ -93,7 +93,7 @@ class Lop extends Model implements HasMedia
 
     public function baiHocs()
     {
-        return $this->hasMany(BaiHoc::class, 'lop_id', 'id');
+        return $this->hasMany(BaiHoc::class, 'lop_id', 'id')->orderBy('vi_tri_bai_hoc');
     }
 
 

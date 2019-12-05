@@ -19,25 +19,42 @@
 
         <section class="tuychinh" style=" margin-top:40px;">
             <div class="container-fluid">
-                <h1>website môn học</h1>
+                <h1>website môn học: {{ $baihoc->lop->ten_lop_hoc }}</h1>
                 <p>Ghi chú: Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn</p>
                 <div class="row">
-                    <div class="col-sm-3" style="background-color:lavender;">.col</div>
-                    <div class="col-sm-8 chuamonhoc">
-                        <h4 class="kh">Khóa học: {{ $lop->ten_lop_hoc }}</h4>
-                        <!--lop hoc start-->
-                        @foreach ($lop->baihocs as $baihoc)
-                        <div class="row">
-                            <div class="col chuamonhoc">
-                                <a href="{{ route('baihocs.show',[$baihoc->lien_quan]) }}">
-                                    <h4 class="kh2">Tên bài học: {{ $baihoc->ten_bai_hoc }} </h4>
-                                </a>
-                                <p class="cach"><span class="newnhut">Tên giảng viên:</span> Mạc Huy Tú </p>
-                                <p class="cach"><span class="newnhut">Phòng học:</span> 101</p>
-                                <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
-                            </div>
+                        <div class="col-sm-3" style="background-color:lavender;">
+                            @foreach ($baihoc->lop->baihocs as $DS_baihoc)
+                                <a href="{{ route('baihocs.show',[$DS_baihoc->lien_quan]) }}"
+                                    @if ($DS_baihoc->id == $baihoc->id)
+                                        style="font-weight: bold"
+                                    @endif>
+                                    {{ $DS_baihoc->ten_bai_hoc }}</a><br>
+                            @endforeach
                         </div>
-                        @endforeach
+                    <div class="col-sm-8 chuamonhoc">
+                        <h4 class="kh2">Tên bài học: {{ $baihoc->ten_bai_hoc }}</h4>
+                        <p class="cach"><span class="newnhut">Lời ngắn:</span> {{ $baihoc->loi_ngan }} </p>
+                        <p class="cach"><span class="newnhut">Nội dung:</span> {{ $baihoc->noi_dung }}</p>
+                        <p class="cach"><span class="newnhut">Hình ảnh:</span>
+                            @foreach($baihoc->hinh_anh_bai_hoc as $key => $media)
+                                <a href="{{ $media->getUrl() }}" target="_blank">
+                                    <img src="{{ $media->getUrl('thumb') }}" width="50px" height="50px">
+                                </a>
+                            @endforeach
+                        </p>
+                        <p class="cach"><span class="newnhut">File:</span>
+                            @foreach($baihoc->file as $key => $media)
+                                <a href="{{ $media->getUrl() }}" target="_blank">
+                                    {{ trans('global.view_file') }}
+                                </a>
+                            @endforeach
+                        </p>
+                        @if ($baihoc_truoc)
+                            <p><a href="{{ route('baihocs.show',[$baihoc_truoc->lien_quan]) }}"><< {{ $baihoc_truoc->ten_bai_hoc }}</a></p>
+                        @endif
+                        @if ($baihoc_sau)
+                            <p><a href="{{ route('baihocs.show', [$baihoc_sau->lien_quan]) }}">>>{{ $baihoc_sau->ten_bai_hoc }}</a></p>
+                        @endif
                         <!--lop hoc end-->
                     </div>
                 </div>

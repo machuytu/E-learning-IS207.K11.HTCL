@@ -22,8 +22,10 @@ Route::get('/trangchu', function () {
 });
 Route::get('/dashboard', 'DashboardSVController@index');
 
-Route::get('lop/{ten_link}', ['uses' => 'LopsController@show', 'as' => 'lops.show']);
-// Route::get('lophocvien/{ten_link}', ['uses' => 'DashboardSVController@show', 'as' => 'lops.show']);
+Route::get('dashboardbaihoc/{ten_link}', ['uses' => 'DashboardSVBaiHocController@show', 'as' => 'lops.show']);
+Route::get('dashboardbaihocCT/{lien_quan}', ['uses' => 'DashboardSVBaiHocCTController@show', 'as' => 'baihocs.show']);
+
+
 Route::get('/trangchu/lop', function () {
     return view('Homepage.lopdanhmuc');
 });
