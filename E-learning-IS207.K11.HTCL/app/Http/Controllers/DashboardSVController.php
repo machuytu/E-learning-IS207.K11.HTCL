@@ -15,7 +15,7 @@ class DashboardSVController extends Controller
     public function index()
     {
         abort_if(Gate::denies('lop_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $lops = Lop::ofGiaoVien()->get();
+        $lops = Lop::ofGiaoVienHocVien()->get();
         //return page
         return view('Homepage/dashboardsv', compact('lops'));
     }

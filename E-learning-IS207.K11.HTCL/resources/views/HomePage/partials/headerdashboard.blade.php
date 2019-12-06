@@ -76,9 +76,18 @@
     <img src="https://courses.uit.edu.vn/pluginfile.php?file=%2F72575%2Fuser%2Ficon%2Fboost%2Ff2&amp;rev=1490024" class="userpicture1" width="35" height="35" role="presentation" aria-hidden="true " border-radius:20px;>
   </button>
   <div class="dropdown-menu2 dropdown-menu ">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
+    @if (Auth::check())
+        <form action="{{ route('logout') }}" method="POST">
+                {{ csrf_field() }}
+            <input type="submit" value="Logout">
+            {{-- <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                    <i class="fas fa-fw fa-sign-out-alt">
+
+                    </i>
+                    {{ trans('global.logout') }}
+                </a> --}}
+        </form>
+    @endif
   </div>
 </div>
 

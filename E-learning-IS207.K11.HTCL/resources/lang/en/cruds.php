@@ -91,7 +91,7 @@ return [
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => '',
-            'ten_tl'            => 'Ten Tl',
+            'ten_tl'            => 'Tên Thể loại',
             'ten_tl_helper'     => '',
             'created_at'        => 'Created at',
             'created_at_helper' => '',

@@ -90,4 +90,8 @@ class User extends Authenticatable
     public function isAdmin() {
         return $this->roles()->where('role_id', 1)->first();
     }
+
+    public function isHocVien() {
+        return $this->roles()->where('role_id', 3)->first();
+    }
 }
