@@ -77,16 +77,7 @@
   </button>
   <div class="dropdown-menu2 dropdown-menu ">
     @if (Auth::check())
-        <form action="{{ route('logout') }}" method="POST">
-                {{ csrf_field() }}
-            <input type="submit" value="Logout">
-            {{-- <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                    <i class="fas fa-fw fa-sign-out-alt">
-
-                    </i>
-                    {{ trans('global.logout') }}
-                </a> --}}
-        </form>
+        <a href="{{ route('logout') }}">Login</a>
     @endif
   </div>
 </div>

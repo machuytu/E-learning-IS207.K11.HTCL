@@ -123,11 +123,12 @@ class Lop extends Model implements HasMedia
         }
     }
 
-    public function scopeOfGiaoVienHocVien($query) {
+    public function scopeOfHocVien($query) {
         if (!Auth::user()->isAdmin()) {
-            return $query->whereHas('giao_vien',function ($q) {
-                $q->where('giao_vien_id', Auth::user()->id);
+            return $query->whereHas('hoc_viens',function ($q) {
+                $q->where('user_id', Auth::user()->id);
             });
         }
+        return $query;
     }
 }
