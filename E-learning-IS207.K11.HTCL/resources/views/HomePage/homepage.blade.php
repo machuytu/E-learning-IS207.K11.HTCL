@@ -9,7 +9,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Trang chủ</title>
+<title>Trang Chủ</title>
 
 @include('HomePage.partials.nguon',[])
 
@@ -58,15 +58,11 @@
 
 <!-- The slideshow -->
 <div class="carousel-inner">
-  <div class="carousel-item active">
-    <img src="{{asset('images/hinhkhoahoc/a.png')}}" alt="Los Angeles" width="600" height="400">
-  </div>
-  <div class="carousel-item">
-    <img src="{{asset('images/hinhkhoahoc/b.jpg')}}" alt="Chicago" width="600" height="400">
-  </div>
-  <div class="carousel-item">
-    <img src="{{asset('images/hinhkhoahoc/c.jpg')}}" alt="New York" width="600" height="400">
-  </div>
+    @foreach ($lop_goiys as $lop_goiy)
+        <div class="carousel-item active">
+            <img src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" width="600" height="300">
+        </div>
+    @endforeach
 </div>
 
 <!-- Left and right controls -->
@@ -89,56 +85,22 @@
         </div>
         <!--section-->
           <ul class="list-unstyled">
-            <li class="mb-3">
-              <div class="recent-post-thumb mr-2">
-                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b> Lê Thị Trúc Hòa </b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li class="mb-3">
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b> Hoàng Thụy Trinh</b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li>
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/java.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b>Nguyễn Minh Nhựt</b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
-
-              </div>
-</div>
-<div style="text-align:center; margin-top:15px;">
-<div class=" marinblog">
-                      <span class="newnhut2"><b> <a href="#" class="nextblog"> Xem Thêm >> </a></b></span>
-  </div>
-
-</div>
-            </li>
+            @foreach ($lop_goiys as $lop_goiy)
+                <li class="mb-3">
+                    <div class="recent-post-thumb mr-2">
+                      <img class="img-fluid" src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" alt="">
+                    </div>
+                    <div class="recent-post-desc">
+                      <div class="post-meta">
+                        <ul class="list-inline">
+                        <div class=" marinblog">
+                            <span class="newnhut">Đăng bởi:<b> {{ $lop_goiy->giao_vien['name'] }} </b></span>
+                            </div>
+                        </ul>
+                      </div> <a href="blog-single.html">{{ $lop_goiy->ten_lop_hoc }}</a>
+                    </div>
+                </li>
+            @endforeach
           </ul>
         </div>
       </div>
@@ -210,7 +172,6 @@
 
 
 <!--laptrinh start-->
-
 <section class="pos-r a">
   <div class="spinner-eff">
     <div class="spinner-circle circle-1"></div>
@@ -234,7 +195,7 @@
               <div class="post-image">
                 @if($lop->hinh_anh_lop)
                     <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                        <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                        <a class="post-categories" href="{{ route('lops.show',[$lop->ten_link]) }}">{{ $lop->ten_lop_hoc }}</a>
                 @endif
             </div>
               <div class="post-desc">
@@ -242,7 +203,7 @@
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
+                            <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
                       </div>
                     </li>
                     <br>
@@ -266,7 +227,7 @@
                       <div class="row margingia ">
 
                       <span class="col mr newnhut">Giá KM</span>
-                      <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}0đ</span></div>
+                      <div class="col mr"><span class='giakm'>{{ $lop->gia * 90 / 100 }}đ</span></div>
 
                       </div>
 
@@ -274,7 +235,7 @@
                   </ul>
                 </div>
                 <div class="post-title">
-                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->ten_lop_hoc }} <br>(10 tuần)</a></h4>
                 </div>
               </div>
             </div>
@@ -286,7 +247,6 @@
     </div>
   </div>
 </section>
-
 <!--laptrinh end-->
 <!--hero ngoaingu section start-->
 
@@ -312,13 +272,13 @@
     <div class="row">
 
             <div class="row">
-                    @foreach ($lops as $lop)
+                    @foreach ($lop_quantams as $lop)
                       <div class="col-sm-4">
                         <div class="post">
                           <div class="post-image">
                             @if($lop->hinh_anh_lop)
                                 <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                                    <a class="post-categories" href="#">{{ $lop->mon_hoc['ten_mon_hoc'] }}</a>
+                                    <a class="post-categories" href="#">{{ $lop->mo_hoc['ten_mh'] }}</a>
                             @endif
                         </div>
                           <div class="post-desc">
@@ -358,7 +318,7 @@
                               </ul>
                             </div>
                             <div class="post-title">
-                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mon_hoc['ten_mon_hoc'] }} <br>(10 tuần)</a></h4>
+                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br>(10 tuần)</a></h4>
                             </div>
                           </div>
                         </div>

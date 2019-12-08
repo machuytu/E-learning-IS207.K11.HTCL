@@ -22,6 +22,10 @@ class StoreTheLoaiRequest extends FormRequest
             'ten_tl' => [
                 'required',
             ],
+
+            'loai_tl' => [
+                'required',
+            ],
         ];
     }
 }

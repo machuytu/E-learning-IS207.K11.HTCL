@@ -28,7 +28,9 @@
                         </div>
                         <div class="form-group {{ $errors->has('ten_bai_hoc') ? 'has-error' : '' }}">
                             <label class="required" for="ten_bai_hoc">{{ trans('cruds.baiHoc.fields.ten_bai_hoc') }}</label>
-                            <input class="form-control" type="text" name="ten_bai_hoc" id="ten_bai_hoc" value="{{ old('ten_bai_hoc', $baiHoc->ten_bai_hoc) }}" required>
+                            <input class="form-control" type="text" name="ten_bai_hoc" id="ten_bai_hoc"
+                                oninput="join_names();" onpaste="join_names();"
+                                value="{{ old('ten_bai_hoc', $baiHoc->ten_bai_hoc) }}" required>
                             @if($errors->has('ten_bai_hoc'))
                                 <span class="help-block" role="alert">{{ $errors->first('ten_bai_hoc') }}</span>
                             @endif
@@ -36,7 +38,8 @@
                         </div>
                         <div class="form-group {{ $errors->has('lien_quan') ? 'has-error' : '' }}">
                             <label for="lien_quan">{{ trans('cruds.baiHoc.fields.lien_quan') }}</label>
-                            <input class="form-control" type="text" name="lien_quan" id="lien_quan" value="{{ old('lien_quan', $baiHoc->lien_quan) }}">
+                            <input class="form-control" type="text" name="lien_quan" id="lien_quan"
+                                value="{{ old('lien_quan', $baiHoc->lien_quan) }}" readonly="readonly">
                             @if($errors->has('lien_quan'))
                                 <span class="help-block" role="alert">{{ $errors->first('lien_quan') }}</span>
                             @endif
@@ -52,20 +55,12 @@
                         </div>
                         <div class="form-group {{ $errors->has('noi_dung') ? 'has-error' : '' }}">
                             <label for="noi_dung">{{ trans('cruds.baiHoc.fields.noi_dung') }}</label>
-                            <input class="form-control" type="text" name="noi_dung" id="noi_dung" value="{{ old('noi_dung', $baiHoc->noi_dung) }}">
+                            <textarea class="form-control" name="noi_dung" id="noi_dung">{{ old('loi_ngan', $baiHoc->loi_ngan) }}</textarea>
                             @if($errors->has('noi_dung'))
                                 <span class="help-block" role="alert">{{ $errors->first('noi_dung') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.baiHoc.fields.noi_dung_helper') }}</span>
                         </div>
-                        {{-- <div class="form-group {{ $errors->has('vi_tri_bai_hoc') ? 'has-error' : '' }}">
-                            <label for="vi_tri_bai_hoc">{{ trans('cruds.baiHoc.fields.vi_tri_bai_hoc') }}</label>
-                            <input class="form-control" type="number" name="vi_tri_bai_hoc" id="vi_tri_bai_hoc" value="{{ old('vi_tri_bai_hoc', $baiHoc->vi_tri_bai_hoc) }}" step="1">
-                            @if($errors->has('vi_tri_bai_hoc'))
-                                <span class="help-block" role="alert">{{ $errors->first('vi_tri_bai_hoc') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.baiHoc.fields.vi_tri_bai_hoc_helper') }}</span>
-                        </div> --}}
                         <div class="form-group {{ $errors->has('hinh_anh_bai_hoc') ? 'has-error' : '' }}">
                             <label for="hinh_anh_bai_hoc">{{ trans('cruds.baiHoc.fields.hinh_anh_bai_hoc') }}</label>
                             <div class="needsclick dropzone" id="hinh_anh_bai_hoc-dropzone">
@@ -96,12 +91,28 @@
             </div>
 
         </div>
+
     </div>
 </div>
 @endsection
 
 @section('scripts')
 <script>
+    function convertToSlug(Text)
+    {
+        return Text
+            .toLowerCase()
+            .replace(/ /g,'-')
+            .replace(/[^\w-]+/g,'')
+            ;
+    }
+    function join_names() {
+        var input_name_first = document.getElementsByName('ten_bai_hoc')[0].value;
+        var input_name_full = document.getElementsByName('lien_quan')[0];
+        var var_name_full = input_name_first;
+        input_name_full.value = convertToSlug(var_name_full);
+    }
+
     var uploadedHinhAnhBaiHocMap = {}
 Dropzone.options.hinhAnhBaiHocDropzone = {
     url: '{{ route('admin.bai-hocs.storeMedia') }}',

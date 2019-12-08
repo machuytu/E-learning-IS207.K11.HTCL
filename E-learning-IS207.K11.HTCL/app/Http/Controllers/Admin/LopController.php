@@ -7,6 +7,8 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyLopRequest;
 use App\Http\Requests\StoreLopRequest;
 use App\Http\Requests\UpdateLopRequest;
+use Illuminate\Support\Str;
+
 use App\Lop;
 use App\MonHoc;
 use App\PhongHoc;
@@ -38,11 +40,11 @@ class LopController extends Controller
 
         $the_loais = TheLoai::all()->pluck('ten_tl', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 2); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $phong_hocs = PhongHoc::all()->pluck('ten_phong', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 4); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.lops.create', compact('mo_hocs', 'the_loais', 'giao_viens', 'phong_hocs', 'hoc_viens'));
     }
@@ -68,11 +70,11 @@ class LopController extends Controller
 
         $the_loais = TheLoai::all()->pluck('ten_tl', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $giao_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 2); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $phong_hocs = PhongHoc::all()->pluck('ten_phong', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 4); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $hoc_viens = User::whereHas('roles',function ($q) { $q->where('role_id', 3); })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $lop->load('mo_hoc', 'the_loai', 'giao_vien', 'phong_hoc', 'hoc_viens');
 

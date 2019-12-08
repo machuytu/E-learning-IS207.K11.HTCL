@@ -10,9 +10,26 @@ class PermissionRoleTableSeeder extends Seeder
     {
         $admin_permissions = Permission::all();
         Role::findOrFail(1)->permissions()->sync($admin_permissions->pluck('id'));
-        $user_permissions = $admin_permissions->filter(function ($permission) {
-            return substr($permission->title, 0, 5) != 'user_' && substr($permission->title, 0, 5) != 'role_' && substr($permission->title, 0, 11) != 'permission_';
-        });
-        Role::findOrFail(2)->permissions()->sync($user_permissions);
+        $permissions = [
+            // 2 => [
+            //     'permissions' => [1, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+            // ],
+            2 => [
+                'permissions' => [19, 21, 24, 26, 29, 31, 34, 36, 39, 40, 41, 42, 43, 44, 45, 46],
+            ],
+            3 => [
+                'permissions' => [19, 21, 24, 26, 29, 31, 34, 36, 39, 41, 44, 46],
+            ],
+
+        ];
+
+        foreach ($permissions as $id => $permissions) {
+            $role = Role::find($id);
+
+            foreach ($permissions as $key => $ids) {
+                $role->{$key}()->sync($ids);
+            }
+        }
+
     }
 }

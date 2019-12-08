@@ -31,6 +31,8 @@ class Lop extends Model implements HasMedia
     protected $fillable = [
         'id',
         'gia',
+        'ten_link',
+        'mo_ta',
         'thgian_bd',
         'thgian_kt',
         'mo_hoc_id',
@@ -91,7 +93,7 @@ class Lop extends Model implements HasMedia
 
     public function baiHocs()
     {
-        return $this->hasMany(BaiHoc::class, 'lop_id', 'id');
+        return $this->hasMany(BaiHoc::class, 'lop_id', 'id')->orderBy('vi_tri_bai_hoc');
     }
 
 
@@ -114,10 +116,19 @@ class Lop extends Model implements HasMedia
     public $incrementing = false;
 
     public function scopeOfGiaoVien($query) {
-        if (!Auth::user()->isAdmin()) {
+        if (!Auth::user()->isAdmin() && !Auth::user()->isHocVien()) {
             return $query->whereHas('giao_vien',function ($q) {
                 $q->where('giao_vien_id', Auth::user()->id);
             });
         }
+    }
+
+    public function scopeOfHocVien($query) {
+        if (!Auth::user()->isAdmin()) {
+            return $query->whereHas('hoc_viens',function ($q) {
+                $q->where('user_id', Auth::user()->id);
+            });
+        }
+        return $query;
     }
 }

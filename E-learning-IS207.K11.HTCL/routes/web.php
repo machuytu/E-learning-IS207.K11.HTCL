@@ -1,8 +1,12 @@
 <?php
 
-// Route::redirect('/', '/login');
-Route::get('/','HomeController@index');
+use App\Http\Controllers\LopsController;
 
+// homepage
+Route::get('/', 'HomeController@index');
+Route::get('/class', ['uses' => 'HomeController@index', 'as' => 'lop.index']);
+
+// get status
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -11,25 +15,25 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
-Route::get('/loginlophoc',function(){
+// login
+Route::get('/loginlophoc', function () {
     return view('HomePage.login');
 });
-Route::get('/trangchu',function(){
-    return view('HomePage.homepage');
-});
-Route::get('/dashboard',function(){
-    return view('HomePage.dashboardsv');
-});
-Route::get('/trangchu/TiengNhat',function(){
-    return view('HomePage.TiengNhat');
-});
-Route::get('/a/b',function(){
-    return view('HomePage.login');
+
+// dashboard hoc vien
+Route::get('/dashboard', 'DashboardSVController@index');
+Route::get('dashboardbaihoc/{ten_link}', ['uses' => 'DashboardSVBaiHocController@show', 'as' => 'lops.show']);
+Route::get('dashboardbaihocCT/{lien_quan}', ['uses' => 'DashboardSVBaiHocCTController@show', 'as' => 'baihocs.show']);
+
+
+Route::get('/trangchu/lop', function () {
+    return view('Homepage.lopdanhmuc');
 });
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('auth.logout');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['admin']], function () {
     Route::get('/', 'DashboardController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

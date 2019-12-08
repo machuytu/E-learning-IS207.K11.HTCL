@@ -35,6 +35,14 @@
                                         {{ $theLoai->ten_tl }}
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.theLoai.fields.loai_tl') }}
+                                    </th>
+                                    <td>
+                                        {{ $theLoai->loai_tl }}
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <div class="form-group">

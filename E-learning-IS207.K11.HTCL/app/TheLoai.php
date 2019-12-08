@@ -19,6 +19,7 @@ class TheLoai extends Model
 
     protected $fillable = [
         'ten_tl',
+        'loai_tl',
         'created_at',
         'updated_at',
         'deleted_at',

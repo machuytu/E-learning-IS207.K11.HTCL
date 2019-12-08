@@ -21,7 +21,6 @@ class StoreBaiHocRequest extends FormRequest
         return [
             'lop_id'         => [
                 'required',
-                'integer',
             ],
             'ten_bai_hoc'    => [
                 'required',

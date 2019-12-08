@@ -14,17 +14,13 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
-        if($user->usertype == 'admin') {
-            return $next($request);
+        if(!Auth::check()) {
+            return redirect('/login');
+        }
+        if(Auth::user()->roles()->where('title','HocVien')->count() > 0) {
+            return redirect('/dashboard');
         }
 
-            else if($user->usertype == 'user') {
-                redirect('/home');
-            }
-
-        else {
-        return redirect('/home');
-        }
+        return $next($request);
     }
 }

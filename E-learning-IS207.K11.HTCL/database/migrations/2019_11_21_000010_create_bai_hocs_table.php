@@ -17,7 +17,7 @@ class CreateBaiHocsTable extends Migration
 
             $table->string('loi_ngan')->nullable();
 
-            $table->string('noi_dung')->nullable();
+            $table->longText('noi_dung')->nullable();
 
             $table->integer('vi_tri_bai_hoc')->nullable();
 

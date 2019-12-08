@@ -33,6 +33,9 @@
                                         {{ trans('cruds.lop.fields.ten_lop_hoc') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.lop.fields.ten_link') }}
+                                    </th>
+                                    <th>
                                         {{ trans('cruds.lop.fields.thgian_bd') }}
                                     </th>
                                     <th>
@@ -80,6 +83,9 @@
                                         </td>
                                         <td>
                                             {{ $lop->ten_lop_hoc ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $lop->ten_link ?? '' }}
                                         </td>
                                         <td>
                                             {{ $lop->thgian_bd ?? '' }}
