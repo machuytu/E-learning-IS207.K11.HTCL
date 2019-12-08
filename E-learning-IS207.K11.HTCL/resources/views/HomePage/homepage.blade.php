@@ -58,15 +58,11 @@
 
 <!-- The slideshow -->
 <div class="carousel-inner">
-  <div class="carousel-item active">
-    <img src="{{asset('images/hinhkhoahoc/a.png')}}" alt="Los Angeles" width="600" height="400">
-  </div>
-  <div class="carousel-item">
-    <img src="{{asset('images/hinhkhoahoc/b.jpg')}}" alt="Chicago" width="600" height="400">
-  </div>
-  <div class="carousel-item">
-    <img src="{{asset('images/hinhkhoahoc/c.jpg')}}" alt="New York" width="600" height="400">
-  </div>
+    @foreach ($lop_goiys as $lop_goiy)
+        <div class="carousel-item active">
+            <img src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" width="600" height="300">
+        </div>
+    @endforeach
 </div>
 
 <!-- Left and right controls -->
@@ -89,56 +85,22 @@
         </div>
         <!--section-->
           <ul class="list-unstyled">
-            <li class="mb-3">
-              <div class="recent-post-thumb mr-2">
-                <img class="img-fluid" src="images/blog/htmlcss.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b> Lê Thị Trúc Hòa </b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li class="mb-3">
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/htmlcss2.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b> Hoàng Thụy Trinh</b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình Web căn bản (HTML, CSS)</a>
-              </div>
-            </li>
-            <li>
-              <div class="recent-post-thumb">
-                <img class="img-fluid" src="images/blog/java.jpg" alt="">
-              </div>
-              <div class="recent-post-desc">
-                <div class="post-meta">
-                  <ul class="list-inline">
-                  <div class=" marinblog">
-                      <span class="newnhut">By:<b>Nguyễn Minh Nhựt</b></span>
-                      </div>
-                  </ul>
-                </div> <a href="blog-single.html">Lập trình JAVA căn bản</a>
-
-              </div>
-</div>
-<div style="text-align:center; margin-top:15px;">
-<div class=" marinblog">
-                      <span class="newnhut2"><b> <a href="#" class="nextblog"> Xem Thêm >> </a></b></span>
-  </div>
-
-</div>
-            </li>
+            @foreach ($lop_goiys as $lop_goiy)
+                <li class="mb-3">
+                    <div class="recent-post-thumb mr-2">
+                      <img class="img-fluid" src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" alt="">
+                    </div>
+                    <div class="recent-post-desc">
+                      <div class="post-meta">
+                        <ul class="list-inline">
+                        <div class=" marinblog">
+                            <span class="newnhut">Đăng bởi:<b> {{ $lop_goiy->giao_vien['name'] }} </b></span>
+                            </div>
+                        </ul>
+                      </div> <a href="blog-single.html">{{ $lop_goiy->ten_lop_hoc }}</a>
+                    </div>
+                </li>
+            @endforeach
           </ul>
         </div>
       </div>
@@ -241,13 +203,13 @@
                   <ul class="list-inline">
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
+                            <span class="newnhut">Thời gian bắt đầu: <b> {{ $lop->thgian_bd }} </b></span>
                       </div>
                     </li>
                     <br>
                     <li>
                       <div class="row margingia">
-                      <span class="newnhut">Giảng viên: <b>{{ $lop->user['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
+                      <span class="newnhut">Giảng viên: <b>{{ $lop->giao_vien['name'] }}</b> ({{ $lop->phong_hoc['ten_phong'] }})</span>
                       </div>
                     </li>
                    <br>

@@ -1,11 +1,12 @@
 <?php
 
-// Route::redirect('/', '/login');
-
 use App\Http\Controllers\LopsController;
 
+// homepage
 Route::get('/', 'HomeController@index');
+Route::get('/class', ['uses' => 'HomeController@index', 'as' => 'lop.index']);
 
+// get status
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -14,14 +15,13 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
+// login
 Route::get('/loginlophoc', function () {
     return view('HomePage.login');
 });
-Route::get('/trangchu', function () {
-    return view('HomePage.homepage');
-});
-Route::get('/dashboard', 'DashboardSVController@index');
 
+// dashboard hoc vien
+Route::get('/dashboard', 'DashboardSVController@index');
 Route::get('dashboardbaihoc/{ten_link}', ['uses' => 'DashboardSVBaiHocController@show', 'as' => 'lops.show']);
 Route::get('dashboardbaihocCT/{lien_quan}', ['uses' => 'DashboardSVBaiHocCTController@show', 'as' => 'baihocs.show']);
 
