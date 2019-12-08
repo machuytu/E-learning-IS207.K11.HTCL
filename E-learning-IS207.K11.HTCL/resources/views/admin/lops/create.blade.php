@@ -146,7 +146,7 @@
                             <label for="mo_ta">{{ trans('cruds.lop.fields.mo_ta') }}</label>
                             <textarea class="form-control" name="mo_ta" id="mo_ta">{!! old('mo_ta') !!}</textarea>
                             @if($errors->has('mo_ta'))
-                                <span class="help-block" role="alert">{{ $errors->first('mo_ta') }}</span>
+                            <span class="help-block" role="alert">{{ $errors->first('mo_ta') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.lop.fields.mo_ta_helper') }}</span>
                         </div>
@@ -231,14 +231,14 @@
       }
     },
     init: function () {
-@if(isset($lop) && $lop->hinh_anh_lop)
+    @if(isset($lop) && $lop->hinh_anh_lop)
       var file = {!! json_encode($lop->hinh_anh_lop) !!}
           this.options.addedfile.call(this, file)
       this.options.thumbnail.call(this, file, '{{ $lop->hinh_anh_lop->getUrl('thumb') }}')
       file.previewElement.classList.add('dz-complete')
       $('form').append('<input type="hidden" name="hinh_anh_lop" value="' + file.file_name + '">')
       this.options.maxFiles = this.options.maxFiles - 1
-@endif
+    @endif
     },
     error: function (file, response) {
         if ($.type(response) === 'string') {

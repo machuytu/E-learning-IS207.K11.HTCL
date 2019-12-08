@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lop;
+use App\TheLoai;
 use App\User;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,7 +30,8 @@ class HomeController extends Controller
     {
         $lops = Lop::select()->orderBy('created_at', 'DESC')->where('published', 1)->get();
         $lop_quantams = Lop::select()->inRandomOrder()->where('published', 1)->limit(3)->get();
+        $the_loai_lap_trinhs = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Lập trình');
         //return page
-        return view('Homepage/homepage', compact('lops','lop_quantams'));
+        return view('Homepage/homepage', compact('lops','lop_quantams','the_loai_lap_trinhs'));
     }
 }

@@ -13,6 +13,8 @@ class CreateTheLoaisTable extends Migration
 
             $table->string('ten_tl');
 
+            $table->string('loai_tl');
+
             $table->timestamps();
 
             $table->softDeletes();

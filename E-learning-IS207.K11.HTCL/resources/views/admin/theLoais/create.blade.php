@@ -21,6 +21,19 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.theLoai.fields.ten_tl_helper') }}</span>
                         </div>
+                        <div class="form-group {{ $errors->has('loai_tl') ? 'has-error' : '' }}">
+                            <label class="required" for="loai_tl">{{ trans('cruds.theLoai.fields.loai_tl') }}</label>
+                            <br>
+                            {{-- <input class="form-control" type="text" name="loai_tl" id="loai_tl" value="{{ old('loai_tl', '') }}" required> --}}
+                                <input type="radio" name="loai_tl" id="loai_tl" value="Lập trình"> Lập trình<br>
+                                <input type="radio" name="loai_tl" id="loai_tl" value="Ngoại ngữ"> Ngoại ngữ<br>
+                                <input type="radio" name="loai_tl" id="loai_tl" value="Kỹ năng sống"> Kỹ năng sống<br>
+                                <input type="radio" name="loai_tl" id="loai_tl" value="Đồ họa"> Đồ họa<br>
+                            @if($errors->has('loai_tl'))
+                                <span class="help-block" role="alert">{{ $errors->first('loai_tl') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.theLoai.fields.loai_tl_helper') }}</span>
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">
                                 {{ trans('global.save') }}

@@ -33,6 +33,9 @@
                                         {{ trans('cruds.theLoai.fields.ten_tl') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.theLoai.fields.loai_tl') }}
+                                    </th>
+                                    <th>
                                         &nbsp;
                                     </th>
                                 </tr>
@@ -48,6 +51,9 @@
                                         </td>
                                         <td>
                                             {{ $theLoai->ten_tl ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $theLoai->loai_tl ?? '' }}
                                         </td>
                                         <td>
                                             @can('the_loai_show')

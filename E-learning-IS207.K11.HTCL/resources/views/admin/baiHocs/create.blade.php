@@ -177,7 +177,7 @@ Dropzone.options.hinhAnhBaiHocDropzone = {
 </script>
 <script>
     var uploadedFileMap = {}
-Dropzone.options.fileDropzone = {
+    Dropzone.options.fileDropzone = {
     url: '{{ route('admin.bai-hocs.storeMedia') }}',
     maxFilesize: 20, // MB
     addRemoveLinks: true,
