@@ -60,7 +60,9 @@
 <div class="carousel-inner">
     @foreach ($lop_goiys as $lop_goiy)
         <div class="carousel-item active">
-            <img src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" width="600" height="300">
+            @if ($lop_goiy->hinh_anh_lop)
+                <img src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" width="600" height="300">
+            @endif
         </div>
     @endforeach
 </div>
@@ -88,7 +90,9 @@
             @foreach ($lop_goiys as $lop_goiy)
                 <li class="mb-3">
                     <div class="recent-post-thumb mr-2">
-                      <img class="img-fluid" src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" alt="">
+                        @if ($lop_goiy->hinh_anh_lop)
+                            <img class="img-fluid" src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" alt="">
+                        @endif
                     </div>
                     <div class="recent-post-desc">
                       <div class="post-meta">

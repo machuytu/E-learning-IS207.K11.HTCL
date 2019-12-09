@@ -9,6 +9,7 @@ use App\Http\Requests\StoreLopRequest;
 use App\Http\Requests\UpdateLopRequest;
 use Illuminate\Support\Str;
 
+
 use App\Lop;
 use App\MonHoc;
 use App\PhongHoc;
@@ -51,20 +52,25 @@ class LopController extends Controller
 
     public function store(StoreLopRequest $request)
     {
+        $request->merge([
+            'thu_hoc' => implode(',', (array) $request->get('thu_hoc'))
+        ]);
+
+
         $lop = Lop::create($request->all());
         $lop->hoc_viens()->sync($request->input('hoc_viens', []));
 
         if ($request->input('hinh_anh_lop', false)) {
             $lop->addMedia(storage_path('tmp/uploads/' . $request->input('hinh_anh_lop')))->toMediaCollection('hinh_anh_lop');
         }
-        // $giao_viens = Auth::user()->isAdmin() ? \array_filter((array)$request->input('giao_vien')) : [Auth::user()->id];
-        // $lop->giao_viens()->sync($giao_viens);
         return redirect()->route('admin.lops.index');
     }
 
     public function edit(Lop $lop)
     {
         abort_if(Gate::denies('lop_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+
 
         $mo_hocs = MonHoc::all()->pluck('ten_mh', 'id')->prepend(trans('global.pleaseSelect'), '');
 

@@ -42,6 +42,12 @@
                                         {{ trans('cruds.lop.fields.thgian_kt') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.lop.fields.ca_hoc') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.lop.fields.thu_hoc') }}
+                                    </th>
+                                    <th>
                                         {{ trans('cruds.lop.fields.mo_hoc') }}
                                     </th>
                                     <th>
@@ -92,6 +98,12 @@
                                         </td>
                                         <td>
                                             {{ $lop->thgian_kt ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $lop->ca_hoc ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $lop->thu_hoc ?? '' }}
                                         </td>
                                         <td>
                                             {{ $lop->mo_hoc->ten_mh ?? '' }}

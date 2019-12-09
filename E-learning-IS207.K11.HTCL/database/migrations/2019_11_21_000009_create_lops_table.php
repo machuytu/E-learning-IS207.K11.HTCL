@@ -19,9 +19,9 @@ class CreateLopsTable extends Migration
 
             $table->date('thgian_kt')->nullable();
 
-            // $table->string('ca_hoc')->nullable();
+            $table->string('ca_hoc')->nullable();
 
-            // $table->string('thu_hoc')->nullable();
+            $table->string('thu_hoc')->nullable();
 
             $table->decimal('gia', 15, 2)->nullable();
 

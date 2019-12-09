@@ -60,6 +60,34 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.lop.fields.thgian_kt_helper') }}</span>
                         </div>
+                        <div class="form-group {{ $errors->has('ca_hoc') ? 'has-error' : '' }}">
+                            <label for="ca_hoc">{{ trans('cruds.lop.fields.ca_hoc') }}</label>
+                            <br>
+                            <input type="radio" name="ca_hoc" id="ca_hoc" value="Ca Sáng (7h30 - 11h)"> Ca Sáng (7h30 - 11h)<br>
+                            <input type="radio" name="ca_hoc" id="ca_hoc" value="Ca Chiều (1h00 - 3h30)"> Ca Chiều (1h00 - 3h30)<br>
+                            <input type="radio" name="ca_hoc" id="ca_hoc" value="Ca Tối (6h00 - 8h30)"> Ca Tối (6h00 - 8h30)<br>
+                            @if($errors->has('ca_hoc'))
+                            <span class="help-block" role="alert">{{ $errors->first('ca_hoc') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.lop.fields.ca_hoc_helper') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('thu_hoc') ? 'has-error' : '' }}">
+                            <label for="thu_hoc">{{ trans('cruds.lop.fields.thu_hoc') }}</label>
+                            <br>
+                            <fieldset>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 2">Thứ 2<br>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 3">Thứ 3<br>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 4">Thứ 4<br>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 5">Thứ 5<br>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 6">Thứ 6<br>
+                                    <input type="checkbox" name="thu_hoc[]" id="thu_hoc" value="Thứ 7">Thứ 7<br>
+                                    <br>
+                            </fieldset>
+                            @if($errors->has('thu_hoc'))
+                            <span class="help-block" role="alert">{{ $errors->first('thu_hoc') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.lop.fields.thu_hoc_helper') }}</span>
+                        </div>
                         <div class="form-group {{ $errors->has('mo_hoc') ? 'has-error' : '' }}">
                             <label class="required" for="mo_hoc_id">{{ trans('cruds.lop.fields.mo_hoc') }}</label>
                             <select class="form-control select2" name="mo_hoc_id" id="mo_hoc_id" required>
