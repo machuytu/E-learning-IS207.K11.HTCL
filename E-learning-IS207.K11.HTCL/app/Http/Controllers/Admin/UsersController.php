@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyUserRequest;
+use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Role;
@@ -14,6 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class UsersController extends Controller
 {
+    use MediaUploadingTrait;
+
     public function index()
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -37,6 +40,10 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->roles()->sync($request->input('roles', []));
 
+        if ($request->input('avatar', false)) {
+            $user->addMedia(storage_path('tmp/uploads/' . $request->input('avatar')))->toMediaCollection('avatar');
+        }
+
         return redirect()->route('admin.users.index');
     }
 
@@ -55,6 +62,14 @@ class UsersController extends Controller
     {
         $user->update($request->all());
         $user->roles()->sync($request->input('roles', []));
+
+        if ($request->input('avatar', false)) {
+            if (!$user->avatar || $request->input('avatar') !== $user->avatar->file_name) {
+                $user->addMedia(storage_path('tmp/uploads/' . $request->input('avatar')))->toMediaCollection('avatar');
+            }
+        } elseif ($user->avatar) {
+            $user->avatar->delete();
+        }
 
         return redirect()->route('admin.users.index');
     }

@@ -411,3 +411,8 @@ inset 0 30px 0 rgba(5,248,161, 0.4), inset -30px 0 0 rgba(255,8,68, 0.4), inset 
 .login-form img{height: 100px;}
 .remember-checkbox label{margin-bottom: 0;}
 .round-shape {position: absolute; right: 10%; bottom: 0; height: 300px; width: 300px; border-radius: 50%; background: none; border:50px solid #2575fc; animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate; opacity: 0.050;}
+
+/* ------------------------
+    Loader
+------------------------*/
+

@@ -8,6 +8,7 @@ use App\User;
 use Gate;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
@@ -26,6 +27,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function getinfo(Request $request) {
+        info($request->id);
+        $id=$request->id;
+
+        $lop=DB::table('lops')
+                        ->join('users','users.id','=','lops.giao_vien_id')
+                        ->select('users.name', 'lops.ten_lop_hoc', 'lops.thgian_bd',
+                            'lops.thgian_kt', 'lops.ca_hoc', 'lops.thu_hoc', 'lops.gia', 'lops.mo_ta', 'lops.mo_hoc_id')
+                        ->where('lops.id',$id)
+                        ->get();
+        return $lop;
+    }
     public function index()
     {
         // lop theo id the loai va tat ca

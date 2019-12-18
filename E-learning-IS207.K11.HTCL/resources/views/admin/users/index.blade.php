@@ -39,6 +39,18 @@
                                         {{ trans('cruds.user.fields.email_verified_at') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.user.fields.sex') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.user.fields.address') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.user.fields.phone_number') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.user.fields.store') }}
+                                    </th>
+                                    <th>
                                         {{ trans('cruds.user.fields.approved') }}
                                     </th>
                                     <th>

@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'failed'   => 'These credentials do not match our records.',
+    'failed'   => 'Sai Tài khoản hoặc không tồn tại',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 ];

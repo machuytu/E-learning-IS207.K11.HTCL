@@ -35,6 +35,8 @@ class Lop extends Model implements HasMedia
         'mo_ta',
         'thgian_bd',
         'thgian_kt',
+        'ca_hoc',
+        'thu_hoc',
         'mo_hoc_id',
         'published',
         'created_at',

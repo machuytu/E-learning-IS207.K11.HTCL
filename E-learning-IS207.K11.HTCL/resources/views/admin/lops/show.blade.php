@@ -61,6 +61,22 @@
                                 </tr>
                                 <tr>
                                     <th>
+                                        {{ trans('cruds.lop.fields.ca_hoc') }}
+                                    </th>
+                                    <td>
+                                        {{ $lop->ca_hoc }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.lop.fields.thu_hoc') }}
+                                    </th>
+                                    <td>
+                                        {{ $lop->thu_hoc }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
                                         {{ trans('cruds.lop.fields.mo_hoc') }}
                                     </th>
                                     <td>
