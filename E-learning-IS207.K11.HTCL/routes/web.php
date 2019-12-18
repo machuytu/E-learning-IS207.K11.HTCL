@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LopsController;
 
+
+Route::post('/getinfo','HomeController@getinfo');
 // homepage
 Route::get('/', 'HomeController@index');
 Route::get('/class', ['uses' => 'HomeController@index', 'as' => 'lop.index']);
@@ -45,6 +47,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Users
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+    Route::post('users/media', 'UsersController@storeMedia')->name('users.storeMedia');
     Route::resource('users', 'UsersController');
 
     // Mon Hocs

@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('ca_hoc') ? 'has-error' : '' }}">
                             <label for="ca_hoc">{{ trans('cruds.lop.fields.ca_hoc') }}</label>
-                            <input class="form-control date" type="text" name="ca_hoc" id="ca_hoc" value="{{ old('ca_hoc', $lop->ca_hoc) }}">
+                            <input class="form-control" type="text" name="ca_hoc" id="ca_hoc" value="{{ old('ca_hoc', $lop->ca_hoc) }}">
                             @if($errors->has('ca_hoc'))
                                 <span class="help-block" role="alert">{{ $errors->first('ca_hoc') }}</span>
                             @endif

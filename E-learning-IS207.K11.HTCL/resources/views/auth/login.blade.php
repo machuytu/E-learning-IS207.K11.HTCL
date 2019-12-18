@@ -50,7 +50,6 @@
 <link href="/css/homepage_css/responsive.css" rel="stylesheet" type="text/css" />
 
 <!--== color-customizer -->
-<link href="#" data-style="styles" rel="stylesheet">
 <link href="/css/homepage_css/color-customize/color-customizer.css" rel="stylesheet" type="text/css" />
 <link href="{{asset('/css/homepage_css/theme-color/nhutcustom.css')}}" rel="stylesheet" type="text/css" />
 <!-- inject css end -->

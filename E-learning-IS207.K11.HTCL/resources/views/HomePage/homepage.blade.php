@@ -3,6 +3,7 @@
 
 <!-- Mirrored from themeht.com/softino/html/multipage/ltr/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Mar 2019 04:08:34 GMT -->
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="keywords" content="HTML5 Template" />
@@ -60,9 +61,11 @@
 <div class="carousel-inner">
     @foreach ($lop_goiys as $lop_goiy)
         <div class="carousel-item active">
+            <a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop_goiy->id}}')" data-target="#myModal">
             @if ($lop_goiy->hinh_anh_lop)
                 <img src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" width="600" height="300">
             @endif
+            </a>
         </div>
     @endforeach
 </div>
@@ -90,9 +93,11 @@
             @foreach ($lop_goiys as $lop_goiy)
                 <li class="mb-3">
                     <div class="recent-post-thumb mr-2">
+                        <a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop_goiy->id}}')" data-target="#myModal">
                         @if ($lop_goiy->hinh_anh_lop)
                             <img class="img-fluid" src="{{ $lop_goiy->hinh_anh_lop->getUrl() }}" alt="">
                         @endif
+                        </a>
                     </div>
                     <div class="recent-post-desc">
                       <div class="post-meta">
@@ -101,7 +106,7 @@
                             <span class="newnhut">Đăng bởi:<b> {{ $lop_goiy->giao_vien['name'] }} </b></span>
                             </div>
                         </ul>
-                      </div> <a href="blog-single.html">{{ $lop_goiy->ten_lop_hoc }}</a>
+                      </div> <a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop_goiy->id}}')" data-target="#myModal">{{ $lop_goiy->ten_lop_hoc }}</a>
                     </div>
                 </li>
             @endforeach
@@ -198,8 +203,9 @@
             <div class="post">
               <div class="post-image">
                 @if($lop->hinh_anh_lop)
-                    <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
-                        <a class="post-categories" href="{{ route('lops.show',[$lop->ten_link]) }}">{{ $lop->ten_lop_hoc }}</a>
+                      <img class="img-fluid hinhanhblog" src="{{ $lop->hinh_anh_lop->getUrl() }}">
+                    <a href="#myModal" class="post-categories" data-toggle="modal" onclick="ShowModal('{{$lop->id}}')" data-target="#myModal">
+                        {{ $lop->ten_lop_hoc }}</a>
                 @endif
             </div>
               <div class="post-desc">
@@ -239,7 +245,7 @@
                   </ul>
                 </div>
                 <div class="post-title">
-                  <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->ten_lop_hoc }} <br>(10 tuần)</a></h4>
+                  <h4><a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop->id}}')" data-target="#myModal">{{ $lop->ten_lop_hoc }} <br>(11 tuần)</a></h4>
                 </div>
               </div>
             </div>
@@ -322,7 +328,7 @@
                               </ul>
                             </div>
                             <div class="post-title">
-                              <h4><a href="href="#myModal" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br>(10 tuần)</a></h4>
+                              <h4><a href="href="#myModal" id="load" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br>(10 tuần)</a></h4>
                             </div>
                           </div>
                         </div>
@@ -376,48 +382,77 @@
  <!-- Modal -->
   <!-- Modal -->
   <div class="modal-nhut fade" id="myModal" role="dialog">
+    {{-- @foreach ($lop as $lop) --}}
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-        <div class="row margingia">
-                      <span class="newnhutmodal">Khóa học xyz</span>
-        </div>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content">
+              <div class="modal-header">
+              <div class="row margingia">
+                  <span class="newnhutmodal" id="tenlophoc"></span>
+              </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="row padding-modal">
+                <div class="col-xs-4">
+                  <span class="newnhutmodal3" name="tengiaovien" id="tengiaovien"></span>
+                </div>
+                <div class=" col-xs-4">
+                  <span class="newnhutmodal3" id="ngaybatdau"></span>
+                </div>
+                <div class=" col-xs-4">
+                  <span class="newnhutmodal3" id="ngayhoc"></span>
+                </div>
+                </div>
+                <div>
+                <p style ="text-align:justify;" id="mota">
+                </p>
+                </div>
 
-        </div>
-        <div class="modal-body">
-          <div class="row padding-modal">
-          <div class="col-xs-4">
-            <span class="newnhutmodal3">Tên GV: Mạc Huy Tú</span>
+              </div>
+              <div class="modal-footer">
+              {{-- <div class=" col-xs-4">
+                  <span class="newnhutmodal3">Số lượng còn lại: 0/100</span>
+                </div> --}}
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
-          <div class=" col-xs-4">
-            <span class="newnhutmodal3">Ngày BĐ: 28/11/2019</span>
-          </div>
-          <div class=" col-xs-4">
-            <span class="newnhutmodal3">(T5 Sáng, T7 Sáng)</span>
-          </div>
-          </div>
-          <div>
-          <p style ="text-align:justify;">Hồ Quỳnh Hương (sinh 16 tháng 10 năm 1980, tại Hạ Long, Quảng Ninh) là một ca sĩ nổi tiếng người Việt Nam, từng nhận được 2 đề cử và giành 1 giải Cống hiến. Ngoài ra, Hồ Quỳnh Hương còn rất đam mê âm nhạc cổ điển, cô rất hâm mộ nữ ca sĩ thính phòng Lan Anh và có lần cô từng đến nhà Lan Anh nhờ tư vấn và xin bản nhạc để thể hiện những bản nhạc cổ điển nước ngoài ,cô được biết đến với danh hiệu "cô gái của những giải thưởng" nhờ bộ sưu tập giải thưởng đồ sộ trong suốt sự nghiệp ca hát.
-
-Hồ Quỳnh Hương được đánh giá là một trong những nữ ca sĩ hàng đầu Việt Nam và là giám khảo chính thức cuộc thi "Nhân tố bí ẩn" (X-Factor Vietnam) mùa thứ nhất và mùa thứ hai.
-
-Hiện tại cô là giảng viên chuyên ngành thanh nhạc tại Đại học Văn hóa - Nghệ thuật Quân đội.</p>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-        <div class=" col-xs-4">
-            <span class="newnhutmodal3">Số lượng còn lại: 0/100</span>
-          </div>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+    {{-- @endforeach --}}
   </div>
 </div>
 </div>
+<script>
+//     $.ajaxSetup({
+//   headers: {
+//     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//   }
+// });
 
+
+    function ShowModal(id){
+    $.ajax({
+    url : '/getinfo',
+    method : 'post',
+    data : {
+    id : id,
+    _token: '{{csrf_token()}}'
+    },
+    headers:
+    {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+
+    success : function(data){
+        $('#tengiaovien').text(data[0]['name']);
+        $('#ngaybatdau').text(data[0]['thgian_bd']);
+        $('#ngayhoc').text(data[0]['thu_hoc']);
+        $('#mota').text(data[0]['mo_ta']);
+        $('#tenlophoc').text(data[0]['ten_lop_hoc']);
+    }
+    });
+    }
+
+</script>
 <!--modalbox-->
 
 <!--back-to-top end-->

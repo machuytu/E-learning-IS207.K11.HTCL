@@ -9,6 +9,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Users
     Route::apiResource('users', 'UsersApiController');
+    Route::post('users/media', 'UsersApiController@storeMedia')->name('users.storeMedia');
 
     // Mon Hocs
     Route::apiResource('mon-hocs', 'MonHocApiController');

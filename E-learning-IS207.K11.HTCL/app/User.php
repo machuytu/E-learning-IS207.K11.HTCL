@@ -10,14 +10,21 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Illuminate\Support\Str;
 use Laravel\Passport\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
-    use SoftDeletes, Notifiable, HasApiTokens;
+    use SoftDeletes, Notifiable, HasApiTokens, HasMediaTrait;
 
     public $table = 'users';
+
+    protected $appends = [
+        'avatar',
+    ];
 
     protected $hidden = [
         'password',
@@ -34,6 +41,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'sex',
+        'address',
+        'phone_number',
+        // 'store',
         'approved',
         'password',
         'created_at',
@@ -42,6 +53,11 @@ class User extends Authenticatable
         'remember_token',
         'email_verified_at',
     ];
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('thumb')->width(50)->height(50);
+    }
 
     public function __construct(array $attributes = [])
     {
@@ -93,5 +109,17 @@ class User extends Authenticatable
 
     public function isHocVien() {
         return $this->roles()->where('role_id', 3)->first();
+    }
+
+    public function getAvatarAttribute()
+    {
+        $file = $this->getMedia('avatar')->last();
+
+        if ($file) {
+            $file->url       = $file->getUrl();
+            $file->thumbnail = $file->getUrl('thumb');
+        }
+
+        return $file;
     }
 }

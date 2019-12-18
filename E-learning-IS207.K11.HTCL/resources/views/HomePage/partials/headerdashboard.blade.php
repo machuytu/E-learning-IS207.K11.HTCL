@@ -77,7 +77,7 @@
   </button>
   <div class="dropdown-menu2 dropdown-menu ">
     @if (Auth::check())
-        <a href="{{ route('logout') }}">Login</a>
+        <a href="{{ route('logout') }}">Logout</a>
     @endif
   </div>
 </div>

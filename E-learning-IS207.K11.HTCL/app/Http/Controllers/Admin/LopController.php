@@ -53,7 +53,7 @@ class LopController extends Controller
     public function store(StoreLopRequest $request)
     {
         $request->merge([
-            'thu_hoc' => implode(',', (array) $request->get('thu_hoc'))
+            'thu_hoc' => implode(', ', (array) $request->get('thu_hoc'))
         ]);
 
 
