@@ -22,7 +22,7 @@
                 <h1>website môn học: {{ $baihoc->lop->ten_lop_hoc }}</h1>
                 <p>Ghi chú: Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn</p>
                 <div class="row">
-                        <div class="col-sm-3" style="background-color:lavender;">
+                        <div class=" moinew col-sm-3" style="background-color:lavender;">
                             @foreach ($baihoc->lop->baihocs as $DS_baihoc)
                                 <a href="{{ route('baihocs.show',[$DS_baihoc->lien_quan]) }}"
                                     @if ($DS_baihoc->id == $baihoc->id)

@@ -12,6 +12,7 @@
 
 <body class="home-3">
 <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
 
 
     @include('HomePage.partials.headerdashboard',[])
@@ -77,7 +78,12 @@
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </div>
+                                <br>
+                                <p class="cach"><span class="newnhut">BÌNH LUẬN VỀ KHÓA HỌC CỦA HỌC VIÊN</span>
+                                <div class="moinew fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#{{ $lop->mo_hoc['ten_mh'] }} - {{ $lop->id }}" data-width="" data-numposts="2">
                                
+  
+                            </div>
                                 
                             </div>
                         </div>

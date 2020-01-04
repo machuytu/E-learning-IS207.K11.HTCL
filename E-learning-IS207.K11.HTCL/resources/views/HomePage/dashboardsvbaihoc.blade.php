@@ -9,7 +9,7 @@
     {{--css include--}}
     @include('HomePage.partials.nguon',[])
 </head>
-
+{{$stt=0}}
 <body class="home-3">
 
     <div class="page-wrapper">
@@ -19,22 +19,42 @@
 
         <section class="tuychinh" style=" margin-top:40px;">
             <div class="container-fluid">
-                <h1>website môn học</h1>
-                <p>Ghi chú: Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn</p>
+                <h1 class="tieude">{{ $lop->ten_lop_hoc }}</h1>
+                
                 <div class="row">
-                    <div class="col-sm-3" style="background-color:lavender;">.col</div>
-                    <div class="col-sm-8 chuamonhoc">
-                        <h4 class="kh">Khóa học: {{ $lop->ten_lop_hoc }}</h4>
+                    <div class="moinew col-sm-3">
+                    <b><h4 class="kh" style="text-align:center">THÔNG TIN GIẢNG VIÊN</h4></b>
+                   <img class="center card-img-top" src="https://courses.uit.edu.vn/pluginfile.php?file=%2F72575%2Fuser%2Ficon%2Fboost%2Ff3&rev=1490024" alt="Card image" style="width:50%">
+               
+                    <h4 class="card-title" style="text-align:center">Nguyễn Mạnh Hiếu</h4>
+                    <p>Mã giảng viên:.....</p>
+                    <p>Số điện thoại:......</p>
+                    <p>Email:.............</p>
+                    <b><h4 class="kh" style="text-align:center">THÔNG BÁO GIẢNG VIÊN</h4></b>
+                    <div class="alert alert-info alert-dismissible">
+                    <!--Tin tức-->
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Chúc mừng<br></strong>Chúc các học viên một năm mới hạnh phúc
+                    </div>
+                    <!--Thông báo báo-->
+                    <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Thông báo!<br></strong> Vì lý do mất điện trung tâm tạm nghỉ!
+                    </div>
+                    <!--Cảnh báo-->
+                    
+                    </div>
+                    <div class="moinew col-sm-8 chuamonhoc">
+                        <h4 class="kh">KHÓA HỌC - {{ $lop->ten_lop_hoc }}</h4>
                         <!--lop hoc start-->
                         @foreach ($lop->baihocs as $baihoc)
                         <div class="row">
                             <div class="col chuamonhoc">
                                 <a href="{{ route('baihocs.show',[$baihoc->lien_quan]) }}">
-                                    <h4 class="kh2">Tên bài học: {{ $baihoc->ten_bai_hoc }} </h4>
+                                    <h4 class="kh2">LESSION {{$stt+=1}} - {{ $baihoc->ten_bai_hoc }} </h4>
                                 </a>
-                                <p class="cach"><span class="newnhut">Tên giảng viên:</span> Mạc Huy Tú </p>
-                                <p class="cach"><span class="newnhut">Phòng học:</span> 101</p>
-                                <p class="cach"><span class="newnhut">Giờ học:</span> T2 Ca Sáng, T4 Ca Sáng</p>
+                                <p class="cach"><span class="newnhut">TÊN GIẢNG VIÊN</span> Mạc Huy Tú </p>
+                                <p class="cach"><span class="newnhut">CONTENT BÀI HỌC {{$stt}} </span>Nội dung </p>
                             </div>
                         </div>
                         @endforeach
