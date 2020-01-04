@@ -504,7 +504,7 @@ marquee.dep{
     background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
     background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
    
-    padding: 2px 6px;
+    padding: 4px 6px;
     border-radius: 5px;
     color: #fff;
     font-weight: 400;
@@ -599,7 +599,7 @@ span.newnhutmodal3{
     font-family:Arial, Helvetica, sans-serif;
 }
 .btncustom{
-    margin-left:10px;
+    margin-left: auto;
     color: #fff;
     background-color: #e25947;
     border-color: #005cbf;
@@ -621,7 +621,7 @@ section.tuychinh{
     padding-right:75px !important;
 }
 div.chuamonhoc{
-    border:1.5px solid rgba(82, 82, 82, 0.295);
+    border: 1.75px solid rgba(0, 0, 0, 0.48);
     padding:30px;
     margin-left: 25px;
     border-radius:5px;
@@ -629,16 +629,20 @@ div.chuamonhoc{
 }
 h4.kh{
     font-family:'Titillium Web', sans-serif;
+    font-size:auto;
     font-style:bold;
     color:rgb(10, 10, 10);
 }
 p.cach{
-    margin:2px;
+    margin-bottom: 7px;
 }
 h4.kh2{
     font-family:'Titillium Web', sans-serif;
     font-style:normal;
     color:rgb(11, 143, 204);
+}
+h4.kh2:hover{
+    color:red;
 }
 .dropdown-menu2.show {
     display: block;
@@ -647,7 +651,8 @@ h4.kh2{
 .dropdown-menu2 {
     position: absolute;
     top: 100%;
-    left: 60px;
+    left: auto;
+    right:50px;
     z-index: 1000;
     display: none;
     float: left;
@@ -656,10 +661,37 @@ h4.kh2{
     margin: .125rem 0 0;
     font-size: 1rem;
     color: #212529;
-    text-align: left;
+    text-align: center;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.15);
     border-radius: .25rem;
+}
+a:hover{
+    color:red;
+}
+h1.tieude{
+    margin-bottom:10px;
+}
+.dinhdang{
+    background:red;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.moinew{
+    height:fit-content;
+    padding:20px;
+    background-color: rgb(255, 255, 255)!important;
+    border-radius: 10px;
+    /* border: black; */
+    border: 1.75px solid rgba(0, 0, 0, 0.48);
+}
+img.center{
+    display: block;
+    margin: 10px auto;
+    
 }
