@@ -10,7 +10,7 @@
 <meta name="description" content="HTML5 Template" />
 <meta name="author" content="www.themeht.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Trung tâm dạy học abc</title>
+<title>Trung tâm dạy học Tương lai</title>
 
 <!-- favicon icon -->
 <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -58,12 +58,14 @@
 <style>
   #form_name, #form_password {
     height: 50px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 16px;
     color: #1c1d3e;
     background: #ffffff85;
     border: 1.5px solid #646b7791;
-    padding-left: 20px;
+    padding-left: 30px;
+    margin-bottom: 23px;
+    
   }
 </style>
 <!-- end custom css -->
@@ -112,7 +114,8 @@
           <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="margin-left: 50px;
+    margin-right: 50px;">
                 <input id="form_name" type="email" name="email" class="form-control" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
 
                 @if($errors->has('email'))
@@ -121,7 +124,8 @@
                     </p>
                 @endif
             </div>
-            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}" style="margin-left: 50px;
+    margin-right: 50px;">
                 <input id="form_password" type="password" name="password" class="form-control" required placeholder="{{ trans('global.login_password') }}">
 
                 @if($errors->has('password'))
@@ -131,25 +135,15 @@
                 @endif
             </div>
             <div class="row">
-                <div class="checkbox icheck">
-                    <label><input type="checkbox" name="remember"> {{ trans('global.remember_me') }}</label>
-                </div>
-                <button type="submit" class="btn btn-theme btn-block btn-circle">
+                
+                <button type="submit" class="btn btn-theme btn-block btn-circle" style="margin-left: 100px;
+    margin-right: 100px; margin-bottom:20px">
                     {{ trans('global.login') }}
                 </button>
             </div>
         </form>
-          <h5 class="mb-0 mt-4 text-capitalize">Bạn có tài khoản chưa? <a href="register.html"><i>Đăng kí ngay!</i></a></h5>
-          <div class="social-icons fullwidth social-colored mt-4 text-center clearfix">
-            <ul class="list-inline">
-              <li class="social-facebook"><a href="#">Facebook</a>
-              </li>
-              <li class="social-twitter"><a href="#">Twitter</a>
-              </li>
-              <li class="social-gplus"><a href="#">Google Plus</a>
-              </li>
-            </ul>
-          </div>
+          
+         
         </div>
       </div>
     </div>

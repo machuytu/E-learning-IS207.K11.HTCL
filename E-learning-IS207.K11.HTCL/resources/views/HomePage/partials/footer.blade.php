@@ -7,7 +7,7 @@
           <div class="footer-logo">
             <img id="footer-logo-img" src="{{asset('images/logo.png')}}" class="img-center" alt="">
           </div>
-          <p class="mb-0">Trung tâm dạy học abc là trung tâm dạy rất nhiều thứ từ lập trình, ngoại ngữ, ôn thi đại học, kinh tế, đời sống, dạy kèm cấp 1, 2, 3,...</p>
+          <p class="mb-0" style="text-align:justify">Trung tâm dạy học abc là trung tâm dạy rất nhiều thứ từ lập trình, ngoại ngữ, ôn thi đại học, kinh tế, đời sống, dạy kèm cấp 1, 2, 3,...</p>
         </div>
         <div class="col-lg-4 col-md-6 pl-md-5 sm-mt-5 footer-list justify-content-between d-flex">
           <ul class="list-unstyled w-100">            
