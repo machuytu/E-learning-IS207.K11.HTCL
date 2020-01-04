@@ -10,6 +10,11 @@
                     {{ trans('global.create') }} {{ trans('cruds.user.title_singular') }}
                 </div>
                 <div class="panel-body">
+                    <div class="form-group">
+                        <a class="btn btn-default" href="{{ route('admin.users.index') }}">
+                            {{ trans('global.back_to_list') }}
+                        </a>
+                    </div>
 
                     <form method="POST" action="{{ route("admin.users.store") }}" enctype="multipart/form-data">
                         @csrf
@@ -29,10 +34,18 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.user.fields.email_helper') }}</span>
                         </div>
+                        <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+                            <label class="required" for="password">{{ trans('cruds.user.fields.password') }}</label>
+                            <input class="form-control" type="password" name="password" id="password" required>
+                            @if($errors->has('password'))
+                                <span class="help-block" role="alert">{{ $errors->first('password') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span>
+                        </div>
                         <div class="form-group {{ $errors->has('sex') ? 'has-error' : '' }}">
-                            <label class="required" for="sex">{{ trans('cruds.user.fields.sex') }}</label>
-                            <input class="form-control" type="text" name="sex" id="sex" value="{{ old('sex') }}" required>
-                            @if($errors->has('sex'))
+                            <label class="required" for="sex">{{ trans('cruds.user.fields.sex') }}</label><br>
+                            <input type="radio" name="sex" id="sex" value="Nam"> Nam<br>
+                            <input type="radio" name="sex" id="sex" value="Nữ"> Nữ<br>                            @if($errors->has('sex'))
                                 <span class="help-block" role="alert">{{ $errors->first('sex') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.user.fields.sex_helper') }}</span>
@@ -61,14 +74,6 @@
                             <span class="help-block" role="alert">{{ $errors->first('avatar') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.user.fields.avatar_helper') }}</span>
-                        </div>
-                        <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                            <label class="required" for="password">{{ trans('cruds.user.fields.password') }}</label>
-                            <input class="form-control" type="password" name="password" id="password" required>
-                            @if($errors->has('password'))
-                                <span class="help-block" role="alert">{{ $errors->first('password') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
                             <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>

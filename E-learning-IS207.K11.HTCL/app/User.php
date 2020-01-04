@@ -111,6 +111,7 @@ class User extends Authenticatable implements HasMedia
         return $this->roles()->where('role_id', 3)->first();
     }
 
+
     public function getAvatarAttribute()
     {
         $file = $this->getMedia('avatar')->last();

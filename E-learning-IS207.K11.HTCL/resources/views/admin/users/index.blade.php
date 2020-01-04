@@ -80,6 +80,18 @@
                                             {{ $user->email_verified_at ?? '' }}
                                         </td>
                                         <td>
+                                            {{ $user->sex ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->address ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->phone_number ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->store ?? '' }}
+                                        </td>
+                                        <td>
                                             <span style="display:none">{{ $user->approved ?? '' }}</span>
                                             <input type="checkbox" disabled="disabled" {{ $user->approved ? 'checked' : '' }}>
                                         </td>
