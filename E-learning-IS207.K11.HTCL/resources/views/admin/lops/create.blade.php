@@ -157,8 +157,13 @@
                             </div>
                             <select class="form-control select2" name="hoc_viens[]" id="hoc_viens" multiple>
                                 @foreach($hoc_viens as $id => $hoc_vien)
-                                <option value="{{ $id }}" {{ in_array($id, old('hoc_viens', [])) ? 'selected' : '' }}>
-                                    {{ $hoc_vien }}</option>
+                                    @if ($id)
+                                        <option value="{{ $id }}" {{ in_array($id, old('hoc_viens', [])) ? 'selected' : '' }}>
+                                            {{ $id." - ".$hoc_vien }}</option>
+                                    @else
+                                        <option value="{{ $id }}" {{ in_array($id, old('hoc_viens', [])) ? 'selected' : '' }}>
+                                            {{ $hoc_vien }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                             @if($errors->has('hoc_viens'))
