@@ -10,8 +10,9 @@
     {{$stt=1}}
 </head>
 <?php
-$a=array("success","info","warning","danger");
-$random_keys=array_rand($a,3);
+$a=array("info","success","warning","danger","primary");
+$random_keys=array_rand($a,5);
+$stt=rand(1,5);
 ?>
 <body class="home-3">
 <div id="fb-root"></div>
@@ -45,9 +46,12 @@ $random_keys=array_rand($a,3);
                     <!--Thông báo trung tâm-->
                     <b><h4 class="kh" style="text-align:center">Thông báo trung tâm</h4></b>
                     <!--Thông báo báo-->
-                    <div class="alert alert-{{$a[$random_keys[0]]}} alert-dismissible">
+
+                    <div class="alert alert-{{$a[$random_keys[$stt]]}} alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+
                     <strong>Thông báo!: {{ $thongbao->ten_tb }}<br></strong> {{ $thongbao->noi_dung }}
+
                     </div>
                     <!--Cảnh báo-->
                     </div>
