@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="moinew col-sm-3">
                     <b><h4 class="kh" style="text-align:center">THÔNG TIN GIẢNG VIÊN</h4></b>
-                   <img class="center card-img-top" src="{{ $lop->giao_vien['avatar']->getUrl() }}" alt="Card image" style="width:50%">
+                   <img class="userpicture1 center card-img-top" src="{{ $lop->giao_vien['avatar']->getUrl() }}" alt="Card image" style="width:50%">
 
                     <h4 class="card-title" style="text-align:center">{{ $lop->giao_vien['name'] }}</h4>
                     <p><b>Mã giảng viên:</b> {{ $lop->giao_vien['id'] }}</p>

@@ -31,7 +31,7 @@
   .buttonnhutcst3{
       background: linear-gradient(90deg, rgb(234, 11, 0) 0%, rgb(252, 87, 37) 80%);
       color:white !important;
-      
+
   }
   .text-themenew{
         color:#eb5959 !important;
@@ -63,12 +63,12 @@
 section.custom1{
       padding-top:3px;
       padding-bottom:50px;
-     
+
 }
 section.hinhnen{
       background-image:linear-gradient(#A1FFCE
       ,
-      
+
 #faffd1);
 padding-top:80px;
 padding-bottom:0px !important;
@@ -159,7 +159,7 @@ marquee.dep{
       font-family: FontAwesome;
       margin-left: 4px;
   }
-  
+
   /* sangtaosacviet.com - code 2 */
   .vi-left-title-1:after {
       border: 17px solid transparent;
@@ -180,15 +180,15 @@ marquee.dep{
   .vi-left-title-1 a {
       color: #fff;
   }
-  
+
   /* sangtaosacviet.com - code 3 */
   #stsv-02 h3.tde {    text-align: center;    margin: 45px 0;    font-size: 16px;    line-height: 20px;    text-transform: uppercase;}
   #stsv-02 h3.tde span {    background: #8CC63F;    height: 50px;    line-height: 50px;    padding: 0px 20px;    color: white;    position: relative;    display: inline-block;    margin: 0;    z-index: 45;    border-radius: 10px 10px 0px 0px;    border: 1px solid #8bb54b;}
   #stsv-02 h3.tde :before,#stsv-02 h3.tde :after {    content: "";    background: url(https://sangtaosacviet.com/wp-content/uploads/2017/09/hd-stsv.png);    width: 87px;    height: 50px;    position: absolute;    top: 19px;    z-index: -1;}
   #stsv-02 h3.tde :before {    left: -44px;    }
   #stsv-02 h3.tde :after {    transform: rotateY(180deg);    right: -44px !important;}
-  
-  
+
+
   /* sangtaosacviet.com - code 4 */
   .vi-left-title-2:after {
       border: 17px solid transparent;
@@ -210,25 +210,25 @@ marquee.dep{
   .vi-left-title-2 a {
       color: #fff;
   }
-  
-  
+
+
   /* sangtaosacviet.com - code 5 */
-  
+
   .box-title-new {    position: relative;    margin: 50px 0; text-align: center;}
   .box-title-new .box-title-name-new {    font-size: 24px;    font-weight: 900;    text-transform: uppercase;    color: #fff; background: #00AA46;    display: inline-block;    vertical-align: top;    position: relative;    z-index: 1;    padding: 10px 20px; margin-bottom: 20px; border-radius: 15px;}
   .box-title-new .box-title-name-new:before {    content: "";    position: absolute;    border-top: 10px solid #00aa46;    border-left: 15px solid transparent;    border-bottom: 7px solid transparent;    border-right: 15px solid transparent;   left: calc(50% - 40px);
       bottom: -25px;
       width: 50px;}
   .box-title-new .box-title-name-new:after {    content: "";    position: absolute;    z-index: 2;    bottom: -18px;    height: 9px;    width: 200px;    left: calc(50% - 100px);    border-top: 2px solid #00aa46;}
-  
-  
+
+
   /* sangtaosacviet.com - code new */
   div#nz-div {
       border-bottom: 2px solid red;
       margin-bottom: 40px;
       display: block;
   }
-  
+
   #nz-div h3.tde {
       margin: 0;
       font-size: 16px;
@@ -236,7 +236,7 @@ marquee.dep{
       display: inline-block;
       text-transform: uppercase;
   }
-  
+
   #nz-div h3.tde :after {
       content: "";
       width: 0;
@@ -249,7 +249,7 @@ marquee.dep{
       top: 0px;
       right: -20px;
   }
-  
+
   #nz-div h3.tde span {
       background: #EA3A3C;
       padding: 10px 20px 8px 20px;
@@ -258,17 +258,17 @@ marquee.dep{
       display: inline-block;
       margin: 0;
   }
-  
+
   .sub-cat {
       display: inline-block;
       margin: 0;
       line-height: 45px;
       margin-left: 100px;
-      
+
   }
-  
+
   /* 2  ========================= */
-  
+
   #nz-div-2 h3.tde :after {
       content: "";
       width: 0;
@@ -281,7 +281,7 @@ marquee.dep{
       top: 0px;
       right: -15px;
   }
-  
+
   #nz-div-2 h3.tde span {
       background: #EA3A3C;
       padding: 10px 20px 8px 20px;
@@ -290,21 +290,21 @@ marquee.dep{
       display: inline-block;
       margin: 0;
   }
-  
+
   #nz-div-2 h3.tde {
       margin: 15px 0;
       font-size: 16px;
       line-height: 20px;
       text-transform: uppercase;
   }
-  
+
   #nz-div-2 hr {
       margin: -34px 0px 54px 0px;
       border: 1px solid red;
   }
-  
+
   /* 3  ========================= */
-  
+
   #nz-div-3 h3.tde span {
       background: #EA3A3C;
       padding: 10px 20px 8px 20px;
@@ -314,7 +314,7 @@ marquee.dep{
       margin: 0;
       border-radius: 23px 23px 0px 0px;
   }
-  
+
   #nz-div-3 h3.tde {
       margin: 15px 0;
       border-bottom: 2px solid #ea3a3c;
@@ -322,9 +322,9 @@ marquee.dep{
       line-height: 20px;
       text-transform: uppercase;
   }
-  
+
   /* 4  ========================= */
-  
+
   #nz-div-4 h3.tde :after {
       content: "";
       width: 0;
@@ -337,8 +337,8 @@ marquee.dep{
       top: 0px;
       right: -20px;
   }
-  
-  
+
+
   #nz-div-4 h3.tde :before {
       content: "";
       width: 0;
@@ -347,11 +347,11 @@ marquee.dep{
       border-style: solid;
       border-color: transparent;
       border-right-color: #EA3A3C;
-      position: absolute;  
+      position: absolute;
       top: 0px;
       left: -20px;
   }
-  
+
   #nz-div-4 h3.tde span {
       background: linear-gradient(90deg, rgb(234, 11, 0) 0%, rgb(252, 87, 37) 80%);
       padding: 10px 20px 8px 20px;
@@ -359,9 +359,9 @@ marquee.dep{
       position: relative;
       display: inline-block;
       margin: 0;
-    
+
   }
-  
+
   #nz-div-4 h3.tde {
       text-align: center;
       margin-top:1px;
@@ -371,13 +371,13 @@ marquee.dep{
       line-height: 20px;
       text-transform: uppercase;
   }
-  
+
   /* 5  ========================= */
-  
+
   #nz-div-5 {
     text-align: center;
   }
-  
+
   #nz-div-5 h3.tde {
       display: inline-block;
       background: linear-gradient(90deg, rgb(234, 11, 0) 0%, rgb(252, 87, 37) 80%);
@@ -387,15 +387,15 @@ marquee.dep{
       padding: 0 30px;
     width: auto;
   }
-    
+
   #nz-div-5 h3.tde span:before {
       content: '';
       background: url(http://web.ncnncn.com/wp-content/uploads/2017/06/bgh1l.png);
       width: 80px;
       height: 70px;
-      z-index: -1; 
+      z-index: -1;
   }
-  
+
   /* ======================================= */
   .title-comm {
       color: #fff;
@@ -407,7 +407,7 @@ marquee.dep{
       background-color: #fff;
       text-align: center;
   }
-  
+
   h3.title-comm:before {
       content: '';
       position: absolute;
@@ -419,7 +419,7 @@ marquee.dep{
       z-index: 1;
       display: block;
   }
-  
+
   .title-comm .title-holder {
       min-width: 350px;
       height: 45px;
@@ -433,7 +433,7 @@ marquee.dep{
       display: inline-block;
       min-width: 280px;
   }
-  
+
   .title-holder:before {
       content: "";
       position: absolute;
@@ -449,7 +449,7 @@ marquee.dep{
       border-bottom: 22px solid transparent;
       border-left: 15px solid #56bbe7;
   }
-  
+
   .title-holder:after {
       content: "";
       position: absolute;
@@ -503,7 +503,7 @@ marquee.dep{
    span.newnhut {
     background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
     background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
-   
+
     padding: 4px 6px;
     border-radius: 5px;
     color: #fff;
@@ -521,7 +521,7 @@ marquee.dep{
 span.newnhut2 {
     background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
     background: linear-gradient(90deg, #00ffae17 0%, #00d4ffe6 100%);
-   
+
     padding: 10px;
     font-size:18px;
     border-radius: 25px;
@@ -535,7 +535,7 @@ a.nextblog{
 }
 a.nextblog:hover{
     color:#fcfcfc;
-    
+
 }
 span.newnhut2:hover{
     border:2px solid rgb(81, 255, 81);
@@ -561,7 +561,7 @@ section.a{
 span.newnhutmodal{
     background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
     background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
-   
+
     padding: 2px 6px;
     border-radius: 5px;
     color: #fff;
@@ -572,13 +572,13 @@ span.newnhutmodal{
     font-family:Arial, Helvetica, sans-serif;
 }
 span.newnhutmodal3{
-    
+
     background-color:rgb(38, 142, 247);
-   
+
     padding: 8px;
     border-radius: 15px;
     color: #fff;
-   
+
     margin-left: 15px;
     font-size:110%;
     letter-spacing: 0;
@@ -694,5 +694,10 @@ h1.tieude{
 img.center{
     display: block;
     margin: 10px auto;
-    
+
+}
+.nhutdemo{
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+    padding:10px;
 }

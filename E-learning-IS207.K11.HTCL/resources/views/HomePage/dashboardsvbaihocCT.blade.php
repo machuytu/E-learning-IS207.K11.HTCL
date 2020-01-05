@@ -20,7 +20,7 @@
         <section class="tuychinh" style=" margin-top:40px;">
             <div class="container-fluid">
                 <h1 class="tieude">Khóa học - {{ $baihoc->lop->ten_lop_hoc }} Bài Học - {{ $baihoc->ten_bai_hoc }}</h1>
-                
+
                 <div class="row">
                         <div class=" moinew col-sm-3" >
                         <b><h4 class="kh" style="text-align:center">DANH SÁCH BÀI HỌC</h4></b>
@@ -35,7 +35,7 @@
                     <div class="col-sm-8 chuamonhoc">
                         <h4 class="kh2">Bài học [{{ $baihoc->ten_bai_hoc }}]</h4>
                         <p class="cach"><span class="newnhut">LỜI NGẮN</span> {{ $baihoc->loi_ngan }} </p>
-                        <p class="cach"><span class="newnhut">NỘI DUNG CỦA BÀI HỌC</span> {{ $baihoc->noi_dung }}</p>
+                        <p class="cach"><span class="newnhut">NỘI DUNG CỦA BÀI HỌC</span><br> {{ $baihoc->noi_dung }}</p>
                         <p class="cach"><span class="newnhut">HÌNH ẢNH</span>
                             @foreach($baihoc->hinh_anh_bai_hoc as $key => $media)
                                 <a href="{{ $media->getUrl() }}" target="_blank">
@@ -44,10 +44,12 @@
                             @endforeach
                         </p>
                         <p class="cach"><span class="newnhut">FILE BÀI HỌC</span>
+                        <br>
                             @foreach($baihoc->file as $key => $media)
                                 <a href="{{ $media->getUrl() }}" target="_blank">
-                                    {{ trans('global.view_file') }}
+                                    {{ $media->name }}
                                 </a>
+                                <br>
                             @endforeach
                         </p>
                         @if ($baihoc_truoc)

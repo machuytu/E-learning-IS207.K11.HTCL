@@ -30,7 +30,7 @@
                     <div class="moinew col-sm-3">
                     <!--Thông tin học viên-->
                     <b><h4 class="kh" style="text-align:center">THÔNG TIN HỌC VIÊN</h4></b>
-                   <img class="center card-img-top" src="{{ $user->avatar->getUrl() }}" alt="Card image" style="width:50%">
+                   <img class="userpicture1 center card-img-top " src="{{ $user->avatar->getUrl() }}" alt="Card image" style="width:50%">
                     <h4 class="card-title" style="text-align:center">{{ $user->name }}</h4>
                     <p><b>Mã học viên:</b> {{ $user->id }}</p>
                     <p><b>Địa chỉ:</b> {{ $user->address }}</p>

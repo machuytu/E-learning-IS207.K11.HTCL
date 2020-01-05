@@ -58,7 +58,7 @@ class HomeController extends Controller
         // thể loại
         $the_loai_lap_trinhs = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Lập trình')->get();
         $the_loai_ngoai_ngus = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Ngoại Ngữ')->get();
-        $the_loai_ky_nang_mens = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Kỹ năng mềm')->get();
+        $the_loai_ky_nang_mens = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Kỹ năng sống')->get();
         $the_loai_do_hoas = TheLoai::select()->orderBy('created_at', 'DESC')->where('loai_tl','Đồ họa')->get();
 
         // return page

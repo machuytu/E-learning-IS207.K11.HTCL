@@ -21,7 +21,7 @@
                                     <ul>
                                         @foreach ($the_loai_ngoai_ngus as $the_loai_ngoai_ngu)
                                         <li>
-                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_lap_trinh->id]) }}">{{ $the_loai_ngoai_ngu->ten_tl ?? ''}}</a>
+                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_ngoai_ngu->id]) }}">{{ $the_loai_ngoai_ngu->ten_tl ?? ''}}</a>
                                         </li>
                                         @endforeach
                                     </ul>
@@ -39,18 +39,20 @@
                                     <ul>
                                         @foreach ($the_loai_ky_nang_mens as $the_loai_ky_nang_mem)
                                         <li>
-                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_lap_trinh->id]) }}">{{ $the_loai_ky_nang_mem->ten_tl ?? ''}}</a>
+                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_ky_nang_mem->id]) }}">{{ $the_loai_ky_nang_mem->ten_tl ?? ''}}</a>
                                         </li>
                                         @endforeach
                                     </ul>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">Đồ Họa</a>
                                     <ul>
+                                        @if ($the_loai_do_hoas)
                                         @foreach ($the_loai_do_hoas as $the_loai_do_hoa)
                                         <li>
-                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_lap_trinh->id]) }}">{{ $the_loai_do_hoa->ten_tl ?? ''}}</a>
+                                            <a href="{{ route('lop.index', ['id_the_loai' => $the_loai_do_hoa->id]) }}">{{ $the_loai_do_hoa->ten_tl ?? ''}}</a>
                                         </li>
                                         @endforeach
+                                        @endif
                                     </ul>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="#">Blogs</a>

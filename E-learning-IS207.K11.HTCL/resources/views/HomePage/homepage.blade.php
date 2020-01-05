@@ -199,7 +199,7 @@
 
         <div class="row">
         @foreach ($lops as $lop)
-          <div class="col-sm-4">
+          <div class="nhutdemo col-sm-4">
             <div class="post">
               <div class="post-image">
                 @if($lop->hinh_anh_lop)
@@ -245,7 +245,7 @@
                   </ul>
                 </div>
                 <div class="post-title">
-                  <h4><a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop->id}}')" data-target="#myModal">{{ $lop->ten_lop_hoc }} <br>(11 tuần)</a></h4>
+                  <h4><a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop->id}}')" data-target="#myModal">{{ $lop->ten_lop_hoc }} <br></a></h4>
                 </div>
               </div>
             </div>
@@ -283,7 +283,7 @@
 
             <div class="row">
                     @foreach ($lop_quantams as $lop)
-                      <div class="col-sm-4">
+                      <div class="nhutdemo col-sm-4">
                         <div class="post">
                           <div class="post-image">
                             @if($lop->hinh_anh_lop)
@@ -328,7 +328,7 @@
                               </ul>
                             </div>
                             <div class="post-title">
-                              <h4><a href="href="#myModal" id="load" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br>(10 tuần)</a></h4>
+                              <h4><a href="href="#myModal" id="load" data-toggle="modal" data-target="#myModal"">{{ $lop->mo_hoc['ten_mh'] }} <br></a></h4>
                             </div>
                           </div>
                         </div>
