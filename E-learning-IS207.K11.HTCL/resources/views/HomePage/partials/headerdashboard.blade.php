@@ -12,10 +12,10 @@
               <span></span>
               <span></span>
             </button>
-          
+
   <button type="button" class="btncustom btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Nguyễn Mạnh Hiếu
-    <img src="https://courses.uit.edu.vn/pluginfile.php?file=%2F72575%2Fuser%2Ficon%2Fboost%2Ff2&amp;rev=1490024" class="userpicture1" width="35" height="35" role="presentation" aria-hidden="true " border-radius:20px;>
+    {{ $user->name }}
+    <img src="{{ $user->avatar->getUrl() }}" class="userpicture1" width="35" height="35" role="presentation" aria-hidden="true " border-radius:20px;>
   </button>
   <div class="dropdown-menu2 dropdown-menu">
     @if (Auth::check())

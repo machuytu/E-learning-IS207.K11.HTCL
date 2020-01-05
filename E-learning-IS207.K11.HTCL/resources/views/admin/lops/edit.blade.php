@@ -207,14 +207,14 @@
       }
     },
     init: function () {
-@if(isset($lop) && $lop->hinh_anh_lop)
+    @if(isset($lop) && $lop->hinh_anh_lop)
       var file = {!! json_encode($lop->hinh_anh_lop) !!}
           this.options.addedfile.call(this, file)
       this.options.thumbnail.call(this, file, '{{ $lop->hinh_anh_lop->getUrl('thumb') }}')
       file.previewElement.classList.add('dz-complete')
       $('form').append('<input type="hidden" name="hinh_anh_lop" value="' + file.file_name + '">')
       this.options.maxFiles = this.options.maxFiles - 1
-@endif
+    @endif
     },
     error: function (file, response) {
         if ($.type(response) === 'string') {
