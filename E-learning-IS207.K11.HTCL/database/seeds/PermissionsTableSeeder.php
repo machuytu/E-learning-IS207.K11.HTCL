@@ -192,6 +192,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => '46',
                 'title' => 'bai_hoc_access',
             ],
+            [
+                'id'    => '47',
+                'title' => 'thong_bao_create',
+            ],
+            [
+                'id'    => '48',
+                'title' => 'thong_bao_edit',
+            ],
+            [
+                'id'    => '49',
+                'title' => 'thong_bao_show',
+            ],
+            [
+                'id'    => '50',
+                'title' => 'thong_bao_delete',
+            ],
+            [
+                'id'    => '51',
+                'title' => 'thong_bao_access',
+            ],
         ];
 
         Permission::insert($permissions);

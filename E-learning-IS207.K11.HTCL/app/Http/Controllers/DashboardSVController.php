@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lop;
+use App\ThongBao;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,8 @@ class DashboardSVController extends Controller
         abort_if(Gate::denies('lop_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $lops = Lop::ofHocVien()->get();
         $user = User::where('id', Auth::user()->id)->first();
+        $thongbao = ThongBao::select()->first();
         //return page
-        return view('Homepage/dashboardsv', compact('lops','user'));
+        return view('Homepage/dashboardsv', compact('lops','user','thongbao'));
     }
 }

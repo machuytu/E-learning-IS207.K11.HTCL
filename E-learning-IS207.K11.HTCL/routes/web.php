@@ -75,4 +75,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('bai-hocs/destroy', 'BaiHocController@massDestroy')->name('bai-hocs.massDestroy');
     Route::post('bai-hocs/media', 'BaiHocController@storeMedia')->name('bai-hocs.storeMedia');
     Route::resource('bai-hocs', 'BaiHocController');
+
+     // Thong Baos
+     Route::delete('thong-baos/destroy', 'ThongBaoController@massDestroy')->name('thong-baos.massDestroy');
+     Route::resource('thong-baos', 'ThongBaoController');
 });

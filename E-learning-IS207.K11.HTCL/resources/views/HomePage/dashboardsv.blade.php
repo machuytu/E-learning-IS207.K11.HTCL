@@ -9,7 +9,10 @@
     @include('HomePage.partials.nguon',[])
     {{$stt=1}}
 </head>
-
+<?php
+$a=array("success","info","warning","danger");
+$random_keys=array_rand($a,3);
+?>
 <body class="home-3">
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
@@ -20,7 +23,8 @@
 
         <section class="tuychinh" style=" margin-top:40px;">
             <div class="container-fluid">
-                <h1 class="tieude">website môn học</h1>
+                <h1 class="tieude">website môn học
+                </h1>
                 <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Chú ý!</strong> Mọi ý kiến đóng góp về trang dashboard vui lòng liên hệ: 17520867@gm.uit.edu.vn
@@ -40,15 +44,10 @@
 
                     <!--Thông báo trung tâm-->
                     <b><h4 class="kh" style="text-align:center">Thông báo trung tâm</h4></b>
-                    <div class="alert alert-info alert-dismissible">
-                    <!--Tin tức-->
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Tin tức!<br></strong> Mời bạn tham dự Lễ Giáng sinh tại trung tâm
-                    </div>
                     <!--Thông báo báo-->
-                    <div class="alert alert-warning alert-dismissible">
+                    <div class="alert alert-{{$a[$random_keys[0]]}} alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Thông báo!<br></strong> Vì lý do mất điện trung tâm tạm nghỉ!
+                    <strong>Thông báo!: {{ $thongbao->ten_tb }}<br></strong> {{ $thongbao->noi_dung }}
                     </div>
                     <!--Cảnh báo-->
                     </div>
@@ -67,7 +66,7 @@
                                 <p class="cach"><span class="newnhut">PHÒNG HỌC</span>
                                     {{ $lop->phong_hoc['ten_phong'] }}</p>
                                 <p class="cach"><span class="newnhut">GIỜ HỌC</span> {{$lop->thu_hoc}} --- <b>{{$lop->ca_hoc}}</b>--- </p>
-                                
+
                                 <button type="button" class="dinhdang btn btn-primary" data-toggle="collapse" data-target="#demo{{$stt+=1}}">Mô tả môn học</button>
                                 <div id="demo{{$stt}}" class="collapse hidden">
                                {{$lop->mo_ta}}

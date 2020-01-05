@@ -112,6 +112,16 @@
                     </a>
                 </li>
             @endcan
+            @can('thong_bao_access')
+                <li class="{{ request()->is('admin/thong-baos') || request()->is('admin/thong-baos/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.thong-baos.index") }}">
+                        <i class="fa-fw fas fa-cogs">
+
+                        </i>
+                        <span>{{ trans('cruds.thongBao.title') }}</span>
+                    </a>
+                </li>
+            @endcan
             <li>
                 <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="fas fa-fw fa-sign-out-alt">

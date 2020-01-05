@@ -223,4 +223,22 @@ return [
             'deleted_at_helper'       => '',
         ],
     ],
+    'thongBao'       => [
+        'title'          => 'Thong Bao',
+        'title_singular' => 'Thong Bao',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'ten_tb'            => 'Ten Tb',
+            'ten_tb_helper'     => '',
+            'noi_dung'          => 'Nội Dung',
+            'noi_dung_helper'   => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ],
 ];

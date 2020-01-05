@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
             RoleUserTableSeeder::class,
 
             //du lieu gia
-            CoSoTableSeeder::class,
-            MonHocTableSeeder::class,
-            PhongHocTableSeeder::class,
-            TheLoaiTableSeeder::class,
-            LopTableSeeder::class,
-            BaiHocTableSeeder::class,
+            // CoSoTableSeeder::class,
+            // MonHocTableSeeder::class,
+            // PhongHocTableSeeder::class,
+            // TheLoaiTableSeeder::class,
+            // LopTableSeeder::class,
+            // BaiHocTableSeeder::class,
         ]);
     }
 }
