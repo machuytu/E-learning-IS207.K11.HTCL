@@ -20,16 +20,16 @@
         <section class="tuychinh" style=" margin-top:40px;">
             <div class="container-fluid">
                 <h1 class="tieude">{{ $lop->ten_lop_hoc }}</h1>
-                
+
                 <div class="row">
                     <div class="moinew col-sm-3">
                     <b><h4 class="kh" style="text-align:center">THÔNG TIN GIẢNG VIÊN</h4></b>
-                   <img class="center card-img-top" src="https://courses.uit.edu.vn/pluginfile.php?file=%2F72575%2Fuser%2Ficon%2Fboost%2Ff3&rev=1490024" alt="Card image" style="width:50%">
-               
-                    <h4 class="card-title" style="text-align:center">Nguyễn Mạnh Hiếu</h4>
-                    <p>Mã giảng viên:.....</p>
-                    <p>Số điện thoại:......</p>
-                    <p>Email:.............</p>
+                   <img class="center card-img-top" src="{{ $lop->giao_vien['avatar']->getUrl() }}" alt="Card image" style="width:50%">
+
+                    <h4 class="card-title" style="text-align:center">{{ $lop->giao_vien['name'] }}</h4>
+                    <p><b>Mã giảng viên:</b> {{ $lop->giao_vien['id'] }}</p>
+                    <p><b>Số điện thoại:</b> {{ $lop->giao_vien['phone_number'] }}</p>
+                    <p><b>Email:</b> {{ $lop->giao_vien['email'] }}</p>
                     <b><h4 class="kh" style="text-align:center">THÔNG BÁO GIẢNG VIÊN</h4></b>
                     <div class="alert alert-info alert-dismissible">
                     <!--Tin tức-->
@@ -42,7 +42,7 @@
                     <strong>Thông báo!<br></strong> Vì lý do mất điện trung tâm tạm nghỉ!
                     </div>
                     <!--Cảnh báo-->
-                    
+
                     </div>
                     <div class="moinew col-sm-8 chuamonhoc">
                         <h4 class="kh">KHÓA HỌC - {{ $lop->ten_lop_hoc }}</h4>

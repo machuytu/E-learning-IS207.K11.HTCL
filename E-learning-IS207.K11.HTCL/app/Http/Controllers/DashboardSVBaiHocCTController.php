@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\BaiHoc;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardSVBaiHocCTController extends Controller
 {
@@ -19,7 +21,8 @@ class DashboardSVBaiHocCTController extends Controller
             ->where('vi_tri_bai_hoc','>',$baihoc->vi_tri_bai_hoc)
             ->orderBy('vi_tri_bai_hoc','asc')
             ->first();
+        $user = User::where('id', Auth::user()->id)->first();
         //return page
-        return view('Homepage.dashboardsvbaihocCT', compact('baihoc', 'baihoc_truoc', 'baihoc_sau'));
+        return view('Homepage.dashboardsvbaihocCT', compact('baihoc', 'baihoc_truoc', 'baihoc_sau','user'));
     }
 }
