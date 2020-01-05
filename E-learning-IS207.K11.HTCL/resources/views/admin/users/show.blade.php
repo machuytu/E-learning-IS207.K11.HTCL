@@ -69,6 +69,18 @@
                                         @endforeach
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.lop.fields.hinh_anh_lop') }}
+                                    </th>
+                                    <td>
+                                        @if($user->avatar)
+                                            <a href="{{ $user->avatar->getUrl() }}" target="_blank">
+                                                <img src="{{ $user->avatar->getUrl('thumb') }}" width="50px" height="50px">
+                                            </a>
+                                        @endif
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <div class="form-group">
