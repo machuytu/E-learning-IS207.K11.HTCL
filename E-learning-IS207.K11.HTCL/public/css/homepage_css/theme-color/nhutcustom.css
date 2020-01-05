@@ -5,17 +5,16 @@
     background: url('https://ak7.picdn.net/shutterstock/videos/19530127/thumb/4.jpg') center center no-repeat;
     background-size: cover;
   }
-  .nhutcst1:before{
-   
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to top, rgb(250, 208, 196) 0%, rgb(255, 209, 255) 100%);
-        opacity: .6; 
-  }
+  .nhutcst1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, rgba(196, 208, 250, 0) 0%, rgb(209, 253, 255) 100%);
+    opacity: .6;
+}
 
   .nhutcst2{
         padding:30px;
@@ -24,11 +23,11 @@
        background-color:#ffffff7d;
 
   }
-  .nhutbackgroundlogin{
+  .nhutbackgroundlogin {
     background: #ffffffb0;
-    border-radius: 50px;
-    padding:50px;
-  }
+    border-radius: 14px;
+    padding: 30px;
+}
   .buttonnhutcst3{
       background: linear-gradient(90deg, rgb(234, 11, 0) 0%, rgb(252, 87, 37) 80%);
       color:white !important;
@@ -50,11 +49,11 @@
       border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
-.border-version{
-      box-shadow: 0 8px 6px -6px #00000070;
-      border-top-left-radius: 50px;
-      border-top-right-radius: 50px;
-      background-image:linear-gradient(#A1FFCE,#faffd1);
+.border-version {
+    box-shadow: 0 8px 6px -6px #00000070;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    background-image: linear-gradient(rgb(191, 255, 222),#faffd1);
 }
 .carousel-inner img {
       width: 100%;
