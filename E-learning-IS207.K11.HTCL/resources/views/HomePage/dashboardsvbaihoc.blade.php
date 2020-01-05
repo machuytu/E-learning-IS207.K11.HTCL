@@ -53,7 +53,7 @@
                                 <a href="{{ route('baihocs.show',[$baihoc->lien_quan]) }}">
                                     <h4 class="kh2">LESSION {{$stt+=1}} - {{ $baihoc->ten_bai_hoc }} </h4>
                                 </a>
-                                <p class="cach"><span class="newnhut">TÊN GIẢNG VIÊN</span> Mạc Huy Tú </p>
+                                <p class="cach"><span class="newnhut">TÊN GIẢNG VIÊN</span>{{ $lop->giao_vien['name'] }}</p>
                                 <p class="cach"><span class="newnhut">CONTENT BÀI HỌC {{$stt}} </span>Nội dung </p>
                             </div>
                         </div>

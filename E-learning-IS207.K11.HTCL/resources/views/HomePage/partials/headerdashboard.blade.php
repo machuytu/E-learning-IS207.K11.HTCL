@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <!-- Navbar -->
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand logo" href="http://127.0.0.1:8181/dashboard">
+            <a class="navbar-brand logo" href="http://127.0.0.1:8000/dashboard">
               <img id="logo-img" class="img-center" src="{{asset('images/logo.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span></span>

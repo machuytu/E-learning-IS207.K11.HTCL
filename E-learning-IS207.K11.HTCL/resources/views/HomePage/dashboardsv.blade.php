@@ -50,7 +50,7 @@ $stt=rand(1,5);
                     <div class="alert alert-{{$a[$random_keys[$stt]]}} alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
 
-                    <strong>Thông báo!: {{ $thongbao->ten_tb }}<br></strong> {{ $thongbao->noi_dung }}
+                    <strong>Thông báo!: {{ $thongbao->ten_tb}}<br></strong> {{ $thongbao->noi_dung }}
 
                     </div>
                     <!--Cảnh báo-->
@@ -72,7 +72,7 @@ $stt=rand(1,5);
                                 <p class="cach"><span class="newnhut">GIỜ HỌC</span> {{$lop->thu_hoc}} --- <b>{{$lop->ca_hoc}}</b>--- </p>
 
                                 <button type="button" class="dinhdang btn btn-primary" data-toggle="collapse" data-target="#demo{{$stt+=1}}">Mô tả môn học</button>
-                                <div id="demo{{$stt}}" class="collapse hidden">
+                                <div id="demo{{$stt}}" class="collapse hidden" style="text-align:justify">
                                {{$lop->mo_ta}}
                                 </div>
                                 <br>

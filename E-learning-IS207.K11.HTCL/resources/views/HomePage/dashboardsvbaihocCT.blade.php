@@ -35,7 +35,8 @@
                     <div class="col-sm-8 chuamonhoc">
                         <h4 class="kh2">Bài học [{{ $baihoc->ten_bai_hoc }}]</h4>
                         <p class="cach"><span class="newnhut">LỜI NGẮN</span> {{ $baihoc->loi_ngan }} </p>
-                        <p class="cach"><span class="newnhut">NỘI DUNG CỦA BÀI HỌC</span><br> {{ $baihoc->noi_dung }}</p>
+                        <p class="cach"><span class="newnhut">NỘI DUNG CỦA BÀI HỌC</span><br>
+                            <p class="cach">{{ $baihoc->noi_dung }}</p></p>
                         <p class="cach"><span class="newnhut">HÌNH ẢNH</span>
                             @foreach($baihoc->hinh_anh_bai_hoc as $key => $media)
                                 <a href="{{ $media->getUrl() }}" target="_blank">
@@ -45,12 +46,14 @@
                         </p>
                         <p class="cach"><span class="newnhut">FILE BÀI HỌC</span>
                         <br>
+                        <p class ="cach">
                             @foreach($baihoc->file as $key => $media)
                                 <a href="{{ $media->getUrl() }}" target="_blank">
                                     {{ $media->name }}
                                 </a>
                                 <br>
                             @endforeach
+                            </p>
                         </p>
                         @if ($baihoc_truoc)
                             <p><a href="{{ route('baihocs.show',[$baihoc_truoc->lien_quan]) }}"><< {{ $baihoc_truoc->ten_bai_hoc }}</a></p>
