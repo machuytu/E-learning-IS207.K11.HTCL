@@ -501,15 +501,15 @@ marquee.dep{
       margin-left:2px !important;
   }
    span.newnhut {
-    background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff));
-    background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
-
-    padding: 4px 6px;
+   
+    background: #328af1;
+   
+    padding: 7.5px;
     border-radius: 5px;
     color: #fff;
     font-weight: 400;
     letter-spacing: 0;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Open Sans,Helvetica,Arial,sans-serif;;
 }
 .margingia{
     margin-top:10px;
@@ -634,7 +634,7 @@ h4.kh{
     color:rgb(10, 10, 10);
 }
 p.cach{
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 }
 h4.kh2{
     font-family:'Titillium Web', sans-serif;

@@ -66,14 +66,11 @@
                                     {{ $lop->giao_vien['name'] }} </p>
                                 <p class="cach"><span class="newnhut">PHÒNG HỌC</span>
                                     {{ $lop->phong_hoc['ten_phong'] }}</p>
-                                <p class="cach"><span class="newnhut">GIỜ HỌC</span> T2 Ca Sáng, T4 Ca Sáng</p>
-
+                                <p class="cach"><span class="newnhut">GIỜ HỌC</span> {{$lop->thu_hoc}} --- <b>{{$lop->ca_hoc}}</b>--- </p>
+                                
                                 <button type="button" class="dinhdang btn btn-primary" data-toggle="collapse" data-target="#demo{{$stt+=1}}">Mô tả môn học</button>
                                 <div id="demo{{$stt}}" class="collapse hidden">
-
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                               {{$lop->mo_ta}}
                                 </div>
                                 <br>
                                 <p class="cach"><span class="newnhut">BÌNH LUẬN VỀ KHÓA HỌC CỦA HỌC VIÊN</span>
