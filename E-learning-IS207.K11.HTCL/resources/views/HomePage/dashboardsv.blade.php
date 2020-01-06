@@ -9,11 +9,7 @@
     @include('HomePage.partials.nguon',[])
     {{$stt=1}}
 </head>
-<?php
-$a=array("info","success","warning","danger","primary");
-$random_keys=array_rand($a,5);
-$stt=rand(1,5);
-?>
+
 <body class="home-3">
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0"></script>
@@ -46,14 +42,13 @@ $stt=rand(1,5);
                     <!--Thông báo trung tâm-->
                     <b><h4 class="kh" style="text-align:center">Thông báo trung tâm</h4></b>
                     <!--Thông báo báo-->
-
-                    <div class="alert alert-{{$a[$random_keys[$stt]]}} alert-dismissible">
+                    @foreach ($thongbaos as $key => $thongbao)
+                    <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-
-                    <strong>Thông báo!: {{ $thongbao->ten_tb}}<br></strong> {{ $thongbao->noi_dung }}
-
+                        <strong>Thông báo!: {{ $thongbao->ten_tb}}<br></strong> {{ $thongbao->noi_dung }}
                     </div>
                     <!--Cảnh báo-->
+                    @endforeach
                     </div>
 
             <div class="col-sm-8 chuamonhoc">

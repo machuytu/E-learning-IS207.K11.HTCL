@@ -31,16 +31,14 @@
                     <p><b>Số điện thoại:</b> {{ $lop->giao_vien['phone_number'] }}</p>
                     <p><b>Email:</b> {{ $lop->giao_vien['email'] }}</p>
                     <b><h4 class="kh" style="text-align:center">THÔNG BÁO GIẢNG VIÊN</h4></b>
+                    @foreach ($lop->baihocs as $baihoc)
                     <div class="alert alert-info alert-dismissible">
                     <!--Tin tức-->
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Chúc mừng<br></strong>Chúc các học viên một năm mới hạnh phúc
+                    <strong>Bai hoc<br></strong>{{ $baihoc->ten_bai_hoc }} đã được đăng
                     </div>
-                    <!--Thông báo báo-->
-                    <div class="alert alert-warning alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Thông báo!<br></strong> Vì lý do mất điện trung tâm tạm nghỉ!
-                    </div>
+
+                    @endforeach
                     <!--Cảnh báo-->
 
                     </div>

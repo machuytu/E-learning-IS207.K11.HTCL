@@ -19,8 +19,8 @@ class DashboardSVController extends Controller
         abort_if(Gate::denies('lop_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $lops = Lop::ofHocVien()->get();
         $user = User::where('id', Auth::user()->id)->first();
-        $thongbao = ThongBao::select()->first();
+        $thongbaos = ThongBao::select()->orderBy('created_at', 'DESC')->limit(3)->get();
         //return page
-        return view('Homepage/dashboardsv', compact('lops','user','thongbao'));
+        return view('Homepage/dashboardsv', compact('lops','user','thongbaos'));
     }
 }

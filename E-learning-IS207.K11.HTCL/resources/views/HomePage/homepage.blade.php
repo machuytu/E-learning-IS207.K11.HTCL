@@ -103,7 +103,7 @@
                       <div class="post-meta">
                         <ul class="list-inline">
                         <div class=" marinblog">
-                            <span class="newnhut">Đăng bởi:<b> {{ $lop_goiy->giao_vien['name'] }} </b></span>
+                            <span class="newtu">Đăng bởi:<b> {{ $lop_goiy->giao_vien['name'] }} </b></span>
                             </div>
                         </ul>
                       </div> <a href="#myModal" data-toggle="modal" onclick="ShowModal('{{$lop_goiy->id}}')" data-target="#myModal">{{ $lop_goiy->ten_lop_hoc }}</a>

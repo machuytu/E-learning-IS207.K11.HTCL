@@ -50,7 +50,7 @@ class HomeController extends Controller
         }
 
         //lop goi y o hinh
-        $lop_goiys = Lop::select()->orderBy('created_at', 'DESC')->where('published', 1)->limit(3)->get();
+        $lop_goiys = Lop::select()->orderBy('created_at', 'DESC')->where('published', 1)->limit(4)->get();
 
         // lop quan tam (data mining - chua lam)
         $lop_quantams = Lop::select()->inRandomOrder()->where('published', 1)->limit(3)->get();

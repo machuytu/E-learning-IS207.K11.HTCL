@@ -701,3 +701,13 @@ img.center{
     flex: 0 0 33.33%;
     padding:10px;
 }
+span.newtu{
+    font-size: 13px;
+    background: #328af1;
+    padding: 3px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: Open Sans,Helvetica,Arial,sans-serif;
+}
