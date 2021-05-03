@@ -17,7 +17,7 @@ class AdminMiddleware
         if(!Auth::check()) {
             return redirect('/login');
         }
-        if(Auth::user()->roles()->where('title','HocVien')->count() > 0) {
+        if(Auth::user()->roles()->where('title','HocVien')->count() > 0 && Auth::user()->roles()->where('title', 'GiaoVien')->count() = 0) {
             return redirect('/dashboard');
         }
 
