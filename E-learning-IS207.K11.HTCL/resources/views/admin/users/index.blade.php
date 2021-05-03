@@ -88,9 +88,9 @@
                                         <td>
                                             {{ $user->phone_number ?? '' }}
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             {{ $user->store ?? '' }}
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <span style="display:none">{{ $user->approved ?? '' }}</span>
                                             <input type="checkbox" disabled="disabled" {{ $user->approved ? 'checked' : '' }}>

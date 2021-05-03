@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
 
             $table->string('phone_number')->nullable();
 
-            $table->double('store')->default(0)->nullable();
+            // $table->double('store')->default(0)->nullable();
 
             $table->string('password')->nullable();
 
