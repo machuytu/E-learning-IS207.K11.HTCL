@@ -62,7 +62,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $key => $user)
+                                @if (Auth::user()->isNhanVien())
+                                @foreach($users as $key => $user )
+                                    @foreach($user->roles as $key => $item)
+                                    @if ( $item->title != 'Admin')
                                     <tr data-entry-id="{{ $user->id }}">
                                         <td>
 
@@ -122,9 +125,74 @@
                                             @endcan
 
                                         </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                @endforeach
+                                @else
+                                @foreach($users as $key => $user )
+                                    <tr data-entry-id="{{ $user->id }}">
+                                        <td>
 
+                                        </td>
+                                        <td>
+                                            {{ $user->id ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->name ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->email ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->email_verified_at ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->sex ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->address ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $user->phone_number ?? '' }}
+                                        </td>
+                                        <!-- <td>
+                                            {{ $user->store ?? '' }}
+                                        </td> -->
+                                        <td>
+                                            <span style="display:none">{{ $user->approved ?? '' }}</span>
+                                            <input type="checkbox" disabled="disabled" {{ $user->approved ? 'checked' : '' }}>
+                                        </td>
+                                        <td>
+                                            @foreach($user->roles as $key => $item)
+                                                <span class="label label-info label-many">{{ $item->title }}</span>
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @can('user_show')
+                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
+                                                    {{ trans('global.view') }}
+                                                </a>
+                                            @endcan
+
+                                            @can('user_edit')
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
+                                                    {{ trans('global.edit') }}
+                                                </a>
+                                            @endcan
+
+                                            @can('user_delete')
+                                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                                </form>
+                                            @endcan
+
+                                        </td>
                                     </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>

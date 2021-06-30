@@ -77,14 +77,23 @@
                         </div>
                         <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
                             <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
-                            <div style="padding-bottom: 4px">
+                            <!-- <div style="padding-bottom: 4px">
                                 <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                                 <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
-                            </div>
+                            </div> -->
                             <select class="form-control select2" name="roles[]" id="roles" multiple required>
-                                @foreach($roles as $id => $roles)
-                                    <option value="{{ $id }}" {{ in_array($id, old('roles', [])) ? 'selected' : '' }}>{{ $roles }}</option>
-                                @endforeach
+                                @if(Auth::user()->isNhanVien())
+                                    @foreach($roles as $id => $roles)
+                                        @if($id == 1 || $id == 4)
+                                        @else
+                                            <option value="{{ $id }}" {{ in_array($id, old('roles', [])) ? 'selected' : '' }}>{{ $roles }}</option>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    @foreach($roles as $id => $roles)
+                                        <option value="{{ $id }}" {{ in_array($id, old('roles', [])) ? 'selected' : '' }}>{{ $roles }}</option>
+                                    @endforeach
+                                @endif
                             </select>
                             @if($errors->has('roles'))
                                 <span class="help-block" role="alert">{{ $errors->first('roles') }}</span>

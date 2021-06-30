@@ -111,6 +111,9 @@ class User extends Authenticatable implements HasMedia
         return $this->roles()->where('role_id', 3)->first();
     }
 
+    public function isNhanVien() {
+        return $this->roles()->where('role_id', 4)->first();
+    }
 
     public function getAvatarAttribute()
     {
